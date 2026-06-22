@@ -1,0 +1,192 @@
+```html
+<h2 style="font-size:48px;color:white;margin-bottom:10px;">
+Subscription Plans
+</h2>
+
+<p style="color:#ccc;font-size:20px;">
+Choose the best plan for your trading needs
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+align-items:stretch;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+">
+
+<!-- FREE TRIAL -->
+
+<div style="
+width:280px;
+background:#0f2747;
+border:2px solid #28a745;
+border-radius:15px;
+padding:30px;
+color:white;
+">
+
+<h3 style="color:#28a745;">🎁 FREE TRIAL</h3>
+
+<h1>21 Days</h1>
+
+<h1 style="color:#28a745;">$0</h1>
+
+<hr>
+
+<p>✅ 1 MT5 Account</p>
+<p>✅ Full Features Access</p>
+<p>✅ No Credit Card Required</p>
+<p>✅ Cloud Dashboard</p>
+
+<button style="
+background:#ffc107;
+padding:15px 30px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+">
+Start Free Trial
+</button>
+
+</div>
+
+<!-- STARTER -->
+
+<div style="
+width:280px;
+background:#0f2747;
+border:2px solid #1a73e8;
+border-radius:15px;
+padding:30px;
+color:white;
+">
+
+<h2>Starter</h2>
+
+<h1 style="color:#4da3ff;">
+$29<span style="font-size:28px;">/month</span>
+</h1>
+
+<p>1 MT5 Account</p>
+
+<hr>
+
+<p>✅ Auto Break-Even</p>
+<p>✅ Smart Trailing Stop</p>
+<p>✅ Trade Copier (1)</p>
+<p>✅ Cloud Dashboard</p>
+
+<button style="
+background:#ffc107;
+padding:15px 30px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+">
+Subscribe
+</button>
+
+</div>
+
+<!-- PRO -->
+
+<div style="
+width:280px;
+background:#17365d;
+border:2px solid #ffc107;
+border-radius:15px;
+padding:30px;
+color:white;
+position:relative;
+">
+
+<div style="
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+background:#ffc107;
+color:black;
+padding:8px 15px;
+border-radius:8px;
+font-weight:bold;
+">
+⭐ Most Popular
+</div>
+
+<h2>Pro</h2>
+
+<h1 style="color:#ffc107;">
+$49<span style="font-size:28px;">/month</span>
+</h1>
+
+<p>3 MT5 Accounts</p>
+
+<hr>
+
+<p>✅ Auto Break-Even</p>
+<p>✅ Smart Trailing Stop</p>
+<p>✅ Trade Copier (3)</p>
+<p>✅ Cloud Dashboard</p>
+<p>✅ Priority Support</p>
+
+<button style="
+background:#ffc107;
+padding:15px 30px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+">
+Subscribe
+</button>
+
+</div>
+
+<!-- VIP -->
+
+<div style="
+width:280px;
+background:#0f2747;
+border:2px solid #9b59ff;
+border-radius:15px;
+padding:30px;
+color:white;
+">
+
+<h2 style="color:#9b59ff;">⭐ VIP</h2>
+
+<h1 style="color:#9b59ff;">
+$99<span style="font-size:28px;">/month</span>
+</h1>
+
+<p>Unlimited Accounts</p>
+
+<hr>
+
+<p>✅ Auto Break-Even</p>
+<p>✅ Smart Trailing Stop</p>
+<p>✅ Unlimited Copier</p>
+<p>✅ Cloud Dashboard</p>
+<p>✅ Priority Support</p>
+<p>✅ 50% Future EA Discount</p>
+
+<button style="
+background:#ffc107;
+padding:15px 30px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+">
+Subscribe
+</button>
+
+</div>
+
+</div>
+```
