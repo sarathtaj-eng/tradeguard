@@ -4,7 +4,23 @@
 <title>TradeGuard Login</title>
 
 <style>
+<script>
+function login() {
 
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if(email === "admin@tradeguard.com" &&
+       password === "TradeGuard123")
+    {
+        window.location.href = "dashboard.html";
+    }
+    else
+    {
+        alert("Invalid Login");
+    }
+}
+</script>
 body{
     font-family:Arial,sans-serif;
     background:#07111f;
