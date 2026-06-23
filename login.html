@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<head>
 <title>TradeGuard Login</title>
 
 <style>
-    <script>
-function login() {
 
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    if(email === "admin@tradeguard.com" &&
-       password === "TradeGuard123")
-    {
-        window.location.href = "dashboard.html";
-    }
-    else
-    {
-        alert("Invalid Login");
-    }
+body{
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
 }
-</script>
+
+.login-box{
+    background:#0d2038;
+    width:400px;
+    padding:40px;
+    border-radius:15px;
+    border:1px solid #17365d;
+    text-align:center;
+}
+
+h1{
+    color:#ffc107;
+    margin-bottom:10px;
+}
+
+p{
+    color:#cccccc;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+    background:#102746;
+    color:white;
+    box-sizing:border-box;
+}
+
+input:focus{
+    outline:1px solid #1a73e8;
+}
+
+button{
+    width:100%;
+    background:#ffc107;
+    color:black;
+    border:none;
+    padding:12px;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.links{
+    margin-top:20px;
+}
+
+.links a{
+    color:#1a73e8;
+    text-decoration:none;
+}
+
+.logo{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+</style>
+
 <script>
 function login(){
 
@@ -43,6 +106,9 @@ function login(){
     }
 }
 </script>
+
+
+    
 body{
     font-family:Arial,sans-serif;
     background:#07111f;
