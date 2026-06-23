@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TradeGuard Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:white;
+}
+
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#0d2038;
+    border-right:1px solid #17365d;
+}
+
+.logo{
+    text-align:center;
+    padding:25px;
+    font-size:28px;
+    font-weight:bold;
+    color:#ffc107;
+    border-bottom:1px solid #17365d;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-bottom:1px solid #17365d;
+}
+
+.sidebar a:hover{
+    background:#17365d;
+}
+
+/* Main */
+.main{
+    margin-left:250px;
+    padding:30px;
+}
+
+h1{
+    color:#ffc107;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:20px;
+}
+
+.card h3{
+    margin-top:0;
+    color:#ffc107;
+}
+
+.status{
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ffc107;
+    color:black;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.activity{
+    margin-top:30px;
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:20px;
+}
+
+.activity ul{
+    list-style:none;
+    padding:0;
+}
+
+.activity li{
+    padding:10px 0;
+    border-bottom:1px solid #17365d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        🛡 TradeGuard
+    </div>
+
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="copier.html">🔄 Trade Copier</a>
+    <a href="trailing.html">📈 Trailing Stop</a>
+    <a href="subscription.html">💳 Subscription</a>
+    <a href="downloads.html">⬇ Downloads</a>
+    <a href="settings.html">⚙ Settings</a>
+    <a href="index.html">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>📊 Dashboard</h1>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>EA Status</h3>
+<div class="status">🟢 Connected</div>
+</div>
+
+<div class="card">
+<h3>Trade Copier</h3>
+<div class="status">🟢 Active</div>
+</div>
+
+<div class="card">
+<h3>Trailing Stop</h3>
+<div class="status">🟢 Active</div>
+</div>
+
+<div class="card">
+<h3>Subscription</h3>
+<div class="status">🟢 Active</div>
+</div>
+
+</div>
+
+<br>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Open Trades</h3>
+<h2>2</h2>
+</div>
+
+<div class="card">
+<h3>Last Sync</h3>
+<h2>5 sec ago</h2>
+</div>
+
+<div class="card">
+<h3>Current Plan</h3>
+<h2>Starter</h2>
+</div>
+
+<div class="card">
+<h3>Expiry Date</h3>
+<h2>30 Jul 2026</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Trade Copier</h3>
+<p>Master Account Connected</p>
+<p>Slave Accounts: 3</p>
+<br>
+<a href="copier.html" class="btn">Manage</a>
+</div>
+
+<div class="card">
+<h3>Trailing Stop</h3>
+<p>Break Even: ON</p>
+<p>Trailing Stop: ON</p>
+<br>
+<a href="trailing.html" class="btn">Manage</a>
+</div>
+
+</div>
+
+<div class="activity">
+
+<h3>📋 Recent Activity</h3>
+
+<ul>
+<li>✅ Trade Copied Successfully</li>
+<li>✅ Break Even Activated</li>
+<li>✅ Trailing Stop Updated</li>
+<li>✅ MT5 Account Synced</li>
+<li>✅ Subscription Verified</li>
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
