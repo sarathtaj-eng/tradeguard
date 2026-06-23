@@ -59,24 +59,37 @@ body{
 h1,h2,h3{
     color:#ffc107;
 }
-/* Copy Mode */
+    /* Account */
+.risk-table th:nth-child(2),
+.risk-table td:nth-child(2){
+    width:100px;
+    min-width:100px;
+}
+
+/* Status */
+.risk-table th:nth-child(3),
+.risk-table td:nth-child(3){
+    width:120px;
+    min-width:120px;
+}
+
+/* Enabled */
 .risk-table th:nth-child(4),
 .risk-table td:nth-child(4){
+    width:80px;
+    min-width:80px;
+}
+
+/* Copy Mode */
+.risk-table th:nth-child(5),
+.risk-table td:nth-child(5){
     min-width:240px;
 }
 
-
-    
-.risk-table th:nth-child(5),
-.risk-table td:nth-child(5){
-    width:90px;
-   
-}
-
- /* Lot */
+/* Lot */
 .risk-table th:nth-child(6),
 .risk-table td:nth-child(6){
-    width:80px;
+    width:90px;
 }
 
 /* Risk */
@@ -106,16 +119,25 @@ h1,h2,h3{
 /* DD % */
 .risk-table th:nth-child(11),
 .risk-table td:nth-child(11){
+    width:80px;
+}
+
+/* Save */
+.risk-table th:nth-child(12),
+.risk-table td:nth-child(12){
     width:90px;
-} 
+}
+
 .risk-table th{
     position:sticky;
     top:0;
     z-index:10;
 }
+
 .risk-table tr:hover td{
     background:#14345d;
 }
+
 
     
 .status{
