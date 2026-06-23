@@ -109,20 +109,25 @@ button:hover{
 <h1>TradeGuard EA</h1>
 
 <p>Member Login</p>
+<form onsubmit="login(); return false;">
 
-<form action="dashboard.html">
+<input
+    type="email"
+    id="email"
+    placeholder="Email Address"
+    required>
 
-<input type="email"
-       placeholder="Email Address"
-       required>
-
-<input type="password"
-       placeholder="Password"
-       required>
+<input
+    type="password"
+    id="password"
+    placeholder="Password"
+    required>
 
 <button type="submit">
 Login
 </button>
+
+
 
 </form>
 
