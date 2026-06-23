@@ -95,14 +95,19 @@ h1,h2,h3{
     background:#fd7e14;
     color:white;
 }
-.copy-mode{
-    width:100%;
-    padding:8px;
+    .copy-mode{
+    width:180px;
+    min-width:180px;
+    padding:10px;
     background:#102746;
     color:white;
-    border:1px solid #244a78;
-    border-radius:6px;
+    border:1px solid #3a5f8f;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
 }
+
 
 .table-btn{
     background:#ffc107;
@@ -129,7 +134,11 @@ h1,h2,h3{
 .btn:hover{
     opacity:0.9;
 }
-
+.risk-table th:nth-child(3),
+.risk-table td:nth-child(3){
+    min-width:220px;
+}
+    
 .risk-table{
     width:100%;
     border-collapse:collapse;
@@ -185,6 +194,22 @@ h1,h2,h3{
     margin:10px 0 0;
     font-size:22px;
     font-weight:bold;
+}
+    .status-dot{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    display:inline-block;
+}
+
+.green{
+    background:#00ff88;
+    box-shadow:0 0 10px #00ff88;
+}
+
+.red{
+    background:#ff4d4d;
+    box-shadow:0 0 10px #ff4d4d;
 }
 </style>
 </head>
@@ -270,7 +295,7 @@ h1,h2,h3{
 
 <tr>
     <td>Client Account 1</td>
-    <td><span class="status">🟢 Connected</span></td>
+    <td><span class="status-dot green"></span></td>
     
     <td>
 <select class="copy-mode">
@@ -291,7 +316,7 @@ h1,h2,h3{
 
 <tr>
     <td>Client Account 2</td>
-    <td><span class="status">🟢 Connected</span></td>
+    <td><span class="status-dot green"></span></td>
     
     <td>
     <select class="copy-mode">
@@ -312,7 +337,7 @@ h1,h2,h3{
 
 <tr>
     <td>Client Account 3</td>
-    <td><span class="status">🟢 Connected</span></td>
+    <td><span class="status-dot green"></span></td>
     <td>
     <select class="copy-mode">
     <option selected>Same Lot</option>
@@ -332,7 +357,7 @@ h1,h2,h3{
 
 <tr>
     <td>Client Account 4</td>
-    <td><span style="color:#ff4d4d;font-weight:bold;">🔴 Disconnected</span></td>
+    <td><span class="status-dot red"></span></td>
     <td>
     <select class="copy-mode">
     <option>Same Lot</option>
