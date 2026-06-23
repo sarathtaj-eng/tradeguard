@@ -121,82 +121,73 @@ input, select{
 <p><strong>Status:</strong> <span class="status">🟢 Connected</span></p>
 
 </div>
-
 <div class="card">
 
-<h2>Client Account #1</h2>
+<h2>Risk Management Settings</h2>
 
-<p>Status: <span class="status">🟢 Connected</span></p>
+<table class="risk-table">
 
-<h3>Risk Management</h3>
+<tr>
+    <th>Description</th>
+    <th>Copy Mode</th>
+    <th>Fixed Lot</th>
+    <th>Risk Multiplier</th>
+    <th>Max Lot</th>
+    <th>Max Trades</th>
+    <th>Daily Loss</th>
+    <th>Drawdown</th>
+</tr>
 
-<label>Copy Mode</label>
-<select>
-<option>Same Lot</option>
-<option>Fixed Lot</option>
-<option>Risk Multiplier</option>
-<option>Balance Ratio</option>
-</select>
+<tr>
+    <td>Client Account 1</td>
 
-<label>Fixed Lot Size</label>
-<input type="number" value="0.10">
+    <td>
+        <select>
+            <option>Same Lot</option>
+            <option selected>Risk Multiplier</option>
+            <option>Fixed Lot</option>
+            <option>Balance Ratio</option>
+        </select>
+    </td>
 
-<label>Risk Multiplier</label>
-<input type="number" value="1.00">
+    <td><input type="number" value="0.10"></td>
+    <td><input type="number" value="1.00"></td>
+    <td><input type="number" value="2.00"></td>
+    <td><input type="number" value="5"></td>
+    <td><input type="number" value="100"></td>
+    <td><input type="number" value="10"></td>
 
-<label>Maximum Lot Size</label>
-<input type="number" value="2.00">
+</tr>
 
-<label>Maximum Open Trades</label>
-<input type="number" value="5">
+<tr>
+    <td>Client Account 2</td>
 
-<label>Maximum Daily Loss ($)</label>
-<input type="number" value="100">
+    <td>
+        <select>
+            <option>Same Lot</option>
+            <option>Risk Multiplier</option>
+            <option selected>Fixed Lot</option>
+            <option>Balance Ratio</option>
+        </select>
+    </td>
 
-<label>Maximum Drawdown (%)</label>
-<input type="number" value="10">
+    <td><input type="number" value="0.20"></td>
+    <td><input type="number" value="1.50"></td>
+    <td><input type="number" value="3.00"></td>
+    <td><input type="number" value="10"></td>
+    <td><input type="number" value="200"></td>
+    <td><input type="number" value="15"></td>
 
-<button class="btn">Save Settings</button>
+</tr>
+
+</table>
+
+<br>
+
+<button class="btn">💾 Save All Settings</button>
 
 </div>
 
-<div class="card">
-
-<h2>Client Account #2</h2>
-
-<p>Status: <span class="status">🟢 Connected</span></p>
-
-<h3>Risk Management</h3>
-
-<label>Copy Mode</label>
-<select>
-<option>Same Lot</option>
-<option>Fixed Lot</option>
-<option>Risk Multiplier</option>
-<option>Balance Ratio</option>
-</select>
-
-<label>Fixed Lot Size</label>
-<input type="number" value="0.20">
-
-<label>Risk Multiplier</label>
-<input type="number" value="1.50">
-
-<label>Maximum Lot Size</label>
-<input type="number" value="3.00">
-
-<label>Maximum Open Trades</label>
-<input type="number" value="10">
-
-<label>Maximum Daily Loss ($)</label>
-<input type="number" value="200">
-
-<label>Maximum Drawdown (%)</label>
-<input type="number" value="15">
-
-<button class="btn">Save Settings</button>
-
-</div>
 
 <div class="card">
 
