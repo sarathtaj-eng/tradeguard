@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,15 +59,9 @@ h1,h2,h3{
     color:#ffc107;
 }
 
-input, select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:6px;
-    background:#102746;
-    color:white;
+.status{
+    color:#00ff88;
+    font-weight:bold;
 }
 
 .btn{
@@ -77,15 +72,43 @@ input, select{
     border-radius:8px;
     font-weight:bold;
     cursor:pointer;
+    margin-right:10px;
 }
 
 .btn:hover{
     opacity:0.9;
 }
 
-.status{
-    color:#00ff88;
-    font-weight:bold;
+.risk-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.risk-table th{
+    background:#17365d;
+    color:#ffc107;
+    padding:12px;
+    border:1px solid #244a78;
+    text-align:center;
+}
+
+.risk-table td{
+    background:#0f2747;
+    padding:10px;
+    border:1px solid #244a78;
+    text-align:center;
+}
+
+.risk-table input,
+.risk-table select{
+    width:100%;
+    padding:8px;
+    background:#102746;
+    color:white;
+    border:none;
+    border-radius:5px;
+    box-sizing:border-box;
 }
 
 </style>
@@ -118,66 +141,108 @@ input, select{
 
 <p><strong>Account:</strong> 12345678</p>
 <p><strong>Server:</strong> IC Markets</p>
-<p><strong>Status:</strong> <span class="status">🟢 Connected</span></p>
+<p><strong>Status:</strong>
+<span class="status">🟢 Connected</span>
+</p>
 
 </div>
+
 <div class="card">
 
-<h2>Risk Management Settings</h2>
+<h2>Client Account Risk Management</h2>
+
+<button class="btn">➕ Add Client</button>
+<button class="btn">➖ Remove Client</button>
+<button class="btn">🔄 Refresh</button>
 
 <table class="risk-table">
 
 <tr>
-    <th>Description</th>
-    <th>Copy Mode</th>
-    <th>Fixed Lot</th>
-    <th>Risk Multiplier</th>
-    <th>Max Lot</th>
-    <th>Max Trades</th>
-    <th>Daily Loss</th>
-    <th>Drawdown</th>
+<th>Client Account</th>
+<th>Status</th>
+<th>Copy Mode</th>
+<th>Fixed Lot</th>
+<th>Risk Multiplier</th>
+<th>Max Lot</th>
+<th>Max Trades</th>
+<th>Daily Loss</th>
+<th>Drawdown</th>
+<th>Save</th>
 </tr>
 
 <tr>
-    <td>Client Account 1</td>
+<td>Client Account 1</td>
+<td><span class="status">🟢 Connected</span></td>
 
-    <td>
-        <select>
-            <option>Same Lot</option>
-            <option selected>Risk Multiplier</option>
-            <option>Fixed Lot</option>
-            <option>Balance Ratio</option>
-        </select>
-    </td>
+<td>
+<select>
+<option>Same Lot</option>
+<option selected>Risk Multiplier</option>
+<option>Fixed Lot</option>
+<option>Balance Ratio</option>
+</select>
+</td>
 
-    <td><input type="number" value="0.10"></td>
-    <td><input type="number" value="1.00"></td>
-    <td><input type="number" value="2.00"></td>
-    <td><input type="number" value="5"></td>
-    <td><input type="number" value="100"></td>
-    <td><input type="number" value="10"></td>
+<td><input type="number" value="0.10"></td>
+<td><input type="number" value="1.00"></td>
+<td><input type="number" value="2.00"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="100"></td>
+<td><input type="number" value="10"></td>
 
+<td>
+<button class="btn">Save</button>
+</td>
 </tr>
 
 <tr>
-    <td>Client Account 2</td>
+<td>Client Account 2</td>
+<td><span class="status">🟢 Connected</span></td>
 
-    <td>
-        <select>
-            <option>Same Lot</option>
-            <option>Risk Multiplier</option>
-            <option selected>Fixed Lot</option>
-            <option>Balance Ratio</option>
-        </select>
-    </td>
+<td>
+<select>
+<option>Same Lot</option>
+<option>Risk Multiplier</option>
+<option selected>Fixed Lot</option>
+<option>Balance Ratio</option>
+</select>
+</td>
 
-    <td><input type="number" value="0.20"></td>
-    <td><input type="number" value="1.50"></td>
-    <td><input type="number" value="3.00"></td>
-    <td><input type="number" value="10"></td>
-    <td><input type="number" value="200"></td>
-    <td><input type="number" value="15"></td>
+<td><input type="number" value="0.20"></td>
+<td><input type="number" value="1.50"></td>
+<td><input type="number" value="3.00"></td>
+<td><input type="number" value="10"></td>
+<td><input type="number" value="200"></td>
+<td><input type="number" value="15"></td>
 
+<td>
+<button class="btn">Save</button>
+</td>
+</tr>
+
+<tr>
+<td>Client Account 3</td>
+<td><span class="status">🟢 Connected</span></td>
+
+<td>
+<select>
+<option selected>Same Lot</option>
+<option>Risk Multiplier</option>
+<option>Fixed Lot</option>
+<option>Balance Ratio</option>
+</select>
+</td>
+
+<td><input type="number" value="0.30"></td>
+<td><input type="number" value="1.00"></td>
+<td><input type="number" value="5.00"></td>
+<td><input type="number" value="20"></td>
+<td><input type="number" value="500"></td>
+<td><input type="number" value="20"></td>
+
+<td>
+<button class="btn">Save</button>
+</td>
 </tr>
 
 </table>
@@ -188,15 +253,15 @@ input, select{
 
 </div>
 
-
 <div class="card">
 
 <h2>Copy Statistics</h2>
 
-<p>Total Client Accounts: 2</p>
+<p>Total Client Accounts: 3</p>
 <p>Copy Status: <span class="status">🟢 Active</span></p>
 <p>Trades Copied Today: 15</p>
 <p>Success Rate: 100%</p>
+<p>Last Sync: 5 Seconds Ago</p>
 
 </div>
 
@@ -204,3 +269,4 @@ input, select{
 
 </body>
 </html>
+```
