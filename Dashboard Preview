@@ -1,0 +1,29 @@
+<!-- DASHBOARD PREVIEW -->
+
+    <h2>Dashboard Preview</h2>
+<img src="dashboard-preview.jpg"
+alt="Dashboard Preview"
+style="
+max-width:100%;
+height:auto;
+display:block;
+margin:auto;
+border-radius:15px;
+border:1px solid #1a73e8;
+">
+
+
+
+<p><strong>EA Status:</strong> 🟢 Connected</p>
+
+<p><strong>Trade Copier:</strong> 🟢 Active</p>
+
+<p><strong>Trailing Stop:</strong> 🟢 Active</p>
+
+<p><strong>Subscription:</strong> 🟢 Active</p>
+
+<p><strong>Open Trades:</strong> 2</p>
+
+<p><strong>Last Sync:</strong> 5 sec ago</p>
+</div>
+
