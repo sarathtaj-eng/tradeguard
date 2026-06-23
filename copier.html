@@ -171,9 +171,10 @@ h1,h2,h3{
     background:#fd7e14;
     color:white;
 }
-    .copy-mode{
-    width:220px;
-    min-width:220px;
+
+.copy-mode{
+    width:180px;
+    min-width:180px;
     padding:8px;
     background:#102746;
     color:white;
@@ -217,12 +218,11 @@ h1,h2,h3{
 
 
 /* Copy Mode */
-
-    .risk-table{
+.risk-table{
     width:100%;
     border-collapse:collapse;
     margin-top:20px;
-    table-layout:fixed;
+    min-width:1450px;
 
 }
 .risk-table th{
@@ -251,16 +251,17 @@ h1,h2,h3{
 
 
 
-    
-.risk-table input[type="number"]{
-    width:75px;
-    padding:6px;
+  .risk-table input[type="number"]{
+    width:90px;
+    padding:8px;
     background:#102746;
     color:white;
     border:1px solid #244a78;
-    border-radius:5px;
+    border-radius:6px;
     text-align:center;
-}
+    box-sizing:border-box;
+}  
+
  
 
 
@@ -388,8 +389,9 @@ h1,h2,h3{
 </div>
 
 </div>
-<table class="risk-table">
 
+<div style="overflow-x:auto;">
+<table class="risk-table">
 
 <tr>
    
@@ -531,10 +533,11 @@ h1,h2,h3{
     <td><button class="table-btn">Save</button></td>
 </tr>
 
-
 </table>
+</div>
 
 <br><br>
+
 
 <button class="table-btn">💾 Save All Settings</button>
 
