@@ -213,6 +213,8 @@ td{
 <div class="main">
 
     <!-- Master Account Card -->
+
+    
     <div class="card">
 
         <h2>👑 Master Account Trailing Stop</h2>
@@ -250,94 +252,58 @@ td{
     <!-- Trailing Settings Card -->
     <div class="card">
 
-        <h2>⚙ Master Account Trailing Settings</h2>
-            <div class="form-grid">
-        <!-- form-grid here -->
+    <h2>⚙ Master Account Trailing Settings</h2>
 
-    </div>
+    <div class="form-grid">
 
-</div> <!-- End Main -->
+        <div>
+            <label>Enable Trailing Stop</label>
+            <select>
+                <option>Enabled</option>
+                <option>Disabled</option>
+            </select>
+        </div>
 
+        <div>
+            <label>
+                Start Trailing After (Pips):
+                <span id="startValue">20</span>
+            </label>
+            <input type="range" id="startSlider" min="1" max="200" value="20">
+        </div>
 
+        <div>
+            <label>
+                Trail Distance (Pips):
+                <span id="trailValue">10</span>
+            </label>
+            <input type="range" id="trailSlider" min="1" max="100" value="10">
+        </div>
 
+        <div>
+            <label>
+                Trail Step (Pips):
+                <span id="stepValue">5</span>
+            </label>
+            <input type="range" id="stepSlider" min="1" max="50" value="5">
+        </div>
 
-<div>
-<label>Enable Trailing Stop</label>
-<select>
-<option>Enabled</option>
-<option>Disabled</option>
-</select>
-</div>
+        <div>
+            <label>Apply To</label>
+            <select>
+                <option>All Trades</option>
+                <option>Buy Only</option>
+                <option>Sell Only</option>
+            </select>
+        </div>
 
+    </div> <!-- form-grid -->
 
-<div>
-<label>
-Start Trailing After (Pips):
-<span id="startValue">20</span>
-</label>
+    <br>
 
-<input
-type="range"
-id="startSlider"
-min="1"
-max="200"
-value="20"
-oninput="document.getElementById('startValue').innerText=this.value"
-style="width:100%;">
-</div>
-
-
-<div>
-
-<label>
-Trail Distance (Pips):
-<span id="trailValue">10</span>
-</label>
-
-<input
-type="range"
-id="trailSlider"
-min="1"
-max="100"
-value="10"
-oninput="document.getElementById('trailValue').innerText=this.value"
-style="width:100%;">
-
-    
-</div>
-<div>
-<label>
-Trail Step (Pips):
-<span id="stepValue">5</span>
-</label>
-
-<input
-type="range"
-id="stepSlider"
-min="1"
-max="50"
-value="5"
-oninput="document.getElementById('stepValue').innerText=this.value"
-style="width:100%;">
-</div>
-
-
-<div>
-<label>Apply To</label>
-<select>
-<option>All Trades</option>
-<option>Buy Only</option>
-<option>Sell Only</option>
-</select>
-</div>
-
-</div>
-
-<br>
-<button>💾 Save Settings</button>
-<button class="btn-green">▶ Activate All</button>
-<button class="btn-red">⏹ Stop All</button>
-
+    <button>💾 Save Settings</button>
+    <button class="btn-green">▶ Activate All</button>
+    <button class="btn-red">⏹ Stop All</button>
 
 </div> <!-- card -->
 
@@ -345,3 +311,4 @@ style="width:100%;">
 
 </body>
 </html>
+   
