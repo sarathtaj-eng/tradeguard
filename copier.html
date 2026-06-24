@@ -461,11 +461,12 @@ h1,h2,h3{
 
 <br><br>
 
+<button class="table-btn" onclick="addClient()">➕ Add Client</button>
 
-<button class="table-btn">➕ Add Client</button>
-<button class="table-btn">➖ Remove Client</button>
-<button class="table-btn">🔄 Refresh</button>
-<button class="table-btn">💾 Save All Settings</button>
+<button class="table-btn" onclick="removeClient()">➖ Remove Client</button>
+
+<button class="table-btn" onclick="location.reload()">🔄 Refresh</button>
+
 
 </div>
 
@@ -497,6 +498,56 @@ h1,h2,h3{
 </div>
 </div>
 </div>
+<script>
+
+let clientCount = 4;
+
+function addClient(){
+
+    clientCount++;
+
+    let table = document.getElementById("clientTable");
+
+    let row = table.insertRow();
+
+    row.innerHTML = `
+        <td>
+            <strong>Client ${clientCount}</strong><br>
+            <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
+        </td>
+
+        <td>
+            <span class="status-dot green"></span>
+            <span class="profit">Online</span>
+        </td>
+
+        <td>
+            <input type="checkbox" checked>
+        </td>
+
+        <td class="profit">+$0</td>
+
+        <td>
+            <button class="table-btn">
+                ⚙ Configure
+            </button>
+        </td>
+    `;
+}
+
+function removeClient(){
+
+    let table = document.getElementById("clientTable");
+
+    if(table.rows.length > 1){
+        table.deleteRow(table.rows.length - 1);
+        clientCount--;
+    }
+}
+
+</script>
+
+    
 </body>
 </html>
 
