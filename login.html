@@ -5,7 +5,7 @@
 
 <head>
 <title>TradeGuard Login</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
     font-family:Arial,sans-serif;
@@ -17,15 +17,17 @@ body{
     height:100vh;
     margin:0;
 }
-
 .login-box{
     background:#0d2038;
-    width:400px;
+    width:90%;
+    max-width:400px;
     padding:40px;
     border-radius:15px;
     border:1px solid #17365d;
     text-align:center;
+    box-sizing:border-box;
 }
+
 
 h1{
     color:#ffc107;
@@ -81,6 +83,37 @@ button:hover{
     font-size:48px;
     margin-bottom:10px;
 }
+@media (max-width:768px){
+
+    .login-box{
+        width:95%;
+        max-width:none;
+        padding:35px 25px;
+    }
+
+    .logo{
+        font-size:70px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    p{
+        font-size:18px;
+    }
+
+    input{
+        height:55px;
+        font-size:18px;
+    }
+
+    button{
+        height:55px;
+        font-size:20px;
+    }
+}
+    
 </style>
 
 <script>
