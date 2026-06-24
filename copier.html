@@ -521,9 +521,7 @@ function addClient(){
 
     let row = table.insertRow();
 row.innerHTML = `
-<td>
-    <input type="radio" name="selectedClient">
-</td>
+<td><input type="radio" name="selectedClient"></td>
 
 <td>
     <strong>Client ${clientCount}</strong><br>
@@ -543,12 +541,11 @@ row.innerHTML = `
 
 <td>
     <button class="table-btn"
-    onclick="window.location.href='client-settings.html'">
-    ⚙ Configure
+        onclick="window.location.href='client-settings.html'">
+        ⚙ Configure
     </button>
 </td>
-`;
-   
+`;   
 }
 
     function removeClient(){
