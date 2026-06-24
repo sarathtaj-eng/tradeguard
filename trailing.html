@@ -1,9 +1,8 @@
+```html
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>TradeGuard - Trailing Stop</title>
-
+<title>TradeGuard - Trailing Manager</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -62,51 +61,101 @@ body{
     margin-bottom:15px;
 }
 
-
-.form-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+.account-box{
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:8px;
+    padding:15px;
 }
 
-label{
-    display:block;
-    margin-bottom:5px;
+.default-settings{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.setting-box{
+    flex:1;
+    min-width:220px;
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:8px;
+    padding:20px;
+    text-align:center;
+}
+
+.setting-box h3{
+    margin:0 0 15px;
     color:#cccccc;
 }
 
-input,select{
-    width:100%;
-    padding:10px;
-    border-radius:5px;
-    border:1px solid #24508a;
-    background:#132b4a;
-    color:white;
-    box-sizing:border-box;
-}
-
-input[type="checkbox"]{
-    width:auto;
-    padding:0;
-    margin:0;
-    transform:scale(1.2);
-}
-
-
-
-    
-button{
-    background:#ffc107;
-    color:black;
-    border:none;
-    padding:10px 18px;
-    border-radius:5px;
-    cursor:pointer;
+.value{
+    font-size:34px;
+    color:#2d8cff;
     font-weight:bold;
 }
 
-button:hover{
-    opacity:0.9;
+.trade-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.trade-table th{
+    background:#17365d;
+    padding:12px;
+    text-align:left;
+}
+
+.trade-table td{
+    padding:12px;
+    border-top:1px solid #17365d;
+}
+
+.buy{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+.sell{
+    color:#ff4d4d;
+    font-weight:bold;
+}
+
+.profit{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+.active-badge{
+    background:#28a745;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.inactive-badge{
+    background:#dc3545;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+button{
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:2px;
+}
+
+.btn-yellow{
+    background:#ffc107;
+    color:black;
 }
 
 .btn-green{
@@ -114,18 +163,11 @@ button:hover{
     color:white;
 }
 
-.btn-red{
-    background:#dc3545;
+.btn-blue{
+    background:#24508a;
     color:white;
 }
-input[type="range"]{
-    cursor:pointer;
-}
 
-button{
-    margin-right:10px;
-    margin-bottom:10px;
-}
 @media(max-width:768px){
 
     .sidebar{
@@ -138,10 +180,13 @@ button{
         margin-left:0;
     }
 
+    .trade-table{
+        display:block;
+        overflow-x:auto;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
@@ -163,31 +208,17 @@ button{
 </div>
 
 </div>
+
 <div class="main">
 
-    <!-- Master Account Card -->
+<!-- MASTER ACCOUNT -->
 
-    
-    <div class="card">
+<div class="card">
 
-        <h2>👑 Master Account Trailing Stop</h2>
+<h2>👑 Master Account</h2>
 
-        <p>Manage MT5 trailing stop settings for your master account.</p>
+<div class="account-box">
 
-        <div style="
-        display:flex;
-        gap:20px;
-        flex-wrap:wrap;
-        margin-bottom:20px;
-        ">
-
-            <div style="
-            background:#132b4a;
-            padding:15px;
-            border-radius:8px;
-            border:1px solid #24508a;
-            min-width:400px;
-            ">
 <b>Account:</b> 12345678<br><br>
 <b>Name:</b> TradeGuard Master<br><br>
 <b>Balance:</b> $12,500<br><br>
@@ -195,125 +226,158 @@ button{
 <b>Broker:</b> IC Markets<br><br>
 <b>Status:</b>
 <span style="color:#00ff88;">Connected</span>
-                
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div> <!-- End Master Account Card -->
+<!-- DEFAULT SETTINGS -->
 
+<div class="card">
 
-    <!-- Trailing Settings Card -->
-    <div class="card">
+<h2>⚙ Default Trailing Settings</h2>
 
-   
-<h2>⚙ Master Account Trailing Settings</h2>
+<div class="default-settings">
 
-<p>
-Status:
-<span style="
-background:#28a745;
-padding:4px 10px;
-border-radius:20px;
-font-size:12px;
-font-weight:bold;">
+<div class="setting-box">
+<h3>Start Trailing</h3>
+<div class="value">20</div>
+Pips
+</div>
+
+<div class="setting-box">
+<h3>Trail Distance</h3>
+<div class="value">10</div>
+Pips
+</div>
+
+<div class="setting-box">
+<h3>Trail Step</h3>
+<div class="value">5</div>
+Pips
+</div>
+
+</div>
+
+<br>
+
+<button class="btn-yellow">
+✏ Edit Default Settings
+</button>
+
+</div>
+
+<!-- OPEN TRADES -->
+
+<div class="card">
+
+<h2>📈 Open Trades (Live)</h2>
+
+<table class="trade-table">
+
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Type</th>
+<th>Open Price</th>
+<th>Current Price</th>
+<th>Profit</th>
+<th>Trailing</th>
+<th>Settings</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>XAUUSD</td>
+<td class="buy">BUY</td>
+<td>3360.25</td>
+<td>3368.40</td>
+<td class="profit">+81.50</td>
+
+<td>
+<span class="active-badge">
 ACTIVE
 </span>
-</p>
-    <div class="form-grid">
+</td>
 
-        <div>
+<td>
+Start:20<br>
+Distance:10<br>
+Step:5
+</td>
 
-            <label style="display:flex;align-items:center;gap:10px;">
-           <input type="checkbox" checked>
-            Enable Trailing Stop
-            </label>
-        
-        </div>
+<td>
+<button class="btn-blue">
+⚙ Settings
+</button>
+</td>
+</tr>
 
-        <div>
-            <label>
-                Start Trailing After (Pips):
-                <span id="startValue">20</span>
-            </label>
-            
+<tr>
+<td>BTCUSD</td>
+<td class="sell">SELL</td>
+<td>105000</td>
+<td>104200</td>
+<td class="profit">+800.00</td>
 
-<input
-type="range"
-id="startSlider"
-min="1"
-max="200"
-value="20"
-oninput="document.getElementById('startValue').innerText=this.value">
+<td>
+<span class="inactive-badge">
+OFF
+</span>
+</td>
 
+<td>
+Default
+</td>
 
-            
-        </div>
+<td>
+<button class="btn-green">
+▶ Activate
+</button>
 
-        <div>
-            <label>
-                Trail Distance (Pips):
-                <span id="trailValue">10</span>
-            </label>
-          
+<button class="btn-blue">
+⚙ Settings
+</button>
+</td>
 
-<input
-type="range"
-id="trailSlider"
-min="1"
-max="100"
-value="10"
-oninput="document.getElementById('trailValue').innerText=this.value">
+</tr>
 
-            
-        </div>
+<tr>
+<td>EURUSD</td>
+<td class="buy">BUY</td>
+<td>1.1560</td>
+<td>1.1582</td>
+<td class="profit">+22.00</td>
 
-        <div>
-            <label>
-                Trail Step (Pips):
-                <span id="stepValue">5</span>
-            </label>
-         
+<td>
+<span class="active-badge">
+ACTIVE
+</span>
+</td>
 
-<input
-type="range"
-id="stepSlider"
-min="1"
-max="50"
-value="5"
-oninput="document.getElementById('stepValue').innerText=this.value">
+<td>
+Default
+</td>
 
-            
-        </div>
+<td>
+<button class="btn-blue">
+⚙ Settings
+</button>
+</td>
 
-        <div>
-            <label>Apply To</label>
-            <select>
-                <option>Master Account Only</option>
-                <option>Master + Clients</option>
-                <option>Clients Only</option>
-                
-            </select>
-        </div>
+</tr>
 
-    </div> <!-- form-grid -->
+</tbody>
 
-    <br>
+</table>
 
-    <button>💾 Save Settings</button>
-    <button class="btn-green">▶ Activate All</button>
-    <button class="btn-red">⏹ Stop All</button>
-    <div id="saveStatus" style="
-    margin-top:15px;
-    color:#00ff88;
-    font-weight:bold;">
-    </div>
+</div>
 
-</div> <!-- card -->
-
-</div> <!-- main -->
+</div>
 
 </body>
 </html>
-   
+```
