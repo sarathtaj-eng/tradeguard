@@ -1,8 +1,9 @@
-```html
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>TradeGuard - Trailing Manager</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -83,6 +84,10 @@ body{
     border-radius:8px;
     padding:20px;
     text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .setting-box h3{
@@ -99,18 +104,21 @@ body{
 .trade-table{
     width:100%;
     border-collapse:collapse;
+    table-layout:fixed;
     margin-top:20px;
 }
 
 .trade-table th{
     background:#17365d;
     padding:12px;
-    text-align:left;
+    text-align:center;
+    color:#ffc107;
 }
 
 .trade-table td{
     padding:12px;
     border-top:1px solid #17365d;
+    text-align:center;
 }
 
 .buy{
@@ -135,18 +143,7 @@ body{
     font-size:12px;
     font-weight:bold;
 }
-.trade-table{
-    width:100%;
-    border-collapse:collapse;
-    table-layout:fixed;
-}
-.setting-box{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-    
+
 .inactive-badge{
     background:#dc3545;
     padding:5px 12px;
@@ -179,26 +176,7 @@ button{
     color:white;
 }
 
-@media(max-width:768px){
-
-    .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-
-    .main{
-        margin-left:0;
-    }
-
-    .trade-table{
-        display:block;
-        overflow-x:auto;
-    }
-}
-
-</style>
-    .stats-row{
+.stats-row{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:15px;
@@ -225,6 +203,27 @@ button{
     font-weight:bold;
     color:#00ff88;
 }
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .trade-table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
@@ -258,18 +257,25 @@ button{
 <div class="account-box">
 
 <b>Account:</b> 12345678<br><br>
+
 <b>Name:</b> TradeGuard Master<br><br>
+
 <b>Balance:</b> $12,500<br><br>
+
 <b>Equity:</b> $12,430<br><br>
+
 <b>Broker:</b> IC Markets<br><br>
+
 <b>Status:</b>
-<span style="color:#00ff88;">Connected</span>
+<span style="color:#00ff88;">
+Connected
+</span>
 
 </div>
 
 </div>
-
-<!-- DEFAULT SETTINGS -->
+<!-- END MASTER ACCOUNT -->
+<!-- DEFAULT TRAILING SETTINGS -->
 
 <div class="card">
 
@@ -305,37 +311,6 @@ Pips
 
 </div>
 
-<!-- OPEN TRADES -->
-<div class="card">
+<!-- END DEFAULT SETTINGS -->
 
-<h2>📈 Open Trades (Live)</h2>
-
-<div class="stats-row">
-
-<div class="stat-box">
-<h3>Open Trades</h3>
-<div class="stat-value">3</div>
-</div>
-
-<div class="stat-box">
-<h3>Trailing Active</h3>
-<div class="stat-value">2</div>
-</div>
-
-<div class="stat-box">
-<h3>Trailing Off</h3>
-<div class="stat-value">1</div>
-</div>
-
-<div class="stat-box">
-<h3>Total Profit</h3>
-<div class="stat-value">$903.50</div>
-</div>
-
-</div>
-
-
-
-</body>
-</html>
-```
+    
