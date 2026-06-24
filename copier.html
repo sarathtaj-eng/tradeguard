@@ -362,20 +362,21 @@ h1,h2,h3{
 
 
 <div style="overflow-x:auto;">
-    <table class="risk-table">
-    <tbody id="clientTable">
-  
 
+<table class="risk-table">
+
+<thead>
 <tr>
-    <th>Select</th>
-    <th>Client</th>
-    <th>Status</th>
-    <th>Enabled</th>
-    <th>P&L Today</th>
-    <th>Manage</th>
-    
+<th>Select</th>
+<th>Client</th>
+<th>Status</th>
+<th>Enabled</th>
+<th>P&L Today</th>
+<th>Manage</th>
 </tr>
+</thead>
 
+<tbody id="clientTable">
 
   <tr>
 <td><input type="radio" name="selectedClient"></td>
@@ -549,21 +550,19 @@ row.innerHTML = `
 `;
    
 }
-function removeClient(){
+
+    function removeClient(){
 
     let table = document.getElementById("clientTable");
-
     let radios = document.getElementsByName("selectedClient");
 
     for(let i = 0; i < radios.length; i++){
 
         if(radios[i].checked){
 
-            table.deleteRow(i + 1);
+            table.deleteRow(i);
 
             clientCount--;
-
-            document.getElementById("clientCountDisplay").innerText = clientCount;
 
             return;
         }
