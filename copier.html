@@ -345,7 +345,7 @@ h1,h2,h3{
     
 <div class="summary-card">
 <h3>Clients</h3>
-<p id="clientCountDisplay">4</p>
+   Clients: <span id="clientSearchCount">4</span> 
 </div>
 
 
@@ -363,24 +363,6 @@ h1,h2,h3{
 <h3>Last Sync</h3>
 <p>5 Sec</p>
 </div>
-
-</div>
-<div style="margin:15px 0;">
-
-<input
-type="text"
-id="clientSearch"
-placeholder="🔍 Search Client Name or MT5 Account..."
-style="
-width:100%;
-padding:12px;
-background:#132b4a;
-border:1px solid #24508a;
-border-radius:8px;
-color:white;
-font-size:14px;
-box-sizing:border-box;
-">
 
 </div>
 
@@ -573,6 +555,7 @@ function addClient(){
 
     clientCount++;
     document.getElementById("clientCountDisplay").innerText = clientCount;
+    document.getElementById("clientSearchCount").innerText = clientCount;
     document.getElementById("statsClientCount").innerText = clientCount;
     document.getElementById("connectedDisplay").innerText =
 (clientCount - 1) + " / " + clientCount;
