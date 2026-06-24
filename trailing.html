@@ -295,11 +295,22 @@ style="width:100%;">
 
     
 </div>
-
 <div>
-<label>Trail Step (Pips)</label>
-<input type="number" value="5">
+<label>
+Trail Step (Pips):
+<span id="stepValue">5</span>
+</label>
+
+<input
+type="range"
+id="stepSlider"
+min="1"
+max="50"
+value="5"
+oninput="document.getElementById('stepValue').innerText=this.value"
+style="width:100%;">
 </div>
+
 
 <div>
 <label>Apply To</label>
@@ -313,12 +324,15 @@ style="width:100%;">
 </div>
 
 <br>
+<button>💾 Save Settings</button>
+<button class="btn-green">▶ Activate All</button>
+<button class="btn-red">⏹ Stop All</button>
 
-<button>💾 Save Settings</button> <button class="btn-green">▶ Activate All</button> <button class="btn-red">⏹ Stop All</button>
+</div> <!-- form-grid -->
 
-</div>
+</div> <!-- card -->
 
-
+</div> <!-- main -->
 
 </body>
 </html>
