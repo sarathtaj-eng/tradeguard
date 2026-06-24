@@ -265,8 +265,22 @@ min-width:250px;
 </div>
 
 <div>
-<label>Trail Distance (Pips)</label>
-<input type="number" value="10">
+
+<label>
+Trail Distance (Pips):
+<span id="trailValue">10</span>
+</label>
+
+<input
+type="range"
+id="trailSlider"
+min="1"
+max="100"
+value="10"
+oninput="document.getElementById('trailValue').innerText=this.value"
+style="width:100%;">
+
+    
 </div>
 
 <div>
