@@ -399,7 +399,7 @@ h1,h2,h3{
 </tr>
 
 <tr>
-
+<td><input type="radio" name="selectedClient"></td>
     <td>
     <strong>Client 2</strong><br>
     <small style="color:#8aa8d6;">MT5 #98765433</small>
@@ -421,6 +421,7 @@ h1,h2,h3{
 </tr>
 
 <tr>
+    <td><input type="radio" name="selectedClient"></td>
     <td>
     <strong>Client 3</strong><br>
     <small style="color:#8aa8d6;">MT5 #98765434</small>
@@ -442,7 +443,7 @@ h1,h2,h3{
 </tr>
 
 <tr>
-
+<td><input type="radio" name="selectedClient"></td>
     <td>
     <strong>Client 4</strong><br>
     <small style="color:#8aa8d6;">MT5 #98765435</small>
@@ -517,31 +518,35 @@ function addClient(){
     let table = document.getElementById("clientTable");
 
     let row = table.insertRow();
+row.innerHTML = `
+<td>
+    <input type="radio" name="selectedClient">
+</td>
 
-    row.innerHTML = `
-        <td>
-            <strong>Client ${clientCount}</strong><br>
-            <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
-        </td>
+<td>
+    <strong>Client ${clientCount}</strong><br>
+    <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
+</td>
 
-        <td>
-            <span class="status-dot green"></span>
-            <span class="profit">Online</span>
-        </td>
+<td>
+    <span class="status-dot green"></span>
+    <span class="profit">Online</span>
+</td>
 
-        <td>
-            <input type="checkbox" checked>
-        </td>
+<td>
+    <input type="checkbox" checked>
+</td>
 
-        <td class="profit">+$0</td>
+<td class="profit">+$0</td>
+
 <td>
     <button class="table-btn"
-        onclick="window.location.href='client-settings.html'">
-        ⚙ Configure
+    onclick="window.location.href='client-settings.html'">
+    ⚙ Configure
     </button>
 </td>
-        
-    `;
+`;
+   
 }
 
 function removeClient(){
