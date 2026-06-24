@@ -1,19 +1,46 @@
-const express = require('express');
-const app = express();
+const express = require("express");
+const { Pool } = require("pg");
+require("dotenv").config();
 
-app.get('/', (req,res)=>{
-    res.send('TradeGuard API Running');
+const app = express();
+app.use(express.json());
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
-app.get('/clients',(req,res)=>{
-    res.json([
-        {id:1,name:'Client A'},
-        {id:2,name:'Client B'}
-    ]);
+// Test database connection
+pool.connect()
+.then(() => console.log("✅ PostgreSQL Connected"))
+.catch(err => console.error("❌ Database Error:", err));
+
+app.get("/", async (req, res) => {
+
+    try{
+        const result = await pool.query("SELECT NOW()");
+
+        res.json({
+            message:"TradeGuard API Running",
+            database:"Connected",
+            time:result.rows[0].now
+        });
+
+    }catch(err){
+
+        res.status(500).json({
+            database:"Disconnected",
+            error:err.message
+        });
+
+    }
+
 });
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT,()=>{
-    console.log('Server Started');
+app.listen(PORT, () => {
+    console.log("🚀 Server Started");
 });
