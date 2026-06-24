@@ -553,8 +553,7 @@ row.innerHTML = `
 </td>
 `;   
 }
-
-    function removeClient(){
+function removeClient(){
 
     let table = document.getElementById("clientTable");
     let radios = document.getElementsByName("selectedClient");
@@ -567,13 +566,15 @@ row.innerHTML = `
 
             clientCount--;
 
+            document.getElementById("clientCountDisplay").innerText = clientCount;
+
             return;
         }
     }
 
     alert("Please select a client to remove.");
 }
-
+   
 
 </script>
 
