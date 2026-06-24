@@ -147,22 +147,21 @@ h1,h2,h3{
     border-radius:8px;
 }
 
-  
- .table-btn{
-    background:#ffc107;
-    color:black;
+  .table-btn{
+    background:#17365d;
+    color:#ffc107;
+    border:1px solid #244a78;
     padding:8px 12px;
-    border:none;
     border-radius:6px;
     font-weight:bold;
     cursor:pointer;
-    font-size:13px;
-    white-space:nowrap;
-    min-width:auto;
+    transition:0.3s;
 }
 
-
-
+.table-btn:hover{
+    background:#244a78;
+}
+ 
 
     
 .btn{
@@ -416,7 +415,7 @@ h1,h2,h3{
     <td><input type="checkbox" checked></td>
     <td>Risk Multiplier</td>
     <td>0.20</td>
-    <td style="color:#ffcc00;font-weight:bold;">+$65</td>
+    <td class="profit">+$65</td>
     <td>
         <button class="table-btn"
         onclick="window.location.href='client-settings.html'">
