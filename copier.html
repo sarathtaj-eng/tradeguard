@@ -572,6 +572,10 @@ function removeClient(){
             clientCount--;
 
             document.getElementById("clientCountDisplay").innerText = clientCount;
+            document.getElementById("statsClientCount").innerText = clientCount;
+
+            document.getElementById("connectedDisplay").innerText =
+            (clientCount - 1) + " / " + clientCount;
 
             return;
         }
@@ -579,7 +583,8 @@ function removeClient(){
 
     alert("Please select a client to remove.");
 }
-   
+    
+
 
 </script>
 
