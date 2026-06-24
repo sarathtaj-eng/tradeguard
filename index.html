@@ -2,6 +2,7 @@
 
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TradeGuard EA</title>
     <style>
  
@@ -17,15 +18,17 @@
         h1 {
             color: #1a73e8;
         }
-
-        .card {
+.card {
     background: #0d2038;
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #17365d;
+    width:95%;
+    max-width:1600px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #17365d;
+    box-sizing:border-box;
 }
+ 
      button {
     background: #ffc107;
     color: black;
@@ -58,19 +61,42 @@ button:hover {
     opacity: 0.9;
 }
 
+@media screen and (max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    h1{
+        font-size:32px !important;
+    }
+
+    .card{
+        width:100%;
+        padding:15px;
+    }
+
+    table{
+        font-size:12px;
+    }
+}
+
+
+        
 /* CSS end */
    </style>
 </head>
 
 <body>
-
 <div style="
 display:flex;
 justify-content:center;
+flex-wrap:wrap;
 gap:30px;
 padding:20px;
 margin-bottom:20px;
 ">
+
 <a href="#home" style="color:white;text-decoration:none;">Home</a>
 <a href="pricing.html" style="color:white;text-decoration:none;">Pricing</a>
 <a href="#download" style="color:white;text-decoration:none;">Download</a>
