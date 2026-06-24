@@ -398,8 +398,9 @@ h1,h2,h3{
 
 
 <div style="overflow-x:auto;">
-<table class="risk-table">
-    <tr>
+    <table class="risk-table">
+
+<tr>
     <th>Client</th>
     <th>Status</th>
     <th>Enabled</th>
@@ -409,147 +410,80 @@ h1,h2,h3{
     <th>Settings</th>
 </tr>
 
+<tr>
+    <td>
+        Client 1<br>
+        <small style="color:#8aa8d6;">Account: 98765432</small>
+    </td>
+    <td><span class="status-dot green"></span> Online</td>
+    <td><input type="checkbox" checked></td>
+    <td>Fixed Lot</td>
+    <td>0.10</td>
+    <td style="color:#00ff88;font-weight:bold;">+$125</td>
+    <td>
+        <button class="table-btn"
+        onclick="window.location.href='client-settings.html'">
+        ⚙ Settings
+        </button>
+    </td>
+</tr>
 
 <tr>
-<td>
-    <tr>
-
-<td>
-Client 1<br>
-<small style="color:#8aa8d6;">Account: 98765432</small>
-</td>
-
-<td>
-<span class="status-dot green"></span> Online
-</td>
-
-<td>
-<input type="checkbox" checked>
-</td>
-
-<td>
-Fixed Lot
-</td>
-
-<td>
-0.10
-</td>
-
-<td style="color:#00ff88;font-weight:bold;">
-+$125
-</td>
-
-<td>
-<button class="table-btn">
-⚙ Settings
-</button>
-</td>
-
-</tr>
-
-    <tr>
-<td>
-Client 2<br>
-<small style="color:#8aa8d6;">Account: 98765433</small>
-</td>
-
-<td>
-<span class="status-dot green"></span> Online
-</td>
-        
-        
-
-    <td><input type="checkbox" checked></td>
-
     <td>
-        <select class="copy-mode">
-            <option>Same Lot</option>
-            <option>Risk Multiplier</option>
-            <option selected>Fixed Lot</option>
-            <option>Balance Ratio</option>
-        </select>
+        Client 2<br>
+        <small style="color:#8aa8d6;">Account: 98765433</small>
     </td>
-
-    <td><input type="number" value="0.20"></td>
-    <td><input type="number" value="1.50"></td>
-    <td><input type="number" value="3.00"></td>
-    <td><input type="number" value="10"></td>
-    <td><input type="number" value="200"></td>
-    <td><input type="number" value="15"></td>
-
-    <td><button class="table-btn">Save</button></td>
-</tr>
-    <tr>
-<td>
-Client 3<br>
-<small style="color:#8aa8d6;">Account: 98765434</small>
-</td>
-
-<td>
-<span class="status-dot green"></span> Online
-</td>
-
-<td><input type="checkbox" checked></td>
-
-<td>
-<select class="copy-mode">
-<option selected>Same Lot</option>
-<option>Risk Multiplier</option>
-<option>Fixed Lot</option>
-<option>Balance Ratio</option>
-</select>
-</td>
-
-<td><input type="number" value="0.30"></td>
-<td><input type="number" value="1.00"></td>
-<td><input type="number" value="5.00"></td>
-<td><input type="number" value="20"></td>
-<td><input type="number" value="500"></td>
-<td><input type="number" value="20"></td>
-
-<td>
-<button class="table-btn">Save</button>
-</td>
-</tr>
-   <tr>
-<td>
-Client 4<br>
-<small style="color:#8aa8d6;">Account: 98765435</small>
-</td>
-
-<td>
-<span class="status-dot red"></span> Offline
-</td>
-
-<td>
-<input type="checkbox">
-</td>
-
-<td>
-<select class="copy-mode">
-<option>Same Lot</option>
-<option>Risk Multiplier</option>
-<option>Fixed Lot</option>
-<option selected>Balance Ratio</option>
-</select>
-</td>
-
-<td><input type="number" value="0.50"></td>
-<td><input type="number" value="2.00"></td>
-<td><input type="number" value="10.00"></td>
-<td><input type="number" value="50"></td>
-<td><input type="number" value="1000"></td>
-<td><input type="number" value="25"></td>
-
-<td>
-<button class="table-btn">Save</button>
-</td>
+    <td><span class="status-dot green"></span> Online</td>
+    <td><input type="checkbox" checked></td>
+    <td>Risk Multiplier</td>
+    <td>0.20</td>
+    <td style="color:#ffcc00;font-weight:bold;">+$65</td>
+    <td>
+        <button class="table-btn"
+        onclick="window.location.href='client-settings.html'">
+        ⚙ Settings
+        </button>
+    </td>
 </tr>
 
-   
+<tr>
+    <td>
+        Client 3<br>
+        <small style="color:#8aa8d6;">Account: 98765434</small>
+    </td>
+    <td><span class="status-dot green"></span> Online</td>
+    <td><input type="checkbox" checked></td>
+    <td>Same Lot</td>
+    <td>0.30</td>
+    <td style="color:#00ff88;font-weight:bold;">+$240</td>
+    <td>
+        <button class="table-btn"
+        onclick="window.location.href='client-settings.html'">
+        ⚙ Settings
+        </button>
+    </td>
+</tr>
 
+<tr>
+    <td>
+        Client 4<br>
+        <small style="color:#8aa8d6;">Account: 98765435</small>
+    </td>
+    <td><span class="status-dot red"></span> Offline</td>
+    <td><input type="checkbox"></td>
+    <td>Balance Ratio</td>
+    <td>0.50</td>
+    <td style="color:#ff4d4d;font-weight:bold;">-$35</td>
+    <td>
+        <button class="table-btn"
+        onclick="window.location.href='client-settings.html'">
+        ⚙ Settings
+        </button>
+    </td>
+</tr>
 
 </table>
+
 </div>
 
 <br><br>
