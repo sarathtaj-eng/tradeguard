@@ -548,16 +548,29 @@ row.innerHTML = `
 `;
    
 }
-
 function removeClient(){
 
     let table = document.getElementById("clientTable");
 
-    if(table.rows.length > 1){
-        table.deleteRow(table.rows.length - 1);
-        clientCount--;
+    let radios = document.getElementsByName("selectedClient");
+
+    for(let i = 0; i < radios.length; i++){
+
+        if(radios[i].checked){
+
+            table.deleteRow(i + 1);
+
+            clientCount--;
+
+            document.getElementById("clientCountDisplay").innerText = clientCount;
+
+            return;
+        }
     }
+
+    alert("Please select a client to remove.");
 }
+
 
 </script>
 
