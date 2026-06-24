@@ -269,7 +269,18 @@ td{
                 Start Trailing After (Pips):
                 <span id="startValue">20</span>
             </label>
-            <input type="range" id="startSlider" min="1" max="200" value="20">
+            
+
+<input
+type="range"
+id="startSlider"
+min="1"
+max="200"
+value="20"
+oninput="document.getElementById('startValue').innerText=this.value">
+
+
+            
         </div>
 
         <div>
