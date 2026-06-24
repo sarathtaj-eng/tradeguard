@@ -243,7 +243,7 @@ min-width:250px;
 
 </div>
 
-<div class="stats">
+
 
 <div class="card">
 
@@ -259,10 +259,23 @@ min-width:250px;
 </select>
 </div>
 
+
 <div>
-<label>Start Trailing After (Pips)</label>
-<input type="number" value="20">
+<label>
+Start Trailing After (Pips):
+<span id="startValue">20</span>
+</label>
+
+<input
+type="range"
+id="startSlider"
+min="1"
+max="200"
+value="20"
+oninput="document.getElementById('startValue').innerText=this.value"
+style="width:100%;">
 </div>
+
 
 <div>
 
