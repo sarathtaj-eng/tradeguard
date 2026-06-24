@@ -365,7 +365,24 @@ h1,h2,h3{
 </div>
 
 </div>
+<div style="margin:15px 0;">
 
+<input
+type="text"
+id="clientSearch"
+placeholder="🔍 Search Client Name or MT5 Account..."
+style="
+width:100%;
+padding:12px;
+background:#132b4a;
+border:1px solid #24508a;
+border-radius:8px;
+color:white;
+font-size:14px;
+box-sizing:border-box;
+">
+
+</div>
 
 <div style="overflow-x:auto;">
 
@@ -584,7 +601,31 @@ function removeClient(){
     alert("Please select a client to remove.");
 }
     
+document.getElementById("clientSearch").addEventListener("keyup", function(){
 
+    let filter = this.value.toUpperCase();
+
+    let table = document.getElementById("clientTable");
+
+    let rows = table.getElementsByTagName("tr");
+
+    for(let i = 0; i < rows.length; i++){
+
+        let txt = rows[i].textContent || rows[i].innerText;
+
+        if(txt.toUpperCase().indexOf(filter) > -1){
+
+            rows[i].style.display = "";
+
+        }
+        else{
+
+            rows[i].style.display = "none";
+
+        }
+    }
+
+});
 
 </script>
 
