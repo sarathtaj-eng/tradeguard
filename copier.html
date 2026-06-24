@@ -515,7 +515,7 @@ let clientCount = 4;
 function addClient(){
 
     clientCount++;
-
+    document.getElementById("clientCountDisplay").innerText = clientCount;
     let table = document.getElementById("clientTable");
 
     let row = table.insertRow();
