@@ -103,37 +103,47 @@ app.post("/register", async (req, res) => {
             });
         }
 
-        // Encrypt password
-        const passwordHash = await bcrypt.hash(password, 10);
+   
+// Encrypt password
+const passwordHash = await bcrypt.hash(password, 10);
 
-        // Save user
-        await pool.query(
-            `INSERT INTO users(username,email,password_hash)
-             VALUES($1,$2,$3)`,
-            [username, email, passwordHash]
-        );
+// Create 21-day free trial
+const trialStart = new Date();
 
-        res.json({
-            success: true,
-            message: "User registered successfully"
-        });
+const trialEnd = new Date();
+trialEnd.setDate(trialEnd.getDate() + 21);
 
-    } catch (err) {
+// Save user
+await pool.query(
+`
+INSERT INTO users
+(
+    username,
+    email,
+    password_hash,
+    plan,
+    account_status,
+    trial_start,
+    trial_end
+)
+VALUES
+(
+    $1,$2,$3,$4,$5,$6,$7
+)
+`,
+[
+    username,
+    email,
+    passwordHash,
+    "FREE TRIAL",
+    "ACTIVE",
+    trialStart,
+    trialEnd
+]
+);
 
-        console.error(err);
-
-        res.status(500).json({
-            success: false,
-            message: "Server Error"
-        });
-
-    }
-
+res.json({
+    success: true,
+    message: "Registration successful. Your 21-day free trial has started."
 });
-const PORT=process.env.PORT||3000;
-
-app.listen(PORT,()=>{
-
-    console.log("🚀 Server Started");
-
-});
+        
