@@ -244,6 +244,49 @@ app.get("/update-db", async (req, res) => {
     }
 
 });
+
+// Login User
+app.post("/login", async (req, res) => {
+
+    try {
+
+        const { email, password } = req.body;
+
+        const result = await pool.query(
+            "SELECT * FROM users WHERE email=$1",
+            [email]
+        );
+
+        if(result.rows.length === 0){
+
+            return res.status(401).json({
+                success:false,
+                message:"Invalid email or password"
+            });
+
+        }
+
+        res.json({
+            success:true,
+            message:"User Found",
+            user:result.rows[0]
+        });
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success:false,
+            message:"Server Error"
+        });
+
+    }
+
+});
+
+
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
