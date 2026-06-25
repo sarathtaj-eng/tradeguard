@@ -148,9 +148,28 @@ VALUES
     trialEnd
 ]
 );
-
 res.json({
     success: true,
     message: "Registration successful. Your 21-day free trial has started."
 });
+
+} catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+        success: false,
+        message: "Server Error"
+    });
+
+}
+
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("🚀 Server Started");
+});
+
         
