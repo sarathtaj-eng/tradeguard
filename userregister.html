@@ -97,14 +97,13 @@ method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
+body: JSON.stringify({
 
-body:JSON.stringify({
+    username: document.getElementById("name").value,
 
-name:document.getElementById("name").value,
+    email: document.getElementById("email").value,
 
-email:document.getElementById("email").value,
-
-password:document.getElementById("password").value
+    password: document.getElementById("password").value
 
 })
 
