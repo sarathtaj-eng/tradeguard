@@ -135,22 +135,22 @@ async function login() {
 
         const data = await response.json();
 
-        if (response.ok) {
+if (response.ok) {
 
-            // Save token and user
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.user));
-            // Redirect
-            if (data.user.role === "admin") {
-                window.location.href = "dashboard.html";
-            } else {
-                window.location.href = "client-dashboard.html";
-            }
-                        
+    // Save token and user
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
 
-        } else {
-            alert(data.message || "Invalid email or password");
-        }
+    // Redirect
+    window.location.href = "client-dashboard.html";
+
+} else {
+
+    alert(data.message || "Invalid email or password");
+
+}
+
+        
 
     } catch (error) {
         console.error(error);
