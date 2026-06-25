@@ -202,7 +202,6 @@ res.json({
 }
 
 });
-
 // Login User
 app.post("/login", async (req, res) => {
 
@@ -215,33 +214,55 @@ app.post("/login", async (req, res) => {
             [email]
         );
 
-        if(result.rows.length === 0){
-
+        if (result.rows.length === 0) {
             return res.status(401).json({
-                success:false,
-                message:"Invalid email or password"
+                success: false,
+                message: "Invalid email or password"
             });
+        }
 
+        const user = result.rows[0];
+
+        // Verify password
+        const validPassword = await bcrypt.compare(
+            password,
+            user.password_hash
+        );
+
+        if (!validPassword) {
+            return res.status(401).json({
+                success: false,
+                message: "Invalid email or password"
+            });
         }
 
         res.json({
-            success:true,
-            message:"User Found",
-            user:result.rows[0]
+            success: true,
+            token: "TEMP-TOKEN",
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                plan: user.plan,
+                account_status: user.account_status,
+                trial_end: user.trial_end
+            }
         });
 
-    }catch(err){
+    } catch (err) {
 
         console.error(err);
 
         res.status(500).json({
-            success:false,
-            message:"Server Error"
+            success: false,
+            message: "Server Error"
         });
 
     }
 
 });
+
+
 // Admin Reset Password (Temporary)
 app.post("/reset-password", async (req, res) => {
 
