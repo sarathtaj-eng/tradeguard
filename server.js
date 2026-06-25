@@ -284,7 +284,59 @@ app.post("/login", async (req, res) => {
     }
 
 });
+// Admin Reset Password (Temporary)
+app.post("/reset-password", async (req, res) => {
 
+    try {
+
+        const { email, newPassword } = req.body;
+
+        if (!email || !newPassword) {
+            return res.status(400).json({
+                success: false,
+                message: "Email and new password are required."
+            });
+        }
+
+        // Check if user exists
+        const user = await pool.query(
+            "SELECT * FROM users WHERE email=$1",
+            [email]
+        );
+
+        if (user.rows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found."
+            });
+        }
+
+        // Encrypt new password
+        const passwordHash = await bcrypt.hash(newPassword, 10);
+
+        // Update password
+        await pool.query(
+            "UPDATE users SET password_hash=$1 WHERE email=$2",
+            [passwordHash, email]
+        );
+
+        res.json({
+            success: true,
+            message: "Password reset successfully."
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
 
 
 const PORT = process.env.PORT || 3000;
