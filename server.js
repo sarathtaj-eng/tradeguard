@@ -202,48 +202,6 @@ res.json({
 }
 
 });
-// One-time database update
-app.get("/update-db", async (req, res) => {
-
-    try {
-
-        await pool.query(`
-            ALTER TABLE users
-            ADD COLUMN IF NOT EXISTS plan VARCHAR(30) DEFAULT 'FREE TRIAL';
-        `);
-
-        await pool.query(`
-            ALTER TABLE users
-            ADD COLUMN IF NOT EXISTS account_status VARCHAR(20) DEFAULT 'ACTIVE';
-        `);
-
-        await pool.query(`
-            ALTER TABLE users
-            ADD COLUMN IF NOT EXISTS trial_start TIMESTAMP;
-        `);
-
-        await pool.query(`
-            ALTER TABLE users
-            ADD COLUMN IF NOT EXISTS trial_end TIMESTAMP;
-        `);
-
-        res.json({
-            success: true,
-            message: "Database updated successfully"
-        });
-
-    } catch (err) {
-
-        console.error(err);
-
-        res.status(500).json({
-            success: false,
-            message: err.message
-        });
-
-    }
-
-});
 
 // Login User
 app.post("/login", async (req, res) => {
