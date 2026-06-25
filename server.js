@@ -82,6 +82,40 @@ app.get("/",async(req,res)=>{
     });
 
 });
+
+// Get All Users
+app.get("/users", async (req, res) => {
+
+    try {
+
+        const result = await pool.query(`
+            SELECT
+                id,
+                username,
+                email,
+                plan,
+                account_status,
+                trial_start,
+                trial_end,
+                created_at
+            FROM users
+            ORDER BY id DESC
+        `);
+
+        res.json(result.rows);
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+});
+
 // Register User
 app.post("/register", async (req, res) => {
 
