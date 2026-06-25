@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeGuard - Registered Users</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:white;
+}
+
+.header{
+    background:#0d2038;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    color:#ffc107;
+    border-bottom:1px solid #17365d;
+}
+
+.container{
+    padding:20px;
+}
+
+.search{
+    width:300px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#102746;
+    color:white;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#0d2038;
+}
+
+th{
+    background:#17365d;
+    color:#ffc107;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #17365d;
+    text-align:center;
+}
+
+tr:hover{
+    background:#102746;
+}
+
+.status{
+    color:#00ff66;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+table{
+    font-size:12px;
+}
+
+.search{
+    width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🛡️ TradeGuard - Registered Users
+</div>
+
+<div class="container">
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="Search User..."
+onkeyup="searchUser()">
+
+<table id="userTable">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Username</th>
+<th>Email</th>
+<th>Plan</th>
+<th>Status</th>
+<th>Trial Ends</th>
+<th>Registered</th>
+
+</tr>
+
+</thead>
+
+<tbody id="userBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+async function loadUsers(){
+
+try{
+
+const response = await fetch("https://tradeguard-api.onrender.com/users");
+
+const users = await response.json();
+
+const tbody=document.getElementById("userBody");
+
+tbody.innerHTML="";
+
+users.forEach(user=>{
+
+tbody.innerHTML +=`
+
+<tr>
+
+<td>${user.id}</td>
+
+<td>${user.username}</td>
+
+<td>${user.email}</td>
+
+<td>${user.plan}</td>
+
+<td class="status">${user.account_status}</td>
+
+<td>${user.trial_end ?
+new Date(user.trial_end).toLocaleDateString() : "-"}</td>
+
+<td>${new Date(user.created_at).toLocaleDateString()}</td>
+
+</tr>
+
+`;
+
+});
+
+}catch(err){
+
+alert("Unable to load users");
+
+console.log(err);
+
+}
+
+}
+
+function searchUser(){
+
+let input=document.getElementById("search").value.toUpperCase();
+
+let table=document.getElementById("userTable");
+
+let tr=table.getElementsByTagName("tr");
+
+for(let i=1;i<tr.length;i++){
+
+let td=tr[i].getElementsByTagName("td")[2];
+
+if(td){
+
+let txt=td.textContent || td.innerText;
+
+tr[i].style.display=txt.toUpperCase().indexOf(input)>-1 ? "" : "none";
+
+}
+
+}
+
+}
+
+loadUsers();
+
+</script>
+
+</body>
+</html>
