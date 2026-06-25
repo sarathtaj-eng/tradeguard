@@ -16,16 +16,23 @@ const pool = new Pool({
 async function initializeDatabase(){
 
     try{
+await pool.query(`
+    CREATE TABLE IF NOT EXISTS users(
+        id SERIAL PRIMARY KEY,
+        username VARCHAR(100) NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
 
-        await pool.query(`
-            CREATE TABLE IF NOT EXISTS users(
-                id SERIAL PRIMARY KEY,
-                username VARCHAR(100) NOT NULL,
-                email VARCHAR(255) UNIQUE NOT NULL,
-                password_hash TEXT NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            );
-        `);
+        plan VARCHAR(30) DEFAULT 'FREE TRIAL',
+        account_status VARCHAR(20) DEFAULT 'ACTIVE',
+
+        trial_start TIMESTAMP,
+        trial_end TIMESTAMP,
+
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+`);
+      
 
         await pool.query(`
             CREATE TABLE IF NOT EXISTS clients(
