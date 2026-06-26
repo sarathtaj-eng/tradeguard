@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TradeGuard Admin Login</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.login-box{
+    width:420px;
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:40px;
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.logo{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#ff4d4d;
+    margin-bottom:10px;
+}
+
+p{
+    color:#cccccc;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:none;
+    border-radius:8px;
+    background:#102746;
+    color:white;
+    box-sizing:border-box;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:2px solid #ff4d4d;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff3333;
+}
+
+.back{
+
+    margin-top:20px;
+
+}
+
+.back a{
+
+    color:#ffc107;
+    text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+🛡️
+</div>
+
+<h1>Admin Login</h1>
+
+<p>TradeGuard Administration Panel</p>
+
+<form onsubmit="adminLogin();return false;">
+
+<input
+type="text"
+id="username"
+placeholder="Admin Username"
+required>
+
+<input
+type="password"
+id="password"
+placeholder="Admin Password"
+required>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<div class="back">
+
+<a href="index.html">
+← Back to Website
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function adminLogin(){
+
+    const username=document.getElementById("username").value;
+    const password=document.getElementById("password").value;
+
+    // Temporary Login
+    if(username==="admin" && password==="TradeGuard123"){
+
+        window.location.href="admin.html";
+
+    }
+    else{
+
+        alert("Invalid administrator login.");
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
