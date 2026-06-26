@@ -19,6 +19,7 @@ const pool = new Pool({
 async function initializeDatabase(){
 
     try{
+         // Users table
 await pool.query(`
     CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
@@ -35,7 +36,7 @@ await pool.query(`
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 `);
-      
+      // Clients table
 
         await pool.query(`
             CREATE TABLE IF NOT EXISTS clients(
@@ -48,7 +49,18 @@ await pool.query(`
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
-
+// Contact Messages table
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS contact_messages(
+                id SERIAL PRIMARY KEY,
+                fullname VARCHAR(100) NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                subject VARCHAR(200) NOT NULL,
+                message TEXT NOT NULL,
+                status VARCHAR(20) DEFAULT 'NEW',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `);
         console.log("✅ Database tables ready");
 
     }catch(err){
