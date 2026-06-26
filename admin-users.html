@@ -42,8 +42,8 @@
         <a href="#" onclick="loadDownloads()">⬇ Downloads</a>
 
         <a href="#" onclick="loadSettings()">⚙ Settings</a>
-
-        <a href="index.html">🚪 Logout</a>
+        <a href="#" onclick="adminLogout()">🚪 Logout</a>
+        
 
     </nav>
 
@@ -140,7 +140,31 @@
 
 </div>
 
+<script>
 
+// Check Admin Login
+if(localStorage.getItem("adminLoggedIn") !== "true"){
+
+    alert("Please login as Administrator.");
+
+    window.location.href = "admin-login.html";
+
+}
+
+// Show Admin Name
+window.onload = function(){
+
+    const adminName = localStorage.getItem("adminName");
+
+    if(adminName){
+
+        document.querySelector(".admin-info strong").innerText = adminName;
+
+    }
+
+};
+
+</script>
 <script src="admin.js"></script>
 
 </body>
