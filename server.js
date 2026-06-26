@@ -287,6 +287,51 @@ app.post("/reset-password", async (req, res) => {
                 success: false,
                 message: "Email and new password are required."
             });
+
+
+// Contact Form
+app.post("/contact", async (req, res) => {
+
+    try {
+
+        const { fullname, email, subject, message } = req.body;
+
+        if (!fullname || !email || !subject || !message) {
+            return res.status(400).json({
+                success: false,
+                message: "All fields are required."
+            });
+        }
+
+        await pool.query(
+            `INSERT INTO contact_messages
+            (fullname, email, subject, message)
+            VALUES ($1, $2, $3, $4)`,
+            [fullname, email, subject, message]
+        );
+
+        res.json({
+            success: true,
+            message: "Message sent successfully."
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+
+
+
+            
         }
 
         // Check if user exists
