@@ -21,14 +21,22 @@ if(localStorage.getItem("adminLoggedIn") !== "true"){
 // ===============================
 
 async function showDashboard(){
+const adminName = localStorage.getItem("adminName") || "Administrator";
 
-    document.getElementById("contentArea").innerHTML = `
+document.querySelector(".admin-info").innerHTML =
+`
+Welcome,
+<strong>${adminName}</strong>
+`;
 
-        <h2>Welcome to TradeGuard Administration</h2>
+document.getElementById("contentArea").innerHTML = `
 
-        <p>Loading dashboard...</p>
+<h2>Welcome to TradeGuard Administration</h2>
 
-    `;
+<p>Select a menu from the left sidebar.</p>
+
+`;
+
 
     try{
 
