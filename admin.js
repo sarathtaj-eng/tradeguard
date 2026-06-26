@@ -4,7 +4,7 @@
 // =====================================
 
 // Change this if your Render URL changes
-const API_URL = "https://tradeguard-5rqn.onrender.com";
+const API_URL = "https://tradeguard-api.onrender.com";
 
 
 
