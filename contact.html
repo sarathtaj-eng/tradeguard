@@ -19,7 +19,7 @@ body{
 .container{
     max-width:1000px;
     margin:40px auto;
-    background:#0d2038;
+    kground:#0d2038;
     border:1px solid #17365d;
     border-radius:12px;
     padding:40px;
@@ -43,7 +43,7 @@ p{
 
 .info{
     margin:30px 0;
-    background:#102746;
+    kground:#102746;
     padding:20px;
     border-radius:10px;
 }
@@ -59,7 +59,7 @@ input, textarea{
     padding:12px;
     border:none;
     border-radius:6px;
-    background:#17365d;
+    kground:#17365d;
     color:white;
     box-sizing:border-box;
     font-size:15px;
@@ -69,44 +69,39 @@ textarea{
     height:140px;
     resize:vertical;
 }
-
-button{
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    background:#ffc107;
-    color:black;
-    border:none;
-    border-radius:6px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:hover{
-    opacity:.9;
-}
-
 .footer{
-    margin-top:40px;
     text-align:center;
+    margin-top:40px;
 }
 
-.footer a{
+.btn{
+    display:inline-block;
+    background:#ffc107;
+    color:#000;
+    text-decoration:none;
+    padding:12px 28px;
+    margin:8px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff9800;
+    color:#000;
+    text-decoration:none;
+}
+
+.footer a:not(.btn){
     color:#4da3ff;
     text-decoration:none;
-    margin:0 5px;
 }
 
-.footer a:hover{
+.footer a:not(.btn):hover{
     text-decoration:underline;
 }
 
-.back-btn{
-    width:auto;
-    padding:12px 25px;
-    margin-top:30px;
-}
+
 
 </style>
 
@@ -158,20 +153,19 @@ Send Message
 </button>
 
 </form>
+    <div class="footer">
 
-<div class="footer">
-
-<button class="back-btn" onclick="window.location='login.html'">
-Back to Login
-</button>
+<a href="index.html" class="btn">🏠 Home</a>
+<a href="login.html" class="btn">🔐 Login</a>
 
 <br><br>
 
-<a href="privacy.html">Privacy Policy</a> |
 <a href="terms.html">Terms of Service</a> |
-<a href="cookies.html">Cookie Policy</a>
+<a href="cookies.html">Cookie Policy</a> |
+<a href="contact.html">Contact Us</a>
 
 </div>
+
 
 </div>
 
