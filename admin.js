@@ -7,22 +7,56 @@
 const API_URL = "https://tradeguard-5rqn.onrender.com";
 
 
+
 // ===============================
 // Dashboard
 // ===============================
 
-function showDashboard(){
+async function showDashboard(){
 
     document.getElementById("contentArea").innerHTML = `
 
         <h2>Welcome to TradeGuard Administration</h2>
 
-        <p>Select a menu from the left sidebar.</p>
+        <p>Loading dashboard...</p>
 
     `;
 
-}
+    try{
 
+        const response = await fetch(API_URL + "/admin-stats");
+
+        const data = await response.json();
+
+        if(data.success){
+
+            document.getElementById("totalUsers").innerText = data.totalUsers;
+
+            document.getElementById("trialUsers").innerText = data.freeTrialUsers;
+
+            document.getElementById("paidUsers").innerText = data.paidUsers;
+
+            document.getElementById("totalMessages").innerText = data.totalMessages;
+
+        }
+
+        document.getElementById("contentArea").innerHTML = `
+
+            <h2>Welcome to TradeGuard Administration</h2>
+
+            <p>Select a menu from the left sidebar.</p>
+
+        `;
+
+    }catch(err){
+
+        console.log(err);
+
+        alert("Unable to load dashboard.");
+
+    }
+
+}
 
 // ===============================
 // Load Users
