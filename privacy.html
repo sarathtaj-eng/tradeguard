@@ -44,33 +44,36 @@ p,li{
 ul{
     padding-left:20px;
 }
-
 .footer{
     text-align:center;
     margin-top:40px;
 }
 
-a{
+.btn{
+    display:inline-block;
+    background:#ffc107;
+    color:#000;
+    text-decoration:none;
+    padding:12px 28px;
+    margin:8px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff9800;
+    color:#000;
+    text-decoration:none;
+}
+
+.footer a:not(.btn){
     color:#4da3ff;
     text-decoration:none;
 }
 
-a:hover{
+.footer a:not(.btn):hover{
     text-decoration:underline;
-}
-
-button{
-    background:#ffc107;
-    color:black;
-    border:none;
-    padding:12px 25px;
-    border-radius:6px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:hover{
-    opacity:.9;
 }
 
 </style>
@@ -153,12 +156,10 @@ TradeGuard may use browser cookies or local storage to keep you signed in, remem
 <p>
 For privacy-related questions, please contact the TradeGuard support team.
 </p>
-
 <div class="footer">
 
-<button onclick="window.location='login.html'">
-Back to Login
-</button>
+<a href="index.html" class="btn">🏠 Home</a>
+<a href="login.html" class="btn">🔐 Login</a>
 
 <br><br>
 
