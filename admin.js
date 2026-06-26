@@ -19,23 +19,30 @@ if(localStorage.getItem("adminLoggedIn") !== "true"){
 // ===============================
 // Dashboard
 // ===============================
-
 async function showDashboard(){
-const adminName = localStorage.getItem("adminName") || "Administrator";
 
-document.querySelector(".admin-info").innerHTML =
-`
-Welcome,
-<strong>${adminName}</strong>
-`;
+    const adminName =
+        localStorage.getItem("adminName") || "Administrator";
 
-document.getElementById("contentArea").innerHTML = `
+    const adminInfo = document.querySelector(".admin-info");
 
-<h2>Welcome to TradeGuard Administration</h2>
+    if(adminInfo){
 
-<p>Select a menu from the left sidebar.</p>
+        adminInfo.innerHTML = `
+            Welcome,
+            <strong>${adminName}</strong>
+        `;
 
-`;
+    }
+
+    document.getElementById("contentArea").innerHTML = `
+
+        <h2>Welcome to TradeGuard Administration</h2>
+
+        <p>Loading dashboard...</p>
+
+    `;
+
 
 
     try{
