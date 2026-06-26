@@ -1,203 +1,148 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TradeGuard - Registered Users</title>
 
-<style>
+<title>TradeGuard Admin Panel</title>
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#07111f;
-    color:white;
-}
+<link rel="stylesheet" href="admin.css">
 
-.header{
-    background:#0d2038;
-    padding:20px;
-    text-align:center;
-    font-size:28px;
-    color:#ffc107;
-    border-bottom:1px solid #17365d;
-}
-
-.container{
-    padding:20px;
-}
-
-.search{
-    width:300px;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#102746;
-    color:white;
-    margin-bottom:20px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#0d2038;
-}
-
-th{
-    background:#17365d;
-    color:#ffc107;
-    padding:12px;
-}
-
-td{
-    padding:12px;
-    border-bottom:1px solid #17365d;
-    text-align:center;
-}
-
-tr:hover{
-    background:#102746;
-}
-
-.status{
-    color:#00ff66;
-    font-weight:bold;
-}
-
-@media(max-width:768px){
-
-table{
-    font-size:12px;
-}
-
-.search{
-    width:100%;
-}
-
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="header">
-🛡️ TradeGuard - Registered Users
-</div>
+<!-- Sidebar -->
 
-<div class="container">
+<div class="sidebar">
 
-<input
-type="text"
-id="search"
-class="search"
-placeholder="Search User..."
-onkeyup="searchUser()">
+    <div class="logo">
 
-<table id="userTable">
+        🛡 TradeGuard
 
-<thead>
+        <span>Admin Panel</span>
 
-<tr>
+    </div>
 
-<th>ID</th>
-<th>Username</th>
-<th>Email</th>
-<th>Plan</th>
-<th>Status</th>
-<th>Trial Ends</th>
-<th>Registered</th>
+    <nav>
 
-</tr>
+        <a href="#" onclick="showDashboard()">📊 Dashboard</a>
 
-</thead>
+        <a href="#" onclick="loadUsers()">👥 Users</a>
 
-<tbody id="userBody">
+        <a href="#" onclick="loadMessages()">📩 Contact Messages</a>
 
-</tbody>
+        <a href="#" onclick="loadSubscriptions()">💳 Subscriptions</a>
 
-</table>
+        <a href="#" onclick="loadLicenses()">🔑 EA Licenses</a>
+
+        <a href="#" onclick="loadDownloads()">⬇ Downloads</a>
+
+        <a href="#" onclick="loadSettings()">⚙ Settings</a>
+
+        <a href="index.html">🚪 Logout</a>
+
+    </nav>
 
 </div>
 
-<script>
 
-async function loadUsers(){
+<!-- Main Content -->
 
-try{
+<div class="main">
 
-const response = await fetch("https://tradeguard-api.onrender.com/users");
+    <!-- Header -->
 
-const users = await response.json();
+    <div class="topbar">
 
-const tbody=document.getElementById("userBody");
+        <h1>Admin Dashboard</h1>
 
-tbody.innerHTML="";
+        <div class="admin-info">
 
-users.forEach(user=>{
+            Welcome,
+            <strong>Administrator</strong>
 
-tbody.innerHTML +=`
+        </div>
 
-<tr>
+    </div>
 
-<td>${user.id}</td>
 
-<td>${user.username}</td>
+    <!-- Statistics -->
 
-<td>${user.email}</td>
+    <div class="cards">
 
-<td>${user.plan}</td>
+        <div class="card">
 
-<td class="status">${user.account_status}</td>
+            <h3>Total Users</h3>
 
-<td>${user.trial_end ?
-new Date(user.trial_end).toLocaleDateString() : "-"}</td>
+            <h2 id="totalUsers">0</h2>
 
-<td>${new Date(user.created_at).toLocaleDateString()}</td>
+        </div>
 
-</tr>
+        <div class="card">
 
-`;
+            <h3>Free Trial</h3>
 
-});
+            <h2 id="trialUsers">0</h2>
 
-}catch(err){
+        </div>
 
-alert("Unable to load users");
+        <div class="card">
 
-console.log(err);
+            <h3>Paid Users</h3>
 
-}
+            <h2 id="paidUsers">0</h2>
 
-}
+        </div>
 
-function searchUser(){
+        <div class="card">
 
-let input=document.getElementById("search").value.toUpperCase();
+            <h3>Messages</h3>
 
-let table=document.getElementById("userTable");
+            <h2 id="totalMessages">0</h2>
 
-let tr=table.getElementsByTagName("tr");
+        </div>
 
-for(let i=1;i<tr.length;i++){
+    </div>
 
-let td=tr[i].getElementsByTagName("td")[2];
 
-if(td){
+    <!-- Dynamic Content -->
 
-let txt=td.textContent || td.innerText;
+    <div class="content" id="contentArea">
 
-tr[i].style.display=txt.toUpperCase().indexOf(input)>-1 ? "" : "none";
+        <h2>Welcome to TradeGuard Administration</h2>
 
-}
+        <p>
 
-}
+            Choose an option from the left menu to manage the system.
 
-}
+        </p>
 
-loadUsers();
+    </div>
 
-</script>
+
+    <!-- Recent Activity -->
+
+    <div class="activity">
+
+        <h3>Recent Activity</h3>
+
+        <ul id="activityList">
+
+            <li>TradeGuard Admin Panel Ready.</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+<script src="admin.js"></script>
 
 </body>
 </html>
+
