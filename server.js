@@ -458,6 +458,70 @@ app.post("/reset-password", async (req, res) => {
     }
 
 });
+
+// =====================================
+// Admin Login
+// =====================================
+
+app.post("/admin-login", async (req, res) => {
+
+    try {
+
+        const { username, password } = req.body;
+
+        if (!username || !password) {
+
+            return res.status(400).json({
+                success: false,
+                message: "Username and password are required."
+            });
+
+        }
+
+        if (
+            username !== ADMIN_USERNAME ||
+            password !== ADMIN_PASSWORD
+        ) {
+
+            return res.status(401).json({
+                success: false,
+                message: "Invalid administrator credentials."
+            });
+
+        }
+
+        res.json({
+
+            success: true,
+            message: "Administrator login successful.",
+
+            admin: {
+
+                username: ADMIN_USERNAME
+
+            }
+
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+
+            success: false,
+            message: "Server Error"
+
+        });
+
+    }
+
+});
+
+
+
+
+
 // =====================================
 // Contact Form
 // =====================================
