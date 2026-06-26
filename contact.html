@@ -157,19 +157,37 @@ If you have any questions about your account, subscription, EA setup, licensing,
 
 <h2>Send Us a Message</h2>
 
-<form>
+<form id="contactForm">
 
 <label>Full Name</label>
-<input type="text" placeholder="Your Name">
+<input type="text"
+       id="fullname"
+       name="fullname"
+       placeholder="Your Name"
+       required>
 
 <label>Email Address</label>
-<input type="email" placeholder="Your Email">
+<input type="email"
+       id="email"
+       name="email"
+       placeholder="Your Email"
+       required>
 
 <label>Subject</label>
-<input type="text" placeholder="Subject">
+<input type="text"
+       id="subject"
+       name="subject"
+       placeholder="Subject"
+       required>
 
 <label>Message</label>
-<textarea placeholder="Type your message here..."></textarea>
+<textarea id="message"
+          name="message"
+          placeholder="Type your message here..."
+          required></textarea>
+    
+
+
 
 <button type="button" onclick="alert('Thank you! This contact form will be connected to the TradeGuard support system soon.')">
 Send Message
