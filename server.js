@@ -626,7 +626,59 @@ app.get("/contact-messages", async (req, res) => {
     }
 
 });
+// =====================================
+// Admin Dashboard Statistics
+// =====================================
 
+app.get("/admin-stats", async (req, res) => {
+
+    try {
+
+        const totalUsers = await pool.query(
+            "SELECT COUNT(*) FROM users"
+        );
+
+        const freeTrial = await pool.query(
+            "SELECT COUNT(*) FROM users WHERE plan='FREE TRIAL'"
+        );
+
+        const paidUsers = await pool.query(
+            "SELECT COUNT(*) FROM users WHERE plan<>'FREE TRIAL'"
+        );
+
+        const messages = await pool.query(
+            "SELECT COUNT(*) FROM contact_messages"
+        );
+
+        res.json({
+
+            success: true,
+
+            totalUsers: Number(totalUsers.rows[0].count),
+
+            freeTrialUsers: Number(freeTrial.rows[0].count),
+
+            paidUsers: Number(paidUsers.rows[0].count),
+
+            totalMessages: Number(messages.rows[0].count)
+
+        });
+
+    } catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+
+            success:false,
+
+            message:"Server Error"
+
+        });
+
+    }
+
+});
 // =====================================
 // Start Server
 // =====================================
