@@ -161,39 +161,17 @@ function searchUser(){
 // ===============================
 // Get Contact Messages
 // ===============================
+function loadMessages(){
 
-app.get("/contact-messages", async (req, res) => {
+    document.getElementById("contentArea").innerHTML = `
 
-    try {
+        <h2>Contact Messages</h2>
 
-        const result = await pool.query(`
-            SELECT
-                id,
-                fullname,
-                email,
-                subject,
-                message,
-                status,
-                created_at
-            FROM contact_messages
-            ORDER BY created_at DESC
-        `);
+        <p>Coming in Step 4...</p>
 
-        res.json(result.rows);
+    `;
 
-    } catch (err) {
-
-        console.error(err);
-
-        res.status(500).json({
-            success: false,
-            message: "Server Error"
-        });
-
-    }
-
-});
-
+}
 
 
 // ===============================
