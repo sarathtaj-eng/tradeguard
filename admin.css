@@ -1,0 +1,245 @@
+
+/* ===========================
+   TradeGuard Admin Panel
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:#fff;
+}
+
+/* Sidebar */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100vh;
+    background:#0d2038;
+    border-right:1px solid #17365d;
+}
+
+.logo{
+    padding:25px;
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    color:#ffc107;
+    border-bottom:1px solid #17365d;
+}
+
+.logo span{
+    display:block;
+    margin-top:8px;
+    font-size:14px;
+    color:#ccc;
+}
+
+.sidebar nav{
+    margin-top:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:15px 25px;
+    transition:.3s;
+    border-bottom:1px solid #17365d;
+}
+
+.sidebar a:hover{
+    background:#17365d;
+    color:#ffc107;
+}
+
+/* Main */
+
+.main{
+    margin-left:250px;
+    padding:30px;
+}
+
+/* Header */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    color:#ffc107;
+}
+
+.admin-info{
+    font-size:16px;
+}
+
+/* Dashboard Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+}
+
+.card h3{
+    color:#ffc107;
+    margin-bottom:10px;
+}
+
+.card h2{
+    font-size:32px;
+}
+
+/* Content */
+
+.content{
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:25px;
+    min-height:300px;
+}
+
+.content h2{
+    color:#ffc107;
+    margin-bottom:15px;
+}
+
+/* Activity */
+
+.activity{
+    margin-top:30px;
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:20px;
+}
+
+.activity h3{
+    color:#ffc107;
+    margin-bottom:15px;
+}
+
+.activity ul{
+    list-style:none;
+}
+
+.activity li{
+    padding:10px 0;
+    border-bottom:1px solid #17365d;
+}
+
+/* Tables */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#17365d;
+    color:#ffc107;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #17365d;
+}
+
+tr:hover{
+    background:#102746;
+}
+
+/* Inputs */
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    background:#102746;
+    color:#fff;
+    border:1px solid #17365d;
+    border-radius:6px;
+    margin-bottom:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#ffc107;
+}
+
+/* Buttons */
+
+button,
+.btn{
+    display:inline-block;
+    background:#ffc107;
+    color:#000;
+    border:none;
+    padding:12px 24px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+}
+
+button:hover,
+.btn:hover{
+    background:#ff9800;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+
+.main{
+    margin-left:0;
+    padding:20px;
+}
+
+.topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+}
+```
