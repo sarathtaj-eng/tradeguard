@@ -247,4 +247,19 @@ function loadSettings(){
 // ===============================
 
 showDashboard();
+// ===============================
+// Admin Logout
+// ===============================
 
+function adminLogout(){
+
+    if(confirm("Are you sure you want to logout?")){
+
+        localStorage.removeItem("adminLoggedIn");
+        localStorage.removeItem("adminName");
+
+        window.location.href = "index.html";
+
+    }
+
+}
