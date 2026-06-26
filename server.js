@@ -4,6 +4,14 @@ const { Pool } = require("pg");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 
+// =====================================
+// Admin Credentials
+// =====================================
+
+const ADMIN_USERNAME = "sarath";
+const ADMIN_PASSWORD = "sarath";
+
+
 const app = express();
 
 app.use(cors());
