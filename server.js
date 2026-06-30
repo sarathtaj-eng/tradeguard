@@ -1,3 +1,6 @@
+
+
+const activationRoutes = require("./activation");
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
@@ -17,6 +20,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use("/api", activationRoutes);
 // PostgreSQL Connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
