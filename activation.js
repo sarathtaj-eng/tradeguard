@@ -3,9 +3,95 @@
 // =====================================
 
 const express = require("express");
+const { Pool } = require("pg");
 
 const router = express.Router();
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+// =====================================
+// Generate Activation Code
+// =====================================
 
+router.post("/generate-activation", async (req, res) => {
+
+    try {
+
+        const activationCode = generateActivationCode();
+
+        const result = await pool.query(
+
+            `INSERT INTO ea_licenses
+            (
+                activation_code
+            )
+            VALUES
+            (
+                $1
+            )
+            RETURNING id`,
+
+            [activationCode]
+
+        );
+
+        const id = result.rows[0].id;
+
+        const licenseNumber = generateLicenseNumber(id);
+
+        const eaID = generateEAID(id);
+
+        await pool.query(
+
+            `UPDATE ea_licenses
+
+            SET
+
+            license_number = $1,
+
+            ea_id = $2
+
+            WHERE id = $3`,
+
+            [
+                licenseNumber,
+                eaID,
+                id
+            ]
+
+        );
+
+        res.json({
+
+            success: true,
+
+            activation_code: activationCode,
+
+            license_number: licenseNumber,
+
+            ea_id: eaID
+
+        });
+
+    }
+    catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+
+            success:false,
+
+            message:"Server Error"
+
+        });
+
+    }
+
+});
 
 // =====================================
 // Generate Activation Code
