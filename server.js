@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS ea_licenses (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
 
     activation_code VARCHAR(50) UNIQUE NOT NULL,
+    license_number VARCHAR(50) UNIQUE,
 
     ea_id VARCHAR(50) UNIQUE,
 
