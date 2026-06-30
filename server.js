@@ -1,11 +1,11 @@
-
-
-const activationRoutes = require("./activation");
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
+
+const activationRoutes = require("./activation");
+
 
 // =====================================
 // Admin Credentials
