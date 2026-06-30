@@ -1,0 +1,8 @@
+POST https://tradeguard-api.onrender.com/register
+Content-Type: application/json
+
+{
+  "username": "Sarath",
+  "email": "sarath@test.com",
+  "password": "123456"
+}
