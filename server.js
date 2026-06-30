@@ -112,11 +112,12 @@ CREATE TABLE IF NOT EXISTS ea_licenses (
 
     activated_at TIMESTAMP,
 
-   
-const expiryDate = new Date();
 
-expiryDate.setDate(expiryDate.getDate() + 21);
-    last_online TIMESTAMP
+expiry_date TIMESTAMP,
+
+last_online TIMESTAMP
+   
+
 
 );
 
