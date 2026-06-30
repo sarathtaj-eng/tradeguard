@@ -545,45 +545,49 @@ document.getElementById('clientSearch').focus();
 <script>
 
 let clientCount = 4;
-
 function addClient(){
 
     clientCount++;
-    document.getElementById("clientCountDisplay").innerText = clientCount;
-document.getElementById("clientSearchCount").innerText = clientCount;
-document.getElementById("statsClientCount").innerText = clientCount;
+
+    document.getElementById("clientSearchCount").innerText = clientCount;
+    document.getElementById("statsClientCount").innerText = clientCount;
+
     document.getElementById("connectedDisplay").innerText =
-(clientCount - 1) + " / " + clientCount;
+        (clientCount - 1) + " / " + clientCount;
+
     let table = document.getElementById("clientTable");
 
     let row = table.insertRow();
-row.innerHTML = `
-<td><input type="radio" name="selectedClient"></td>
 
-<td>
-    <strong>Client ${clientCount}</strong><br>
-    <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
-</td>
+    row.innerHTML = `
+    <td><input type="radio" name="selectedClient"></td>
 
-<td>
-    <span class="status-dot green"></span>
-    <span class="profit">Online</span>
-</td>
+    <td>
+        <strong>Client ${clientCount}</strong><br>
+        <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
+    </td>
 
-<td>
-    <input type="checkbox" checked>
-</td>
+    <td>
+        <span class="status-dot green"></span>
+        <span class="profit">Online</span>
+    </td>
 
-<td class="profit">+$0</td>
+    <td>
+        <input type="checkbox" checked>
+    </td>
 
-<td>
-    <button class="table-btn"
+    <td class="profit">+$0</td>
+
+    <td>
+        <button class="table-btn"
         onclick="window.location.href='client-settings.html'">
         ⚙ Configure
-    </button>
-</td>
-`;   
+        </button>
+    </td>
+    `;
 }
+
+  
 function removeClient(){
 
     let table = document.getElementById("clientTable");
