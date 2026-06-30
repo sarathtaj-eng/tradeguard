@@ -74,6 +74,45 @@ async function initializeDatabase() {
             );
         `);
 
+// =====================================
+// EA Licenses Table
+// =====================================
+
+await pool.query(`
+CREATE TABLE IF NOT EXISTS ea_licenses (
+
+    id SERIAL PRIMARY KEY,
+
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+
+    activation_code VARCHAR(50) UNIQUE NOT NULL,
+
+    ea_id VARCHAR(50) UNIQUE,
+
+    role VARCHAR(20) DEFAULT 'NONE',
+
+    status VARCHAR(20) DEFAULT 'NOT_ACTIVATED',
+
+    subscription VARCHAR(30) DEFAULT 'FREE TRIAL',
+
+    mt5_account VARCHAR(50),
+
+    broker VARCHAR(100),
+
+    terminal_id VARCHAR(100),
+
+    ea_version VARCHAR(20),
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    activated_at TIMESTAMP,
+
+    last_online TIMESTAMP
+
+);
+`);
+
+        
         console.log("✅ Database tables ready");
 
     } catch (err) {
