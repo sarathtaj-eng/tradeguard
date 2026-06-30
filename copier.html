@@ -626,46 +626,36 @@ document.getElementById('clientSearch').focus();
 <script>
 
 let clientCount = 4;
-function addClient(){
 
-    clientCount++;
+    function addClient(){
 
-    document.getElementById("clientSearchCount").innerText = clientCount;
-    document.getElementById("statsClientCount").innerText = clientCount;
+    // Clear previous EA ID
+    document.getElementById("clientEAID").value = "";
 
-    document.getElementById("connectedDisplay").innerText =
-        (clientCount - 1) + " / " + clientCount;
+    // Show popup
+    document.getElementById("addClientModal").style.display = "block";
 
-    let table = document.getElementById("clientTable");
+}
+function closeAddClient(){
 
-    let row = table.insertRow();
+    document.getElementById("addClientModal").style.display = "none";
 
-    row.innerHTML = `
-    <td><input type="radio" name="selectedClient"></td>
+}
 
-    <td>
-        <strong>Client ${clientCount}</strong><br>
-        <small style="color:#8aa8d6;">MT5 #98765${clientCount}</small>
-    </td>
+function searchClientEA(){
 
-    <td>
-        <span class="status-dot green"></span>
-        <span class="profit">Online</span>
-    </td>
+    let eaID = document.getElementById("clientEAID").value.trim();
 
-    <td>
-        <input type="checkbox" checked>
-    </td>
+    if(eaID == ""){
 
-    <td class="profit">+$0</td>
+        alert("Please enter Client EA ID.");
 
-    <td>
-        <button class="table-btn"
-        onclick="window.location.href='client-settings.html'">
-        ⚙ Configure
-        </button>
-    </td>
-    `;
+        return;
+
+    }
+
+    alert("Searching Client EA ID : " + eaID);
+
 }
 
   
