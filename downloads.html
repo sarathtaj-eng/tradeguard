@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>TradeGuard Download Center</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:white;
+}
+
+.sidebar{
+    position:fixed;
+    width:250px;
+    height:100%;
+    background:#0d2038;
+    border-right:1px solid #17365d;
+}
+
+.logo{
+    padding:25px;
+    text-align:center;
+    color:#ffc107;
+    font-size:28px;
+    font-weight:bold;
+    border-bottom:1px solid #17365d;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-bottom:1px solid #17365d;
+}
+
+.sidebar a:hover{
+    background:#17365d;
+}
+
+.active-menu{
+    background:#17365d;
+    color:#ffc107 !important;
+}
+
+.main{
+    margin-left:250px;
+    padding:30px;
+}
+
+.card{
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.summary-card{
+    background:#0f2747;
+    border:1px solid #244a78;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+}
+
+.summary-card h3{
+    color:#ffc107;
+    margin:0;
+}
+
+.summary-card p{
+    font-size:20px;
+    margin-top:10px;
+}
+
+.table-btn{
+
+    background:#17365d;
+    color:#ffc107;
+    border:1px solid #244a78;
+    padding:12px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:5px;
+
+}
+
+.table-btn:hover{
+
+    background:#244a78;
+
+}
+
+.info-table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+}
+
+.info-table th{
+
+    background:#17365d;
+    color:#ffc107;
+    padding:12px;
+    border:1px solid #244a78;
+    text-align:left;
+
+}
+
+.info-table td{
+
+    background:#0f2747;
+    padding:12px;
+    border:1px solid #244a78;
+
+}
+
+.download-btn{
+
+    background:#00aa55;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+.download-btn:hover{
+
+    background:#00cc66;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+🛡 TradeGuard
+</div>
+
+<a href="dashboard.html">📊 Dashboard</a>
+<a href="monitor.html">📋 Trade Monitor</a>
+<a href="copier.html">🔄 Trade Copier</a>
+<a href="trailing.html">📈 Trailing Stop</a>
+<a href="downloads.html" class="active-menu">📥 Downloads</a>
+<a href="subscription.html">💳 Subscription</a>
+<a href="settings.html">⚙ Settings</a>
+<a href="index.html">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>📥 TradeGuard Download Center</h1>
+
+<div class="card">
+
+<h2>TradeGuard EA</h2>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+<h3>Version</h3>
+<p>v1.0.0</p>
+</div>
+
+<div class="summary-card">
+<h3>Status</h3>
+<p style="color:#00ff88;">Latest</p>
+</div>
+
+<div class="summary-card">
+<h3>Platform</h3>
+<p>MT5</p>
+</div>
+
+<div class="summary-card">
+<h3>License</h3>
+<p style="color:#ffc107;">Required</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>EA Activation</h2>
+
+<table class="info-table">
+
+<tr>
+
+<th width="250">Activation Code</th>
+
+<td id="activationCode">
+Not Generated
+</td>
+
+</tr>
+
+<tr>
+
+<th>Status</th>
+
+<td id="activationStatus">
+Waiting
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<button
+class="table-btn"
+onclick="generateCode()">
+
+🔑 Generate Activation Code
+
+</button>
+
+<button
+class="download-btn"
+id="downloadButton"
+disabled>
+
+📥 Download TradeGuard EA
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Installation</h2>
+
+<ol>
+
+<li>Generate your Activation Code.</li>
+
+<li>Download the TradeGuard EA.</li>
+
+<li>Copy the EA into the MT5 Experts folder.</li>
+
+<li>Restart MetaTrader 5.</li>
+
+<li>Attach the EA to any chart.</li>
+
+<li>Enter your Activation Code.</li>
+
+<li>Click Activate.</li>
+
+</ol>
+
+</div>
+
+</div>
+
+<script>
+
+function generateCode(){
+
+    document.getElementById("activationCode").innerHTML =
+    "Waiting for Server...";
+
+    document.getElementById("activationStatus").innerHTML =
+    "Ready";
+
+    document.getElementById("downloadButton").disabled=false;
+
+}
+
+</script>
+
+</body>
+
+</html>
