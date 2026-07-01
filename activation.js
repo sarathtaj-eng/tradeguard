@@ -180,7 +180,7 @@ await client.query(
 } finally {
 
     client.release();
-
+}
 
     console.error(err);
 
