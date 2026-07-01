@@ -4,6 +4,7 @@
 
 const express = require("express");
 const { Pool } = require("pg");
+const auth = require("./auth");
 
 const router = express.Router();
 const pool = new Pool({
@@ -15,15 +16,13 @@ const pool = new Pool({
 // =====================================
 // Generate Activation Code
 // =====================================
-
-router.post("/generate-activation", async (req, res) => {
+router.post("/generate-activation", auth, async (req, res) => {
 
     try {
 
         // Temporary user ID until login integration
-        const { user_id } = req.body;
-
-        const userID = user_id;
+        const userID = req.user.id;
+        
        if(!userID){
 
     return res.status(400).json({
