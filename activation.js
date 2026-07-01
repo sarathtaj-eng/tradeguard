@@ -21,7 +21,10 @@ router.post("/generate-activation", async (req, res) => {
     try {
 
         // Temporary user ID until login integration
-        const userID = 1;
+        const { user_id } = req.body;
+
+        const userID = user_id;
+       
 
         // Check whether the user already has a license
         const existing = await pool.query(
