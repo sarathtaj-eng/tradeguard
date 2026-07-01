@@ -194,7 +194,7 @@ await client.query(
 
 }
     
-    
+});    
 
 // =====================================
 // Generate Activation Code
