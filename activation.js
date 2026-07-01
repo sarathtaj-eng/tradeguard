@@ -181,11 +181,6 @@ await client.query(
 
     client.release();
 
-} 
-       
-     
-        console.error(e);
-    }
 
     console.error(err);
 
@@ -240,15 +235,7 @@ function generateActivationCode() {
 }
 
 
-// =====================================
-// Generate License Number
-// =====================================
 
-function generateLicenseNumber(id) {
-
-    return "TG-LIC-" + String(id).padStart(8, "0");
-
-}
 
 
 // =====================================
