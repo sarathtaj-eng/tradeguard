@@ -162,27 +162,30 @@ async function adminLogin(){
         );
 
         const data = await response.json();
+if(data.success){
 
-        if(data.success){
-// Save Admin JWT
-localStorage.setItem("adminToken", data.token);
+    // Clear any old admin session
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("admin");
 
-// Save Admin Details
-localStorage.setItem(
-    "admin",
-    JSON.stringify(data.admin)
-);
+    // Save new Admin JWT
+    localStorage.setItem("adminToken", data.token);
 
-// Redirect
-window.location.href = "admin-users.html";
-          
-            
+    // Save admin details
+    localStorage.setItem(
+        "admin",
+        JSON.stringify(data.admin)
+    );
 
-        }else{
+    // Redirect to Admin Panel
+    window.location.href = "admin-users.html";
 
-            alert(data.message);
+}else{
 
-        }
+    alert(data.message);
+
+}
+    
 
     }catch(err){
 
