@@ -23,9 +23,11 @@ if(!token){
 // Dashboard
 // ===============================
 async function showDashboard(){
+const admin = JSON.parse(localStorage.getItem("admin"));
 
-    const adminName =
-        localStorage.getItem("adminName") || "Administrator";
+const adminName =
+    admin ? admin.username : "Administrator";
+    
 
     const adminInfo = document.querySelector(".admin-info");
 
