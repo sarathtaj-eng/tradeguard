@@ -294,16 +294,26 @@ async function generateCode(){
     document.getElementById("activationStatus").innerHTML = "Please wait...";
 
     try{
+const user = JSON.parse(localStorage.getItem("user"));
 
-        const response = await fetch(
-            "https://tradeguard-api.onrender.com/api/generate-activation",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }
-        );
+const response = await fetch(
+    "https://tradeguard-api.onrender.com/api/generate-activation",
+    {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            user_id: user.id
+
+        })
+
+    }
+);
+      
 
         const data = await response.json();
 
