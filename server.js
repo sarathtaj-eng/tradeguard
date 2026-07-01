@@ -1,3 +1,5 @@
+
+const adminAuth = require("./adminAuth");
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
@@ -192,8 +194,8 @@ app.get("/", async (req, res) => {
 // =====================================
 // Get All Users
 // =====================================
+app.get("/users", adminAuth, async (req, res) => {
 
-app.get("/users", async (req, res) => {
 
     try {
 
@@ -698,8 +700,8 @@ app.post("/contact", async (req, res) => {
 // Get All Contact Messages (Admin)
 // =====================================
 
-app.get("/contact-messages", async (req, res) => {
 
+app.get("/contact-messages", adminAuth, async (req, res) => {
     try {
 
         const result = await pool.query(
@@ -736,8 +738,8 @@ app.get("/contact-messages", async (req, res) => {
 // Admin Dashboard Statistics
 // =====================================
 
-app.get("/admin-stats", async (req, res) => {
 
+app.get("/admin-stats", adminAuth, async (req, res) => {
     try {
 
         const totalUsers = await pool.query(
@@ -789,8 +791,8 @@ app.get("/admin-stats", async (req, res) => {
 // =====================================
 // EA Licenses Table Info (Temporary)
 // =====================================
+app.get("/table-info", adminAuth, async (req, res) => {
 
-app.get("/table-info", async (req, res) => {
 
     try {
 
@@ -831,8 +833,8 @@ const PORT = process.env.PORT || 3000;
 // Delete All EA Licenses (Temporary)
 // =====================================
 
-app.get("/clear-licenses", async (req, res) => {
 
+app.get("/clear-licenses", adminAuth, async (req, res) => {
     try{
 
         await pool.query("DELETE FROM ea_licenses");
