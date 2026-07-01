@@ -249,12 +249,13 @@ function generateLicenseNumber(id) {
 // =====================================
 
 
-
 // =====================================
 // Test API
 // =====================================
 
 router.get("/test", (req, res) => {
+
+    const sampleCode = generateActivationCode();
 
     res.json({
 
@@ -262,29 +263,20 @@ router.get("/test", (req, res) => {
 
         message: "TradeGuard Activation API Working",
 
-    const sampleCode = generateActivationCode();
+        sample: {
 
-res.json({
+            activation_code: sampleCode,
 
-    success: true,
+            license_number: generateLicenseNumber(1),
 
-    message: "TradeGuard Activation API Working",
+            ea_id: sampleCode
 
-    sample: {
-
-        activation_code: sampleCode,
-
-        license_number: generateLicenseNumber(1),
-
-        ea_id: sampleCode
-
-    }
-
-});
+        }
 
     });
 
 });
+
 
 
 // =====================================
