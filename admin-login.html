@@ -161,7 +161,13 @@ async function adminLogin(){
             }
         );
 
- 
+ if(!response.ok){
+
+    alert("Login failed.");
+
+    return;
+
+}
         
         const data = await response.json();
 
