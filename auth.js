@@ -4,40 +4,36 @@
 
 const jwt = require("jsonwebtoken");
 
-module.exports = function(req, res, next) {
+module.exports = function(req, res, next){
 
-    try {
+    try{
 
-        // Get Authorization Header
         const authHeader = req.headers.authorization;
 
-        if (!authHeader) {
+        if(!authHeader){
 
             return res.status(401).json({
 
-                success: false,
-                message: "Authorization token missing."
+                success:false,
+                message:"Authorization token missing."
 
             });
 
         }
 
-        // Check Bearer Format
-        if (!authHeader.startsWith("Bearer ")) {
+        if(!authHeader.startsWith("Bearer ")){
 
             return res.status(401).json({
 
-                success: false,
-                message: "Invalid authorization format."
+                success:false,
+                message:"Invalid authorization format."
 
             });
 
         }
 
-        // Extract Token
-        const token = authHeader.split(" ")[1];
+        const token = authHeader.substring(7);
 
-        // Verify JWT
         const decoded = jwt.verify(
 
             token,
@@ -46,20 +42,36 @@ module.exports = function(req, res, next) {
 
         );
 
-        // Save Logged-in User
+        // Basic validation
+        if(!decoded.id){
+
+            return res.status(401).json({
+
+                success:false,
+                message:"Invalid token."
+
+            });
+
+        }
+
         req.user = decoded;
 
         next();
 
-    } catch (err) {
+    }
+    catch(err){
+
+        console.error("JWT Error:", err.message);
 
         return res.status(401).json({
 
-            success: false,
-            message: "Invalid or expired token."
+            success:false,
+            message:"Invalid or expired token."
 
         });
 
     }
 
 };
+
+
