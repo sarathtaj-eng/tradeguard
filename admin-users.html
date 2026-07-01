@@ -141,9 +141,13 @@
 </div>
 
 <script>
+// =====================================
+// Check Admin JWT Login
+// =====================================
 
-// Check Admin Login
-if(localStorage.getItem("adminLoggedIn") !== "true"){
+const token = localStorage.getItem("adminToken");
+
+if(!token){
 
     alert("Please login as Administrator.");
 
@@ -151,14 +155,18 @@ if(localStorage.getItem("adminLoggedIn") !== "true"){
 
 }
 
+// =====================================
 // Show Admin Name
+// =====================================
+
 window.onload = function(){
 
-    const adminName = localStorage.getItem("adminName");
+    const admin = JSON.parse(localStorage.getItem("admin"));
 
-    if(adminName){
+    if(admin){
 
-        document.querySelector(".admin-info strong").innerText = adminName;
+        document.querySelector(".admin-info strong").innerText =
+            admin.username;
 
     }
 
