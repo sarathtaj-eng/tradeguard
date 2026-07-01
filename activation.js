@@ -20,9 +20,32 @@ router.post("/generate-activation", auth, async (req, res) => {
 
     try {
 
-        // Temporary user ID until login integration
+         // Logged-in user ID from JWT
         const userID = req.user.id;
-        
+        // Verify user exists
+
+const userCheck = await pool.query(
+
+    `SELECT id
+     FROM users
+     WHERE id = $1
+     LIMIT 1`,
+
+    [userID]
+
+);
+
+if(userCheck.rows.length === 0){
+
+    return res.status(404).json({
+
+        success:false,
+
+        message:"User not found."
+
+    });
+
+}
        if(!userID){
 
     return res.status(400).json({
