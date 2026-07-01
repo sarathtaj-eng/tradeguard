@@ -60,22 +60,26 @@ router.post("/generate-activation", async (req, res) => {
         // No existing license, so create one
         const activationCode = generateActivationCode();
 
+const result = await pool.query(
 
-        const result = await pool.query(
+    `INSERT INTO ea_licenses
+    (
+        user_id,
+        activation_code
+    )
+    VALUES
+    (
+        $1,
+        $2
+    )
+    RETURNING id`,
 
-            `INSERT INTO ea_licenses
-            (
-                activation_code
-            )
-            VALUES
-            (
-                $1
-            )
-            RETURNING id`,
+    [
+        userID,
+        activationCode
+    ]
 
-            [activationCode]
-
-        );
+);
 
         const id = result.rows[0].id;
 
