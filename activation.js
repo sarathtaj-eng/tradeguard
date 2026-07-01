@@ -181,7 +181,7 @@ await client.query(
 
     client.release();
 }
-
+} catch(err){
     console.error(err);
 
     res.status(500).json({
@@ -195,8 +195,6 @@ await client.query(
 }
     
     
-
-});
 
 // =====================================
 // Generate Activation Code
