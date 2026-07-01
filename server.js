@@ -570,19 +570,44 @@ app.post("/admin-login", async (req, res) => {
             });
 
         }
+// Create Admin JWT
+const token = jwt.sign(
 
-        res.json({
+    {
 
-            success: true,
-            message: "Administrator login successful.",
+        username: ADMIN_USERNAME,
+        role: "admin"
 
-            admin: {
+    },
 
-                username: ADMIN_USERNAME
+    process.env.JWT_SECRET,
 
-            }
+    {
 
-        });
+        expiresIn: "7d"
+
+    }
+
+);
+
+// Login Success
+res.json({
+
+    success: true,
+
+    message: "Administrator login successful.",
+
+    token: token,
+
+    admin: {
+
+        username: ADMIN_USERNAME,
+        role: "admin"
+
+    }
+
+});
+       
 
     } catch (err) {
 
