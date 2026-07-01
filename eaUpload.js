@@ -54,15 +54,16 @@ router.post(
     upload.single("ea"),
 
     async(req,res)=>{
+res.json({
 
-        res.json({
+    success: true,
 
-            success:true,
+    message: "EA uploaded successfully.",
 
-            filename:req.file.filename
+    filename: req.file.filename
 
-        });
-
+});
+        
     }
 
 );
