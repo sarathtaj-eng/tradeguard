@@ -161,14 +161,17 @@ async function adminLogin(){
             }
         );
 
+ 
+        
         const data = await response.json();
-if(data.success){
 
-    // Clear any old admin session
+        if(data.success){
+
+    // Clear previous admin session
     localStorage.removeItem("adminToken");
     localStorage.removeItem("admin");
 
-    // Save new Admin JWT
+    // Save new JWT token
     localStorage.setItem("adminToken", data.token);
 
     // Save admin details
@@ -177,7 +180,7 @@ if(data.success){
         JSON.stringify(data.admin)
     );
 
-    // Redirect to Admin Panel
+    // Redirect to admin panel
     window.location.href = "admin-users.html";
 
 }else{
@@ -185,6 +188,7 @@ if(data.success){
     alert(data.message);
 
 }
+
     
 
     }catch(err){
