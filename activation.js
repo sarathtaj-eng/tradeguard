@@ -129,7 +129,8 @@ const id = result.rows[0].id;
 
 const licenseNumber = generateLicenseNumber(id);
 
-const eaID = generateEAID(id);
+const eaID = activationCode;
+
 
 await client.query(
 
