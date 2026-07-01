@@ -92,11 +92,19 @@ if(userCheck.rows.length === 0){
             });
 
         }
-         await pool.query("BEGIN");
-        // No existing license, so create one
-        const activationCode = generateActivationCode();
-       
-const result = await pool.query(
+
+const client = await pool.connect();
+
+try {
+
+    await client.query("BEGIN");
+         
+
+
+// No existing license, so create one
+const activationCode = generateActivationCode();
+
+const result = await client.query(
 
     `INSERT INTO ea_licenses
     (
@@ -117,33 +125,36 @@ const result = await pool.query(
 
 );
 
-        const id = result.rows[0].id;
+const id = result.rows[0].id;
 
-        const licenseNumber = generateLicenseNumber(id);
+const licenseNumber = generateLicenseNumber(id);
 
-        const eaID = generateEAID(id);
+const eaID = generateEAID(id);
 
-        await pool.query(
+await client.query(
 
-            `UPDATE ea_licenses
+    `UPDATE ea_licenses
 
-            SET
+    SET
 
-            license_number = $1,
+    license_number = $1,
 
-            ea_id = $2
+    ea_id = $2
 
-            WHERE id = $3`,
+    WHERE id = $3`,
 
-            [
-                licenseNumber,
-                eaID,
-                id
-            ]
+    [
+        licenseNumber,
+        eaID,
+        id
+    ]
 
-        );
+);
 
-        await pool.query("COMMIT");
+
+
+     
+    await client.query("COMMIT");
 
         res.json({
 
@@ -158,11 +169,20 @@ const result = await pool.query(
         });
 
     }
-        catch(err){
 
-    try{
-        await pool.query("ROLLBACK");
-    }catch(e){
+    } catch(err){
+
+    await client.query("ROLLBACK");
+
+    throw err;
+
+} finally {
+
+    client.release();
+
+} 
+       
+     
         console.error(e);
     }
 
