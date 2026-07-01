@@ -24,7 +24,17 @@ router.post("/generate-activation", async (req, res) => {
         const { user_id } = req.body;
 
         const userID = user_id;
-       
+       if(!userID){
+
+    return res.status(400).json({
+
+        success:false,
+
+        message:"User ID missing."
+
+    });
+
+}
 
         // Check whether the user already has a license
         const existing = await pool.query(
