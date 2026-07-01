@@ -280,22 +280,57 @@ disabled>
 </div>
 
 </div>
-
 <script>
 
-function generateCode(){
+async function generateCode(){
 
-    document.getElementById("activationCode").innerHTML =
-    "Waiting for Server...";
+    document.getElementById("activationCode").innerHTML = "Generating...";
+    document.getElementById("activationStatus").innerHTML = "Please wait...";
 
-    document.getElementById("activationStatus").innerHTML =
-    "Ready";
+    try{
 
-    document.getElementById("downloadButton").disabled=false;
+        const response = await fetch(
+            "https://tradeguard-api.onrender.com/api/generate-activation",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            document.getElementById("activationCode").innerHTML =
+                data.activation_code;
+
+            document.getElementById("activationStatus").innerHTML =
+                "Activation Code Generated";
+
+            document.getElementById("downloadButton").disabled = false;
+
+        }else{
+
+            document.getElementById("activationStatus").innerHTML =
+                data.message || "Generation Failed";
+
+        }
+
+    }catch(err){
+
+        console.error(err);
+
+        document.getElementById("activationStatus").innerHTML =
+            "Server Connection Failed";
+
+    }
 
 }
 
 </script>
+
 
 </body>
 
