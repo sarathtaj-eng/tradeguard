@@ -5,11 +5,14 @@
 
 // Change this if your Render URL changes
 const API_URL = "https://tradeguard-api.onrender.com";
+
 // ===============================
 // Admin Authentication Check
 // ===============================
 
-if(localStorage.getItem("adminLoggedIn") !== "true"){
+const token = localStorage.getItem("adminToken");
+
+if(!token){
 
     window.location.href = "admin-login.html";
 
