@@ -729,6 +729,42 @@ app.get("/admin-stats", async (req, res) => {
     }
 
 });
+
+// =====================================
+// EA Licenses Table Info (Temporary)
+// =====================================
+
+app.get("/table-info", async (req, res) => {
+
+    try {
+
+        const result = await pool.query(`
+            SELECT
+                column_name,
+                data_type
+            FROM information_schema.columns
+            WHERE table_name = 'ea_licenses'
+            ORDER BY ordinal_position
+        `);
+
+        res.json(result.rows);
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
+});
+
+
+
+
 // =====================================
 // Start Server
 // =====================================
