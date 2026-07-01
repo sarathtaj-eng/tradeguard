@@ -421,6 +421,76 @@ async function uploadEA(){
     }
 
 }
+
+// ===============================
+// Upload EA to Server
+// ===============================
+
+async function uploadEA(){
+
+    const file = document.getElementById("eaFile").files[0];
+
+    if(!file){
+
+        alert("Please select an EX5 file.");
+
+        return;
+
+    }
+
+    const formData = new FormData();
+
+    formData.append("ea", file);
+
+    try{
+
+        const response = await fetch(
+
+            API_URL + "/api/upload-ea",
+
+            {
+
+                method: "POST",
+
+                headers:{
+
+                    "Authorization": "Bearer " + token
+
+                },
+
+                body: formData
+
+            }
+
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            document.getElementById("uploadResult").innerHTML =
+
+                "<span style='color:lime;'>✅ " + data.message + "</span>";
+
+        }else{
+
+            document.getElementById("uploadResult").innerHTML =
+
+                "<span style='color:red;'>❌ " + data.message + "</span>";
+
+        }
+
+    }catch(err){
+
+        console.error(err);
+
+        alert("Upload failed.");
+
+    }
+
+}
+
+
 // ===============================
 // Default Page
 // ===============================
