@@ -77,15 +77,7 @@ async function initializeDatabase() {
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
         `);
-await pool.query(`
-ALTER TABLE ea_licenses
-ADD COLUMN IF NOT EXISTS license_number VARCHAR(50) UNIQUE;
-`);
 
-await pool.query(`
-ALTER TABLE ea_licenses
-ADD COLUMN IF NOT EXISTS expiry_date TIMESTAMP;
-`);
 // =====================================
 // EA Licenses Table
 // =====================================
@@ -131,7 +123,15 @@ last_online TIMESTAMP
 
 `);
 
-        
+     await pool.query(`
+ALTER TABLE ea_licenses
+ADD COLUMN IF NOT EXISTS license_number VARCHAR(50) UNIQUE;
+`);
+
+await pool.query(`
+ALTER TABLE ea_licenses
+ADD COLUMN IF NOT EXISTS expiry_date TIMESTAMP;
+`);   
         console.log("✅ Database tables ready");
 
     } catch (err) {
