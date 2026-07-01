@@ -140,23 +140,15 @@
     </div>
 
 </div>
-
 <script>
-// =====================================
-// Check Admin JWT Login
-// =====================================
-
 const token = localStorage.getItem("adminToken");
 
-if(!token){
-
+if (!token) {
     alert("Please login as Administrator.");
-
     window.location.href = "admin-login.html";
-
 }
+</script>
 
-<script>
 <script src="admin.js"></script>
 
 </body>
