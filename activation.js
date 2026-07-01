@@ -169,7 +169,7 @@ await client.query(
 
         });
 
-    }
+    
 
     } catch(err){
 
