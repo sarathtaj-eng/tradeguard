@@ -52,8 +52,15 @@ const adminName =
 
     try{
 
-        const response = await fetch(API_URL + "/admin-stats");
-
+        
+const response = await fetch(
+    API_URL + "/admin-stats",
+    {
+        headers:{
+            "Authorization":"Bearer " + token
+        }
+    }
+);
         const data = await response.json();
 
         if(data.success){
