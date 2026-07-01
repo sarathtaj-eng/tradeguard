@@ -246,7 +246,7 @@ onclick="generateCode()">
 
 <a
 id="downloadLink"
-href="TradeGuardEA.ex5"
+href="TradeGuardEA.ex5.txt"
 download
 style="pointer-events:none; text-decoration:none;">
 
@@ -318,8 +318,10 @@ async function generateCode(){
 
             document.getElementById("activationStatus").innerHTML =
                 "Activation Code Generated";
-
             document.getElementById("downloadButton").disabled = false;
+
+        document.getElementById("downloadLink").style.pointerEvents = "auto";
+            
 
         }else{
 
