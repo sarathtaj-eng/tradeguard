@@ -19,11 +19,22 @@ const pool = new Pool({
 router.post("/generate-activation", auth, async (req, res) => {
 
     try {
+// Logged-in user ID from JWT
+const userID = req.user.id;
 
-         // Logged-in user ID from JWT
-        const userID = req.user.id;
-        // Verify user exists
+if(!userID){
 
+    return res.status(400).json({
+
+        success:false,
+
+        message:"User ID missing."
+
+    });
+
+}
+
+// Verify user exists
 const userCheck = await pool.query(
 
     `SELECT id
@@ -46,17 +57,7 @@ if(userCheck.rows.length === 0){
     });
 
 }
-       if(!userID){
-
-    return res.status(400).json({
-
-        success:false,
-
-        message:"User ID missing."
-
-    });
-
-}
+    
 
         // Check whether the user already has a license
         const existing = await pool.query(
