@@ -15,7 +15,7 @@ const pool = new Pool({
 // =====================================
 // Generate Activation Code
 // =====================================
-router.get("/generate-activation", async (req, res) => {
+router.post("/generate-activation", async (req, res) => {
 
 
     try {
