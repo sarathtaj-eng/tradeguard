@@ -164,10 +164,18 @@ async function adminLogin(){
         const data = await response.json();
 
         if(data.success){
+// Save Admin JWT
+localStorage.setItem("adminToken", data.token);
 
-            localStorage.setItem("adminLoggedIn","true");
-            localStorage.setItem("adminName",data.admin.username);
-            window.location.href="admin-users.html";
+// Save Admin Details
+localStorage.setItem(
+    "admin",
+    JSON.stringify(data.admin)
+);
+
+// Redirect
+window.location.href = "admin-users.html";
+          
             
 
         }else{
