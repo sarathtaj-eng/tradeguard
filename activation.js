@@ -248,11 +248,6 @@ function generateLicenseNumber(id) {
 // Generate EA ID
 // =====================================
 
-function generateEAID(id) {
-
-    return "TG-EA-" + String(id).padStart(8, "0");
-
-}
 
 
 // =====================================
@@ -267,15 +262,25 @@ router.get("/test", (req, res) => {
 
         message: "TradeGuard Activation API Working",
 
-        sample: {
+    const sampleCode = generateActivationCode();
 
-            activation_code: generateActivationCode(),
+res.json({
 
-            license_number: generateLicenseNumber(1),
+    success: true,
 
-            ea_id: generateEAID(1)
+    message: "TradeGuard Activation API Working",
 
-        }
+    sample: {
+
+        activation_code: sampleCode,
+
+        license_number: generateLicenseNumber(1),
+
+        ea_id: sampleCode
+
+    }
+
+});
 
     });
 
