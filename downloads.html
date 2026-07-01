@@ -287,33 +287,30 @@ style="
 
 </div>
 <script>
-
 async function generateCode(){
 
     document.getElementById("activationCode").innerHTML = "Generating...";
     document.getElementById("activationStatus").innerHTML = "Please wait...";
 
     try{
-const user = JSON.parse(localStorage.getItem("user"));
 
-const response = await fetch(
-    "https://tradeguard-api.onrender.com/api/generate-activation",
-    {
-        method: "POST",
+        // Get JWT token from login
+        const token = localStorage.getItem("token");
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+        const response = await fetch(
+            "https://tradeguard-api.onrender.com/api/generate-activation",
+            {
+                method: "POST",
 
-        body: JSON.stringify({
+                headers: {
 
-            user_id: user.id
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
 
-        })
+                }
 
-    }
-);
-      
+            }
+        );
 
         const data = await response.json();
 
@@ -324,10 +321,9 @@ const response = await fetch(
 
             document.getElementById("activationStatus").innerHTML =
                 "Activation Code Generated";
-           
 
-        document.getElementById("downloadLink").style.pointerEvents = "auto";
-           document.getElementById("downloadLink").style.opacity = "1"; 
+            document.getElementById("downloadLink").style.pointerEvents = "auto";
+            document.getElementById("downloadLink").style.opacity = "1";
 
         }else{
 
