@@ -15,12 +15,51 @@ const pool = new Pool({
 // =====================================
 // Generate Activation Code
 // =====================================
-router.post("/generate-activation", async (req, res) => {
 
+router.post("/generate-activation", async (req, res) => {
 
     try {
 
+        // Temporary user ID until login integration
+        const userID = 1;
+
+        // Check whether the user already has a license
+        const existing = await pool.query(
+
+            `SELECT
+                activation_code,
+                license_number,
+                ea_id
+             FROM ea_licenses
+             WHERE user_id = $1
+             LIMIT 1`,
+
+            [userID]
+
+        );
+
+        // Return the existing activation code if found
+        if(existing.rows.length > 0){
+
+            return res.json({
+
+                success: true,
+
+                activation_code: existing.rows[0].activation_code,
+
+                license_number: existing.rows[0].license_number,
+
+                ea_id: existing.rows[0].ea_id,
+
+                existing: true
+
+            });
+
+        }
+
+        // No existing license, so create one
         const activationCode = generateActivationCode();
+
 
         const result = await pool.query(
 
