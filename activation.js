@@ -92,10 +92,10 @@ if(userCheck.rows.length === 0){
             });
 
         }
-
+         await pool.query("BEGIN");
         // No existing license, so create one
         const activationCode = generateActivationCode();
-        await pool.query("BEGIN");
+       
 const result = await pool.query(
 
     `INSERT INTO ea_licenses
