@@ -779,6 +779,36 @@ app.get("/table-info", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
+// =====================================
+// Delete All EA Licenses (Temporary)
+// =====================================
+
+app.get("/clear-licenses", async (req, res) => {
+
+    try{
+
+        await pool.query("DELETE FROM ea_licenses");
+
+        res.json({
+            success: true,
+            message: "All EA licenses deleted."
+        });
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
+});
+
+
+
 app.listen(PORT, () => {
 
     console.log("======================================");
