@@ -101,8 +101,24 @@ async function loadUsers(){
 
     try{
 
-        const response = await fetch(API_URL + "/users");
+       
 
+const response = await fetch(
+
+    API_URL + "/users",
+
+    {
+
+        headers:{
+
+            "Authorization":"Bearer " + token
+
+        }
+
+    }
+
+);
+        
         const data = await response.json();
 
         const users = data.users || data;
