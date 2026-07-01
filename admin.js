@@ -326,7 +326,38 @@ function loadSettings(){
 
 }
 
+// ===============================
+// Upload EA
+// ===============================
 
+function showEAUpload(){
+
+    document.getElementById("contentArea").innerHTML = `
+
+    <h2>Upload MT5 Expert Advisor</h2>
+
+    <br>
+
+    <input
+        type="file"
+        id="eaFile"
+        accept=".ex5">
+
+    <br><br>
+
+    <button onclick="uploadEA()">
+
+        Upload EA
+
+    </button>
+
+    <br><br>
+
+    <div id="uploadResult"></div>
+
+    `;
+
+}
 // ===============================
 // Default Page
 // ===============================
