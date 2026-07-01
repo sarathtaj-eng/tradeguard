@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const activationRoutes = require("./activation");
-
+const eaUploadRoutes = require("./eaUpload");
 
 // =====================================
 // Admin Credentials
@@ -24,6 +24,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", activationRoutes);
+app.use("/api", eaUploadRoutes);
 // PostgreSQL Connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
