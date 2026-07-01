@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const activationRoutes = require("./activation");
@@ -404,30 +405,52 @@ app.post("/login", async (req, res) => {
             });
 
         }
+// Create JWT Token
 
-        // Login Success
-        res.json({
+const token = jwt.sign(
 
-            success: true,
+    {
 
-            message: "Login successful.",
+        id: user.id,
+        email: user.email
 
-            token: "TEMP-TOKEN",
+    },
 
-            user: {
+    process.env.JWT_SECRET,
 
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                plan: user.plan,
-                account_status: user.account_status,
-                trial_start: user.trial_start,
-                trial_end: user.trial_end,
-                created_at: user.created_at
+    {
 
-            }
+        expiresIn: "7d"
 
-        });
+    }
+
+);
+
+// Login Success
+
+res.json({
+
+    success: true,
+
+    message: "Login successful.",
+
+    token: token,
+
+    user: {
+
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        plan: user.plan,
+        account_status: user.account_status,
+        trial_start: user.trial_start,
+        trial_end: user.trial_end,
+        created_at: user.created_at
+
+    }
+
+});
+       
 
     } catch (err) {
 
