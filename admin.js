@@ -323,10 +323,9 @@ showDashboard();
 function adminLogout(){
 
     if(confirm("Are you sure you want to logout?")){
-
-        localStorage.removeItem("adminLoggedIn");
-        localStorage.removeItem("adminName");
-
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("admin");
+       
         window.location.href = "index.html";
 
     }
