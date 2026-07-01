@@ -95,7 +95,7 @@ if(userCheck.rows.length === 0){
 
         // No existing license, so create one
         const activationCode = generateActivationCode();
-
+        await pool.query("BEGIN");
 const result = await pool.query(
 
     `INSERT INTO ea_licenses
@@ -143,6 +143,8 @@ const result = await pool.query(
 
         );
 
+        await pool.query("COMMIT");
+
         res.json({
 
             success: true,
@@ -156,19 +158,27 @@ const result = await pool.query(
         });
 
     }
-    catch(err){
+        catch(err){
 
-        console.error(err);
-
-        res.status(500).json({
-
-            success:false,
-
-            message:"Server Error"
-
-        });
-
+    try{
+        await pool.query("ROLLBACK");
+    }catch(e){
+        console.error(e);
     }
+
+    console.error(err);
+
+    res.status(500).json({
+
+        success:false,
+
+        message:"Server Error"
+
+    });
+
+}
+    
+    
 
 });
 
