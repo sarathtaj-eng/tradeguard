@@ -558,17 +558,7 @@ async function generateCode(){
 
     document.getElementById("activationCode").innerHTML = "Generating...";
     document.getElementById("activationStatus").innerHTML = "Please wait...";
-    document.getElementById("eaID").innerHTML =
-        data.ea_id || "Waiting for Activation";
     
-    document.getElementById("licenseNumber").innerHTML =
-        data.license_number || "Pending";
-    
-    document.getElementById("eaRole").innerHTML =
-        data.role || "Not Assigned";
-    
-    document.getElementById("subscription").innerHTML =
-        data.subscription || "FREE TRIAL";
     
     document.getElementById("expiryDate").innerHTML =
         data.expiry_date || "--";
