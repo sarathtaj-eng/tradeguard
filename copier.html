@@ -642,22 +642,57 @@ function closeAddClient(){
     document.getElementById("addClientModal").style.display = "none";
 
 }
+async function searchClientEA(){
 
-function searchClientEA(){
+    const eaID = document.getElementById("clientEAID").value.trim();
 
-    let eaID = document.getElementById("clientEAID").value.trim();
-
-    if(eaID == ""){
-
+    if(!eaID){
         alert("Please enter Client EA ID.");
-
         return;
+    }
+
+    try{
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(
+            "https://tradeguard-api.onrender.com/api/client/search",
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + token
+                },
+                body:JSON.stringify({
+                    eaID:eaID
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        console.log(data);
+
+        if(response.ok){
+
+            alert("Client Found : " + data.clientName);
+
+        }else{
+
+            alert(data.message);
+
+        }
+
+    }catch(err){
+
+        console.error(err);
+
+        alert("Cannot connect to server.");
 
     }
 
-    alert("Searching Client EA ID : " + eaID);
-
 }
+
 
   
 function removeClient(){
