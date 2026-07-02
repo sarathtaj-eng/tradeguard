@@ -877,24 +877,25 @@ app.post("/api/client/search", auth, async (req, res) => {
             });
 
         }
-
-        const result = await pool.query(
-            `SELECT
-                id,
-                ea_id,
-                activation_code,
-                license_number,
-                role,
-                status,
-                subscription,
-                mt5_account,
-                broker,
-                expiry_date,
-                last_online
-            FROM ea_licenses
-            WHERE ea_id = $1`,
-            [eaID]
-        );
+const result = await pool.query(
+    `SELECT
+        id,
+        user_id,
+        ea_id,
+        activation_code,
+        license_number,
+        role,
+        status,
+        subscription,
+        mt5_account,
+        broker,
+        expiry_date,
+        last_online
+    FROM ea_licenses
+    WHERE ea_id = $1`,
+    [eaID]
+);
+     
 if(result.rows.length === 0){
 
     return res.status(404).json({
@@ -903,7 +904,28 @@ if(result.rows.length === 0){
     });
 
 }
+const client = result.rows[0];
 
+// Prevent adding your own MASTER EA
+if(
+    client.user_id === req.user.id &&
+    client.role === "MASTER"
+){
+
+    return res.status(400).json({
+        success:false,
+        message:"You cannot add your own MASTER EA as a client."
+    });
+
+}
+res.json({
+    success:true,
+    client:client
+});
+
+
+
+        
 // Get the client record
 const client = result.rows[0];
 
