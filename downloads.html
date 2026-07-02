@@ -153,24 +153,36 @@ body.menu-open{
     border:1px solid #244a78;
 
 }
-
 .download-btn{
 
+    display:inline-block;
     background:#00aa55;
     color:white;
     border:none;
+    text-align:center;
+    text-decoration:none;
     padding:14px 25px;
     border-radius:6px;
     font-size:16px;
+    font-weight:bold;
     cursor:pointer;
+    transition:0.2s;
 
 }
 
 .download-btn:hover{
 
     background:#00cc66;
+    transform:translateY(-2px);
 
 }
+
+.download-btn:active{
+
+    transform:scale(0.98);
+
+}
+
 /* =====================================
    Mobile Responsive
 ===================================== */
