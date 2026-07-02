@@ -19,13 +19,16 @@ body{
 body.menu-open{
     overflow:hidden;
 }
-.sidebar{
+    .sidebar{
+
     position:fixed;
+    top:0;
+    left:-260px;
     width:250px;
     height:100%;
-    overflow-y:auto;
-    background:#0d2038;
-    border-right:1px solid #17365d;
+    transition:left 0.3s ease;
+    z-index:1000;
+
 }
 
 .logo{
