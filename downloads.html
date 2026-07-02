@@ -14,7 +14,11 @@ body{
     background:#07111f;
     color:white;
 }
+/* Add this just after the body{} CSS block */
 
+body.menu-open{
+    overflow:hidden;
+}
 .sidebar{
     position:fixed;
     width:250px;
@@ -297,9 +301,9 @@ h2{
 <a href="subscription.html" onclick="closeMenu()">💳 Subscription</a>
 
 <a href="settings.html" onclick="closeMenu()">⚙ Settings</a>
+<a href="index.html" onclick="closeMenu()">🚪 Logout</a>
 
 
-<a href="index.html">🚪 Logout</a>
 
 </div>
 
