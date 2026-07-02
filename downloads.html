@@ -453,7 +453,7 @@ h2{
 <div class="card">
 
 <h2>EA Information</h2>
-<table class="info-table">
+    <table class="info-table">
 
 <tr>
     <th width="250">Activation Code</th>
@@ -467,7 +467,7 @@ h2{
 
 <tr>
     <th>License Number</th>
-    <td id="licenseNumber">Not Available</td>
+    <td id="licenseNumber">Waiting for Activation</td>
 </tr>
 
 <tr>
@@ -478,16 +478,6 @@ h2{
 <tr>
     <th>Status</th>
     <td id="activationStatus">Waiting</td>
-</tr>
-
-<tr>
-    <th>Subscription</th>
-    <td id="subscription">FREE TRIAL</td>
-</tr>
-
-<tr>
-    <th>Expiry Date</th>
-    <td id="expiryDate">--</td>
 </tr>
 
 </table>
@@ -608,6 +598,14 @@ async function generateCode(){
 
             document.getElementById("activationCode").innerHTML =
                 data.activation_code;
+            document.getElementById("eaID").innerHTML =
+            "Waiting for Activation";
+
+        document.getElementById("licenseNumber").innerHTML =
+            "Waiting for Activation";
+
+        document.getElementById("eaRole").innerHTML =
+            "Not Assigned";
 
             document.getElementById("activationStatus").innerHTML =
                 "Activation Code Generated";
