@@ -6,6 +6,7 @@ const { Pool } = require("pg");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const auth = require("./auth");
 
 const activationRoutes = require("./activation");
 const eaUploadRoutes = require("./eaUpload");
@@ -858,7 +859,69 @@ app.get("/clear-licenses", adminAuth, async (req, res) => {
 
 });
 
+// =====================================
+// Search Client EA
+// =====================================
 
+app.post("/api/client/search", auth, async (req, res) => {
+
+    try{
+
+        const { eaID } = req.body;
+
+        if(!eaID){
+
+            return res.status(400).json({
+                success:false,
+                message:"EA ID is required."
+            });
+
+        }
+
+        const result = await pool.query(
+            `SELECT
+                id,
+                ea_id,
+                activation_code,
+                license_number,
+                role,
+                status,
+                subscription,
+                mt5_account,
+                broker,
+                expiry_date,
+                last_online
+            FROM ea_licenses
+            WHERE ea_id = $1`,
+            [eaID]
+        );
+
+        if(result.rows.length === 0){
+
+            return res.status(404).json({
+                success:false,
+                message:"Client EA not found."
+            });
+
+        }
+
+        res.json({
+            success:true,
+            client:result.rows[0]
+        });
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success:false,
+            message:"Server Error"
+        });
+
+    }
+
+});
 
 app.listen(PORT, () => {
 
