@@ -452,31 +452,46 @@ h2{
 
 <div class="card">
 
-<h2>EA Activation</h2>
-
+<h2>EA Information</h2>
 <table class="info-table">
 
 <tr>
-
-<th width="250">Activation Code</th>
-
-<td id="activationCode">
-Not Generated
-</td>
-
+    <th width="250">Activation Code</th>
+    <td id="activationCode">Not Generated</td>
 </tr>
 
 <tr>
+    <th>EA ID</th>
+    <td id="eaID">Waiting for Activation</td>
+</tr>
 
-<th>Status</th>
+<tr>
+    <th>License Number</th>
+    <td id="licenseNumber">Not Available</td>
+</tr>
 
-<td id="activationStatus">
-Waiting
-</td>
+<tr>
+    <th>Role</th>
+    <td id="eaRole">Not Assigned</td>
+</tr>
 
+<tr>
+    <th>Status</th>
+    <td id="activationStatus">Waiting</td>
+</tr>
+
+<tr>
+    <th>Subscription</th>
+    <td id="subscription">FREE TRIAL</td>
+</tr>
+
+<tr>
+    <th>Expiry Date</th>
+    <td id="expiryDate">--</td>
 </tr>
 
 </table>
+
 
 <br>
 
@@ -553,7 +568,20 @@ async function generateCode(){
 
     document.getElementById("activationCode").innerHTML = "Generating...";
     document.getElementById("activationStatus").innerHTML = "Please wait...";
-
+    document.getElementById("eaID").innerHTML =
+        data.ea_id || "Waiting for Activation";
+    
+    document.getElementById("licenseNumber").innerHTML =
+        data.license_number || "Pending";
+    
+    document.getElementById("eaRole").innerHTML =
+        data.role || "Not Assigned";
+    
+    document.getElementById("subscription").innerHTML =
+        data.subscription || "FREE TRIAL";
+    
+    document.getElementById("expiryDate").innerHTML =
+        data.expiry_date || "--";
     try{
 
         // Get JWT token from login
