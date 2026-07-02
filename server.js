@@ -895,20 +895,34 @@ app.post("/api/client/search", auth, async (req, res) => {
             WHERE ea_id = $1`,
             [eaID]
         );
+if(result.rows.length === 0){
 
-        if(result.rows.length === 0){
+    return res.status(404).json({
+        success:false,
+        message:"Client EA not found."
+    });
 
-            return res.status(404).json({
-                success:false,
-                message:"Client EA not found."
-            });
+}
 
-        }
+// Get the client record
+const client = result.rows[0];
 
-        res.json({
-            success:true,
-            client:result.rows[0]
-        });
+// Prevent adding your own EA
+if(client.user_id === req.user.id){
+
+    return res.status(400).json({
+        success:false,
+        message:"You cannot add your own EA as a client."
+    });
+
+}
+
+// Success
+res.json({
+    success:true,
+    client:client
+});
+       
 
     }catch(err){
 
