@@ -925,26 +925,7 @@ res.json({
 
 
 
-        
-// Get the client record
-const client = result.rows[0];
-
-// Prevent adding your own EA
-if(client.user_id === req.user.id){
-
-    return res.status(400).json({
-        success:false,
-        message:"You cannot add your own EA as a client."
-    });
-
-}
-
-// Success
-res.json({
-    success:true,
-    client:client
-});
-       
+ 
 
     }catch(err){
 
