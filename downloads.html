@@ -76,13 +76,23 @@ body.menu-open{
     margin-left:251px;
     padding:30px;
 }
-
 .card{
+
     background:#0d2038;
     border:1px solid #17365d;
     border-radius:12px;
     padding:20px;
     margin-bottom:20px;
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+    border-color:#2f67a8;
+
 }
 
 .summary-grid{
@@ -90,13 +100,23 @@ body.menu-open{
     grid-template-columns:repeat(4,1fr);
     gap:15px;
 }
-
 .summary-card{
+
     background:#0f2747;
     border:1px solid #244a78;
     border-radius:10px;
     padding:15px;
     text-align:center;
+
+    transition:.25s;
+
+}
+
+.summary-card:hover{
+
+    transform:scale(1.03);
+    border-color:#ffc107;
+
 }
 
 .summary-card h3{
@@ -108,7 +128,6 @@ body.menu-open{
     font-size:20px;
     margin-top:10px;
 }
-
 .table-btn{
 
     background:#17365d;
@@ -120,11 +139,20 @@ body.menu-open{
     font-weight:bold;
     margin:5px;
 
+    transition:.2s;
+
 }
 
 .table-btn:hover{
 
     background:#244a78;
+    transform:translateY(-2px);
+
+}
+
+.table-btn:active{
+
+    transform:scale(.98);
 
 }
 
