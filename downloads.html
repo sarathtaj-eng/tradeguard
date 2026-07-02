@@ -422,17 +422,20 @@ style="
 
 </div>
 <script>
-function toggleMenu(){
+    function toggleMenu(){
 
     document.querySelector(".sidebar").classList.toggle("show");
-
     document.querySelector(".overlay").classList.toggle("show");
+
+    document.body.classList.toggle("menu-open");
 
 }
 function closeMenu(){
 
     document.querySelector(".sidebar").classList.remove("show");
     document.querySelector(".overlay").classList.remove("show");
+
+    document.body.classList.remove("menu-open");
 
 }
 
