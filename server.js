@@ -939,7 +939,32 @@ res.json({
     }
 
 });
+app.get("/test-ea", async (req, res) => {
 
+    try {
+
+        const result = await pool.query(`
+            SELECT
+                ea_id,
+                role,
+                status,
+                user_id
+            FROM ea_licenses
+            ORDER BY id DESC
+        `);
+
+        res.json(result.rows);
+
+    } catch (err) {
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
+});
 app.listen(PORT, () => {
 
     console.log("======================================");
