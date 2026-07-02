@@ -417,7 +417,12 @@ function toggleMenu(){
     document.querySelector(".overlay").classList.toggle("show");
 
 }
+function closeMenu(){
 
+    document.querySelector(".sidebar").classList.remove("show");
+    document.querySelector(".overlay").classList.remove("show");
+
+}
 
     
 async function generateCode(){
