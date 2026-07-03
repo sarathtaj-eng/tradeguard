@@ -627,16 +627,16 @@ document.getElementById('clientSearch').focus();
 <script>
 
 let clientCount = 4;
+function addClient(){
 
-    function addClient(){
+    // Clear previous Activation Code
+    document.getElementById("activationCode").value = "";
 
-    // Clear previous EA ID
-        document.getElementById("activationCode").value = "";
-   
     // Show popup
     document.getElementById("addClientModal").style.display = "block";
 
 }
+   
 function closeAddClient(){
 
     document.getElementById("addClientModal").style.display = "none";
