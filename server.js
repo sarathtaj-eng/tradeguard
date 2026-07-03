@@ -866,14 +866,15 @@ app.get("/clear-licenses", adminAuth, async (req, res) => {
 app.post("/api/client/search", auth, async (req, res) => {
 
     try{
-
-        const { eaID } = req.body;
-
-        if(!eaID){
+        const { activationCode } = req.body;
+       
+        if(!activationCode){
+      
 
             return res.status(400).json({
                 success:false,
-                message:"EA ID is required."
+                message:"Activation Code is required."
+                
             });
 
         }
@@ -892,8 +893,9 @@ const result = await pool.query(
         expiry_date,
         last_online
     FROM ea_licenses
-    WHERE ea_id = $1`,
-    [eaID]
+    WHERE activation_code = $1
+  [activationCode]
+ 
 );
      
 if(result.rows.length === 0){
