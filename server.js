@@ -893,7 +893,11 @@ const result = await pool.query(
         expiry_date,
         last_online
     FROM ea_licenses
-    WHERE activation_code = $1`,
+    WHERE activation_code = $1
+    AND status = 'ACTIVE'
+    AND role = 'MASTER'`,
+
+    
       [activationCode]
  
 );
