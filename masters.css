@@ -1,0 +1,401 @@
+/* =====================================
+   TradeGuard Masters
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#07111f;
+    color:#ffffff;
+    font-family:Arial,Helvetica,sans-serif;
+
+}
+
+/* =====================================
+   Header
+===================================== */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+
+    background:#0b1628;
+
+    border-bottom:1px solid #1f3048;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+}
+
+.logo{
+
+    font-size:26px;
+    font-weight:bold;
+    color:#00d084;
+
+}
+
+.userMenu{
+
+    display:flex;
+    gap:25px;
+
+}
+
+.userMenu a{
+
+    color:#d7d7d7;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.userMenu a:hover{
+
+    color:#00d084;
+
+}
+
+.userMenu .active{
+
+    color:#00d084;
+    font-weight:bold;
+
+}
+
+/* =====================================
+   Hero
+===================================== */
+
+.hero{
+
+    text-align:center;
+    padding:60px 20px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    color:#9ea9bc;
+    font-size:18px;
+    max-width:750px;
+    margin:auto;
+    line-height:1.6;
+
+}
+
+/* =====================================
+   Filter Section
+===================================== */
+
+.filters{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+.filters input,
+.filters select{
+
+    background:#13243d;
+
+    border:1px solid #23395d;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.filters input:focus,
+.filters select:focus{
+
+    border-color:#00d084;
+
+}
+
+.filters button{
+
+    background:#00d084;
+
+    border:none;
+
+    color:#07111f;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.filters button:hover{
+
+    background:#00b56d;
+
+}
+
+/* =====================================
+   Master Cards
+===================================== */
+
+.masterContainer{
+
+    width:95%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(340px,1fr));
+
+    gap:25px;
+
+    padding-bottom:60px;
+
+}
+
+/* =====================================
+   Card
+===================================== */
+
+.masterCard{
+
+    background:#101d33;
+
+    border:1px solid #23395d;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.masterCard:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#00d084;
+
+    box-shadow:0 15px 35px rgba(0,208,132,.18);
+
+}
+
+/* =====================================
+   Master Header
+===================================== */
+
+.masterHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.masterID{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#00d084;
+
+}
+
+.status{
+
+    background:#0d4b32;
+
+    color:#6dffb6;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+/* =====================================
+   Statistics
+===================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+.stat{
+
+    background:#162746;
+
+    border-radius:12px;
+
+    padding:15px;
+
+}
+
+.statTitle{
+
+    color:#9ea9bc;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+
+}
+
+.statValue{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+/* =====================================
+   View Button
+===================================== */
+
+.viewBtn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    background:#00d084;
+
+    color:#07111f;
+
+    border:none;
+
+    padding:15px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.viewBtn:hover{
+
+    background:#00b56d;
+
+}
+
+/* =====================================
+   Responsive
+===================================== */
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.userMenu{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.masterContainer{
+
+    grid-template-columns:1fr;
+
+}
+
+.filters{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+    font-size:28px;
+
+}
+
+}
