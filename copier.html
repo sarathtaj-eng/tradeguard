@@ -646,11 +646,11 @@ async function searchClientEA(){
     
     const activationCode = document.getElementById("activationCode").value.trim();
     
-
-    if(!eaID){
-        alert("Please enter Client EA ID.");
-        return;
-    }
+if(!activationCode){
+    alert("Please enter Master Activation Code.");
+    return;
+}
+   
 
     try{
 
