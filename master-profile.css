@@ -1,0 +1,472 @@
+/* =========================================
+   TradeGuard Master Profile
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#07111f;
+    color:#ffffff;
+    font-family:Arial,Helvetica,sans-serif;
+
+}
+
+/* =========================================
+   Header
+========================================= */
+
+header{
+
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+
+    background:#0b1628;
+
+    border-bottom:1px solid #1f3048;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+}
+
+.logo{
+
+    font-size:26px;
+    font-weight:bold;
+    color:#00d084;
+
+}
+
+nav{
+
+    display:flex;
+    gap:30px;
+
+}
+
+nav a{
+
+    color:#d8d8d8;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#00d084;
+
+}
+
+/* =========================================
+   Profile Header
+========================================= */
+
+.profileHeader{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:40px auto;
+
+    background:#101d33;
+
+    border:1px solid #22395b;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+}
+
+.masterIcon{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#00d084;
+
+    color:#07111f;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+.profileHeader h1{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+}
+
+.profileHeader p{
+
+    color:#9ea9bc;
+
+    margin-bottom:10px;
+
+}
+
+#statusBadge{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    background:#0d4b32;
+
+    color:#6dffb6;
+
+    font-weight:bold;
+
+}
+
+/* =========================================
+   Statistics
+========================================= */
+
+.statsGrid{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.statCard{
+
+    background:#101d33;
+
+    border:1px solid #22395b;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.statCard:hover{
+
+    border-color:#00d084;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,208,132,.15);
+
+}
+
+.statCard h3{
+
+    color:#9ea9bc;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+
+}
+
+.statCard h2{
+
+    font-size:30px;
+
+    color:#00d084;
+
+}
+
+/* =========================================
+   Chart
+========================================= */
+
+.chartBox{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:35px auto;
+
+    background:#101d33;
+
+    border:1px solid #22395b;
+
+    border-radius:18px;
+
+    padding:30px;
+
+}
+
+.chartBox h2{
+
+    margin-bottom:20px;
+
+}
+
+.chartPlaceholder{
+
+    height:320px;
+
+    border:2px dashed #34557d;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#76879e;
+
+    font-size:22px;
+
+}
+
+/* =========================================
+   Contact
+========================================= */
+
+.contactBox{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:35px auto;
+
+    background:#101d33;
+
+    border:1px solid #22395b;
+
+    border-radius:18px;
+
+    padding:30px;
+
+}
+
+.contactBox h2{
+
+    margin-bottom:20px;
+
+}
+
+.contactRow{
+
+    display:flex;
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #203553;
+
+}
+
+.contactRow:last-child{
+
+    border-bottom:none;
+
+}
+
+.contactRow span:first-child{
+
+    color:#9ea9bc;
+
+}
+
+.contactRow span:last-child{
+
+    color:#00d084;
+
+    font-weight:bold;
+
+}
+
+/* =========================================
+   About
+========================================= */
+
+.aboutBox{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:35px auto;
+
+    background:#101d33;
+
+    border:1px solid #22395b;
+
+    border-radius:18px;
+
+    padding:30px;
+
+}
+
+.aboutBox h2{
+
+    margin-bottom:20px;
+
+}
+
+.aboutBox p{
+
+    color:#c8d2df;
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+   Buttons
+========================================= */
+
+.actionButtons{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:35px auto 60px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.actionButtons button{
+
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#followBtn{
+
+    background:#00d084;
+
+    color:#07111f;
+
+}
+
+#followBtn:hover{
+
+    background:#00b56d;
+
+}
+
+#messageBtn{
+
+    background:#1f3d63;
+
+    color:white;
+
+}
+
+#messageBtn:hover{
+
+    background:#315886;
+
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.profileHeader{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+.actionButtons{
+
+    flex-direction:column;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.statsGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.chartPlaceholder{
+
+    height:220px;
+
+    font-size:18px;
+
+}
+
+.profileHeader h1{
+
+    font-size:28px;
+
+}
+
+}
