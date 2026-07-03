@@ -643,8 +643,9 @@ function closeAddClient(){
 
 }
 async function searchClientEA(){
-
-    const eaID = document.getElementById("clientEAID").value.trim();
+    
+    const activationCode = document.getElementById("activationCode").value.trim();
+    
 
     if(!eaID){
         alert("Please enter Client EA ID.");
@@ -663,9 +664,10 @@ async function searchClientEA(){
                     "Content-Type":"application/json",
                     "Authorization":"Bearer " + token
                 },
-                body:JSON.stringify({
-                    eaID:eaID
-                })
+                body: JSON.stringify({
+                activationCode: activationCode
+            })
+               
             }
         );
 
@@ -757,13 +759,13 @@ document.getElementById("clientSearch").addEventListener("keyup", function(){
     <div class="modal-box">
 
         <h2>➕ Add Client</h2>
-
-        <label>Client EA ID</label>
-
-        <input
-            type="text"
-            id="clientEAID"
-            placeholder="Enter Client EA ID">
+        <label>Master Activation Code</label>
+        
+    <input
+    type="text"
+    id="activationCode"
+    placeholder="Enter Master Activation Code">
+      
 
         <div class="modal-footer">
 
