@@ -879,6 +879,7 @@ app.post("/api/client/search", auth, async (req, res) => {
 
         }
 const result = await pool.query(
+
     `SELECT
         id,
         user_id,
@@ -892,15 +893,15 @@ const result = await pool.query(
         broker,
         expiry_date,
         last_online
-    FROM ea_licenses
-    WHERE activation_code = $1
-    AND status = 'ACTIVE'
-    AND role = 'MASTER'`,
+     FROM ea_licenses
+     WHERE activation_code = $1
+       AND status = 'ACTIVE'
+       AND role = 'MASTER'`,
 
-    
-      [activationCode]
- 
+    [activationCode]
+
 );
+
      
 if(result.rows.length === 0){
 
