@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>TradeGuard Masters</title>
+
+<link rel="stylesheet" href="masters.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- Header -->
+<!-- ========================= -->
+
+<header>
+
+<div class="logo">
+
+TradeGuard Masters
+
+</div>
+
+<div class="userMenu">
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="download.html">Downloads</a>
+
+<a href="copier.html">Trade Copier</a>
+
+<a href="masters.html" class="active">Masters</a>
+
+<a href="settings.html">Settings</a>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- Hero -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<h1>
+
+Verified Master Performance
+
+</h1>
+
+<p>
+
+Discover experienced traders with verified
+long-term trading performance.
+
+</p>
+
+</section>
+
+<!-- ========================= -->
+<!-- Search & Filters -->
+<!-- ========================= -->
+
+<section class="filters">
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search Master ID">
+
+<select id="sortBy">
+
+<option value="growth">
+
+Highest Growth
+
+</option>
+
+<option value="days">
+
+Longest Trading Days
+
+</option>
+
+<option value="drawdown">
+
+Lowest Drawdown
+
+</option>
+
+<option value="followers">
+
+Most Followers
+
+</option>
+
+</select>
+
+<input
+type="number"
+id="minDays"
+placeholder="Min Days">
+
+<input
+type="number"
+id="maxDD"
+placeholder="Max Drawdown %">
+
+<input
+type="number"
+id="minGrowth"
+placeholder="Min Growth %">
+
+<button id="applyFilters">
+
+Apply Filters
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- Master Cards -->
+<!-- ========================= -->
+
+<section
+class="masterContainer"
+id="masterContainer">
+
+<!-- Dynamic Cards -->
+
+</section>
+
+<script src="masters.js"></script>
+
+</body>
+
+</html>
