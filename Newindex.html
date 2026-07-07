@@ -486,10 +486,14 @@ margin-bottom:35px;
 padding:10px 0;
 font-size:17px;
 }
-
+.market-card:hover{
+transform:translateY(-8px);
+border-color:#ffc107;
+}
 .market-card{
 background:#0d1a2d;
 padding:35px;
+transition:.3s;
 border-radius:20px;
 border:1px solid rgba(255,255,255,.08);
 }
@@ -547,12 +551,15 @@ gap:70px;
 align-items:center;
 
 }
-
+.followers-image img:hover{
+transform:scale(1.02);
+}
 .followers-image img{
 
 width:100%;
 
 border-radius:25px;
+transition:.4s;
 
 display:block;
 
@@ -837,6 +844,20 @@ color:#8fa5c4;
 font-size:14px;
 
 }
+  @keyframes floatHero{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+}
 /*======================================================
 STATISTICS
 ======================================================*/
@@ -928,6 +949,7 @@ text-align:center;
 .hero-image{
 
 max-width:650px;
+animation:floatHero 6s ease-in-out infinite;
 
 margin:auto;
 
