@@ -83,18 +83,13 @@ backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,255,255,.05);
 
 }
-
 .navbar{
-
-height:100px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
+
     .logo{
     display:flex;
     align-items:center;
@@ -979,15 +974,16 @@ flex-direction:column;
 .navbar{
     height:80px;
 }
-
 .logo{
-    min-width:auto;
+    min-width:0;
+    flex:1;
 }
 
 .logo svg{
-    height:60px;
+    width:170px;
+    height:auto;
 }
-
+    
 .nav-menu{
     display:none;
 }
@@ -997,8 +993,8 @@ flex-direction:column;
 }
 
 .login-btn{
-    padding:8px 18px;
-    font-size:14px;
+    padding:8px 14px;
+    white-space:nowrap;
 }
 
 .mobile-menu{
