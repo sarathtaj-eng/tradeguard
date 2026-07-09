@@ -349,3 +349,373 @@ li{
     }
 
 }
+/*==================================================
+PART 3A
+Premium Hero
+==================================================*/
+
+.hero{
+
+    display:flex;
+    align-items:center;
+
+    min-height:780px;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(6,12,25,.88) 0%,
+    rgba(6,12,25,.55) 45%,
+    rgba(6,12,25,.10) 100%
+    ),
+    url("copyhero.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.45);
+
+}
+
+/* Blue Glow */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at center,
+rgba(13,110,253,.12),
+transparent 60%);
+
+pointer-events:none;
+
+}
+
+/* Glass Card */
+
+.hero-overlay{
+
+width:100%;
+
+padding:70px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.hero-content{
+
+max-width:620px;
+
+padding:55px;
+
+background:rgba(8,18,35,.45);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.45);
+
+animation:heroFade .8s ease;
+
+}
+
+/* Badge */
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:10px 20px;
+
+background:#17365d;
+
+border:1px solid #2b5d9b;
+
+border-radius:30px;
+
+color:#ffc107;
+
+font-size:15px;
+
+font-weight:700;
+
+margin-bottom:30px;
+
+}
+
+/* Title */
+
+.hero h1{
+
+font-size:72px;
+
+line-height:1;
+
+font-weight:900;
+
+margin-bottom:12px;
+
+letter-spacing:-2px;
+
+text-shadow:
+
+0 5px 20px rgba(0,0,0,.45);
+
+}
+
+/* Subtitle */
+
+.hero h2{
+
+font-size:28px;
+
+font-weight:500;
+
+color:#ffc107;
+
+margin-bottom:30px;
+
+letter-spacing:1px;
+
+}
+
+/* Paragraph */
+
+.hero p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#d9e7ff;
+
+margin-bottom:40px;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-provider,
+.btn-investor{
+
+min-width:230px;
+
+padding:18px 35px;
+
+border-radius:14px;
+
+font-size:17px;
+
+font-weight:700;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.btn-provider:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 40px rgba(13,110,253,.40);
+
+}
+
+.btn-investor:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 40px rgba(22,163,74,.40);
+
+}
+
+/* Hero Animation */
+
+@keyframes heroFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Background Animation */
+
+.hero{
+
+animation:heroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+0%{
+
+background-size:100%;
+
+}
+
+100%{
+
+background-size:108%;
+
+}
+
+}
+
+/* Desktop */
+
+@media(max-width:1200px){
+
+.hero{
+
+min-height:700px;
+
+}
+
+.hero-content{
+
+max-width:560px;
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.hero{
+
+min-height:650px;
+
+background-position:65% center;
+
+}
+
+.hero-overlay{
+
+padding:40px;
+
+}
+
+.hero-content{
+
+max-width:100%;
+
+padding:40px;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero h2{
+
+font-size:24px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.hero{
+
+background-position:72% center;
+
+}
+
+.hero-content{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero h2{
+
+font-size:20px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn-provider,
+.btn-investor{
+
+width:100%;
+
+}
+
+}
