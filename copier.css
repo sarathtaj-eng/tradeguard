@@ -1,758 +1,351 @@
-/*==========================================
+/*==================================================
 TradeGuard Copy Network
-Version 1.0
-==========================================*/
+PART 2A - Base Layout
+==================================================*/
+
+/* ---------- Reset ---------- */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+    background:#081321;
+    color:#ffffff;
+    line-height:1.6;
+}
 
-font-family:Arial,Helvetica,sans-serif;
-background:#07111f;
-color:#ffffff;
+/* ---------- Variables ---------- */
+
+:root{
+
+    --bg:#081321;
+    --card:#10253d;
+    --card2:#17365d;
+
+    --gold:#ffc107;
+    --blue:#0d6efd;
+    --green:#16a34a;
+
+    --text:#ffffff;
+    --text2:#c9d7eb;
+
+    --border:#23456d;
 
 }
 
-/*==========================================
-Sidebar
-==========================================*/
+/* ---------- Sidebar ---------- */
 
 .sidebar{
 
-position:fixed;
+    position:fixed;
 
-left:0;
-top:0;
+    left:0;
+    top:0;
 
-width:250px;
-height:100vh;
+    width:260px;
+    height:100vh;
 
-background:#0d2038;
+    background:#0d2038;
 
-border-right:1px solid #1e3d63;
+    border-right:1px solid var(--border);
 
-overflow:auto;
+    overflow-y:auto;
 
-z-index:999;
+    z-index:999;
 
 }
 
 .logo{
 
-padding:28px;
+    padding:30px;
 
-font-size:30px;
+    font-size:28px;
 
-font-weight:bold;
+    font-weight:700;
 
-color:#ffc107;
+    color:var(--gold);
 
-text-align:center;
+    text-align:center;
 
-border-bottom:1px solid #17365d;
+    border-bottom:1px solid var(--border);
+
+}
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
 
 }
 
 .sidebar a{
 
-display:block;
+    color:white;
 
-padding:16px 25px;
+    text-decoration:none;
 
-color:white;
+    padding:18px 25px;
 
-text-decoration:none;
+    transition:.3s;
 
-transition:.3s;
-
-border-bottom:1px solid #17365d;
+    border-bottom:1px solid rgba(255,255,255,.05);
 
 }
 
 .sidebar a:hover{
 
-background:#17365d;
+    background:#17365d;
 
 }
 
-.active-menu{
+.sidebar .active{
 
-background:#17365d;
+    background:#17365d;
 
-color:#ffc107!important;
-
-}
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-top:0;
-
-width:100%;
-
-height:100%;
-
-border-radius:24px;
-
-pointer-events:none;
-
-box-shadow:inset 0 0 120px rgba(0,132,255,.08);
+    color:var(--gold);
 
 }
-/*==========================================
-Main
-==========================================*/
+
+/* ---------- Main ---------- */
 
 .main{
 
-margin-left:250px;
+    margin-left:260px;
 
-padding:35px;
-
-}
-/*==========================================
-PREMIUM HERO
-==========================================*/
-
-.hero{
-
-position:relative;
-
-height:780px;
-
-margin-bottom:70px;
-
-border-radius:24px;
-
-overflow:hidden;
-
-display:flex;
-
-align-items:center;
-
-background:
-linear-gradient(
-90deg,
-rgba(5,10,20,.82) 0%,
-rgba(5,10,20,.45) 45%,
-rgba(5,10,20,.10) 100%
-),
-url("copyhero.png");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-box-shadow:0 25px 60px rgba(0,0,0,.55);
+    padding:40px;
 
 }
 
-.hero-overlay{
+/* ---------- Sections ---------- */
 
-width:100%;
-height:100%;
+section{
 
-display:flex;
-align-items:center;
-
-}
-.hero-content{
-
-position:relative;
-
-z-index:5;
-
-max-width:620px;
-
-margin-left:70px;
-
-padding:50px;
-
-background:rgba(7,17,31,.45);
-
-backdrop-filter:blur(16px);
-
--webkit-backdrop-filter:blur(16px);
-
-border:1px solid rgba(255,255,255,.12);
-
-border-radius:22px;
-
-box-shadow:
-0 25px 60px rgba(0,0,0,.45),
-0 0 30px rgba(13,110,253,.12);
-
-animation:heroCard .8s ease;
-
-}
-
-
-.hero-badge{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:8px;
-
-padding:12px 22px;
-
-border-radius:50px;
-
-background:#17365d;
-
-border:1px solid #2f69a8;
-
-font-size:15px;
-
-font-weight:bold;
-
-color:#ffc107;
-
-margin-bottom:28px;
-
-}
-
-.hero h1{
-
-font-size:72px;
-
-font-weight:900;
-
-line-height:1.02;
-
-margin-bottom:28px;
-
-color:white;
-
-letter-spacing:-2px;
-
-}
-.hero p{
-
-font-size:18px;
-
-line-height:1.9;
-
-color:#d9e7ff;
-
-margin-bottom:40px;
-
-}
-
-
-.hero-buttons{
-
-display:flex;
-
-gap:18px;
-
-flex-wrap:wrap;
-
-}
-.hero{
-
-animation:heroZoom 18s ease-in-out infinite alternate;
-
-}
-
-@keyframes heroZoom{
-
-0%{
-
-background-size:100%;
-
-}
-
-100%{
-
-background-size:108%;
-
-}
-
-}
-.provider-btn,
-
-.investor-btn{
-padding:20px 36px;
-
-min-width:230px;
-
-font-size:18px;
-
-font-weight:700;
-
-
-border-radius:12px;
-
-
-
-text-decoration:none;
-
-transition:.35s;
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-.provider-btn{
-
-background:#0d6efd;
-
-color:white;
-
-}
-
-.provider-btn:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 18px 35px rgba(13,110,253,.45);
-
-}
-
-.investor-btn{
-
-background:#16a34a;
-
-color:white;
-
-}
-
-.investor-btn:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 18px 35px rgba(22,163,74,.45);
-
-}
-.hero-title{
-
-font-size:26px;
-
-font-weight:600;
-
-color:#ffc107;
-
-margin-bottom:28px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-}
-
-
-/*==========================================
-Provider / Investor Cards
-==========================================*/
-
-.roles{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:30px;
-
-margin-bottom:60px;
-
-}
-.role-card{
-
-background:linear-gradient(
-180deg,
-#132844,
-#0b1b2e
-);
-
-border:1px solid rgba(60,119,182,.35);
-
-border-radius:20px;
-
-padding:40px;
-
-transition:.35s;
-
-box-shadow:0 15px 35px rgba(0,0,0,.30);
-
-}
-
-.role-card:hover{
-
-transform:translateY(-10px);
-
-border-color:#4b8fe3;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.45),
-0 0 25px rgba(13,110,253,.20);
-
-}
-
-.role-icon{
-
-font-size:60px;
-
-margin-bottom:20px;
-
-}
-
-.role-card h2{
-
-font-size:34px;
-
-color:#ffc107;
-
-margin-bottom:15px;
-
-}
-
-.role-card p{
-
-line-height:1.8;
-
-color:#cfd8e8;
-
-margin-bottom:20px;
-
-}
-
-.role-card ul{
-
-list-style:none;
-
-margin-bottom:30px;
-
-}
-
-.role-card li{
-
-padding:10px 0;
-
-border-bottom:1px solid rgba(255,255,255,.05);
-
-}
-
-.role-button{
-
-display:inline-block;
-
-margin-top:10px;
-
-}
-
-/*==========================================
-Section
-==========================================*/
-
-.section{
-
-margin-bottom:60px;
+    margin-bottom:70px;
 
 }
 
 .section h2{
 
-font-size:40px;
+    font-size:40px;
 
-color:#ffc107;
+    color:var(--gold);
 
-margin-bottom:35px;
-
-}
-
-/*==========================================
-Steps
-==========================================*/
-
-.steps{
-
-display:grid;
-
-grid-template-columns:repeat(6,1fr);
-
-gap:20px;
+    margin-bottom:35px;
 
 }
 
-.step{
+/* ---------- Hero ---------- */
 
-background:#0d2038;
+.hero{
 
-border:1px solid #244a78;
+    min-height:700px;
 
-border-radius:16px;
+    border-radius:24px;
 
-padding:25px;
+    overflow:hidden;
 
-text-align:center;
-
-transition:.35s;
+    position:relative;
 
 }
 
-.step:hover{
+/* ---------- Typography ---------- */
 
-transform:translateY(-8px);
+h1{
 
-}
+    font-size:68px;
 
-.step span{
+    line-height:1.05;
 
-display:inline-flex;
-
-justify-content:center;
-
-align-items:center;
-
-width:55px;
-
-height:55px;
-
-border-radius:50%;
-
-background:#0d6efd;
-
-font-size:22px;
-
-font-weight:bold;
-
-margin-bottom:18px;
+    font-weight:800;
 
 }
 
-/*==========================================
-Connection Cards
-==========================================*/
+h2{
 
-.connection-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:30px;
+    font-size:32px;
 
 }
 
-.connection-card{
+h3{
 
-background:#0d2038;
-
-border:1px solid #244a78;
-
-border-radius:18px;
-
-padding:35px;
-
-text-align:center;
-
-font-size:20px;
-
-line-height:2;
-
-transition:.35s;
+    font-size:28px;
 
 }
 
-.connection-card:hover{
+p{
 
-transform:translateY(-8px);
+    color:var(--text2);
 
 }
 
-/*==========================================
-CTA
-==========================================*/
+/* ---------- Buttons ---------- */
 
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-provider,
+.btn-investor,
+.card-button{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    border-radius:12px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.btn-provider{
+
+    background:var(--blue);
+
+    color:white;
+
+    padding:18px 34px;
+
+}
+
+.btn-provider:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-investor{
+
+    background:var(--green);
+
+    color:white;
+
+    padding:18px 34px;
+
+}
+
+.btn-investor:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card-button{
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:15px 28px;
+
+}
+
+/* ---------- Cards ---------- */
+
+.role-card,
+.connection,
+.feature,
+.faq-item,
 .cta{
 
-background:#0d2038;
+    background:var(--card);
 
-border:1px solid #244a78;
+    border:1px solid var(--border);
 
-border-radius:20px;
-
-padding:60px;
-
-text-align:center;
-
-margin-bottom:60px;
+    border-radius:20px;
 
 }
 
-.cta h2{
+/* ---------- Lists ---------- */
 
-font-size:48px;
+ul{
 
-margin-bottom:20px;
-
-color:#ffc107;
+    list-style:none;
 
 }
 
-.cta p{
+li{
 
-font-size:20px;
-
-color:#d6e3ff;
-
-margin-bottom:35px;
+    padding:10px 0;
 
 }
 
-/*==========================================
-Responsive
-==========================================*/
+/* ---------- Responsive ---------- */
 
 @media(max-width:1100px){
 
-.roles{
+    .main{
 
-grid-template-columns:1fr;
+        margin-left:0;
 
-}
+    }
 
-.steps{
+    .sidebar{
 
-grid-template-columns:repeat(3,1fr);
+        position:relative;
 
-}
+        width:100%;
 
-.connection-grid{
+        height:auto;
 
-grid-template-columns:1fr;
-
-}
+    }
 
 }
 
 @media(max-width:768px){
 
-.sidebar{
+    .main{
 
-position:relative;
+        padding:20px;
 
-width:100%;
+    }
 
-height:auto;
+    h1{
 
-}
+        font-size:44px;
 
-.main{
+    }
 
-margin-left:0;
+    h2{
 
-padding:20px;
+        font-size:28px;
 
-}
-.hero{
+    }
 
-height:650px;
+    .hero-buttons{
 
-background-position:70% center;
+        flex-direction:column;
 
-}
+    }
 
+    .btn-provider,
+    .btn-investor{
 
+        width:100%;
 
-.hero-content{
-
-padding:40px;
-
-text-align:center;
-
-}
-.hero h1{
-
-font-size:64px;
-
-font-weight:900;
-
-line-height:1;
-
-letter-spacing:-2px;
-
-margin-bottom:10px;
-
-text-shadow:0 5px 20px rgba(0,0,0,.45);
-
-}
-
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-.steps{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.section h2{
-
-font-size:32px;
-
-text-align:center;
-
-}
-
-.cta{
-
-padding:35px;
-
-}
-
-.cta h2{
-
-font-size:36px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.steps{
-
-grid-template-columns:1fr;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.provider-btn,
-
-.investor-btn{
-
-width:100%;
-
-text-align:center;
-
-}
+    }
 
 }
