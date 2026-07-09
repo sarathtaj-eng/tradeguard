@@ -1,242 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
 
-/*==================================
-Hero
-==================================*/
+<head>
 
-.hero{
+<meta charset="UTF-8">
 
-background:url("copyhero.png") center center/cover no-repeat;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-min-height:720px;
+<title>TradeGuard Copy Network</title>
 
-border-radius:18px;
+<link rel="stylesheet" href="copier.css">
 
-position:relative;
+</head>
 
-overflow:hidden;
-
-display:flex;
-
-align-items:center;
-
-}
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-top:0;
-
-width:100%;
-
-height:100%;
-
-background:linear-gradient(
-90deg,
-rgba(4,10,20,.90),
-rgba(4,10,20,.65),
-rgba(4,10,20,.30)
-);
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:10;
-
-max-width:620px;
-
-padding:80px;
-
-}
-
-.hero-badge{
-
-display:inline-block;
-
-padding:10px 20px;
-
-background:#17365d;
-
-border:1px solid #2b5d9a;
-
-border-radius:30px;
-
-color:#ffc107;
-
-font-weight:bold;
-
-margin-bottom:25px;
-
-}
-
-.hero h1{
-
-font-size:64px;
-
-font-weight:800;
-
-line-height:1.05;
-
-color:#ffffff;
-
-margin:0 0 25px;
-
-}
-
-.hero-subtitle{
-
-font-size:19px;
-
-line-height:1.8;
-
-color:#d9e5ff;
-
-margin-bottom:40px;
-
-}
-
-.hero-buttons{
-
-display:flex;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.hero-buttons a{
-
-padding:18px 30px;
-
-border-radius:10px;
-
-font-size:17px;
-
-font-weight:bold;
-
-text-decoration:none;
-
-transition:.35s;
-
-}
-
-.provider-btn{
-
-background:#0d6efd;
-
-color:white;
-
-}
-
-.provider-btn:hover{
-
-background:#0b5ed7;
-
-transform:translateY(-4px);
-
-}
-
-.investor-btn{
-
-background:#16a34a;
-
-color:white;
-
-}
-
-.investor-btn:hover{
-
-background:#15803d;
-
-transform:translateY(-4px);
-
-}
-@media(max-width:900px){
-
-.hero{
-
-min-height:600px;
-
-}
-
-.hero-content{
-
-padding:40px;
-
-text-align:center;
-
-max-width:100%;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-}
 <body>
+
+<!-- =========================
+Sidebar
+========================== -->
 
 <div class="sidebar">
 
-...
+<div class="logo">
+
+🛡 TradeGuard
 
 </div>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="monitor.html">📋 Trade Monitor</a>
+
+<a href="copier.html" class="active-menu">
+
+🔄 Copy Network
+
+</a>
+
+<a href="trailing.html">📈 Trailing Stop</a>
+
+<a href="downloads.html">📥 Downloads</a>
+
+<a href="subscription.html">💳 Subscription</a>
+
+<a href="settings.html">⚙ Settings</a>
+
+<a href="index.html">🚪 Logout</a>
+
+</div>
+
+
+<!-- =========================
+Main Area
+========================== -->
 
 <div class="main">
 
 
+<!-- =========================
+Hero Section
+========================== -->
+
 <section class="hero">
+
+<div class="hero-overlay">
 
 <div class="hero-content">
 
-<span class="hero-badge">
+<div class="hero-badge">
+
 🔄 TradeGuard Copy Network
-</span>
+
+</div>
 
 <h1>
-Connect.<br>
-Approve.<br>
+
+Connect.
+
+<br>
+
+Approve.
+
+<br>
+
 Copy. Grow.
+
 </h1>
 
-<p class="hero-subtitle">
+<p>
 
 TradeGuard Copy Network securely connects
-<strong>Providers (Master EA)</strong> and
-<strong>Investors (Client EA)</strong>
-through a secure approval-based copy trading network.
 
-Every connection is verified.
-Every trade is synchronized.
-Both parties remain in complete control.
+<strong>Providers (Master EA)</strong>
+
+and
+
+<strong>Investors (Client EA)</strong>
+
+through a secure approval-based copy trading network.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="master-ea.html" class="provider-btn">
+<a href="master-ea.html"
+
+class="provider-btn">
 
 👑 Become Provider
 
 </a>
 
-<a href="client-ea.html" class="investor-btn">
+<a href="client-ea.html"
+
+class="investor-btn">
 
 📥 Become Investor
 
@@ -246,40 +123,333 @@ Both parties remain in complete control.
 
 </div>
 
+</div>
+
 </section>
 
+
+<!-- =========================
+Provider & Investor
+========================== -->
+
+<section class="roles">
+
+
+<div class="role-card">
+
+<div class="role-icon">
+
+👑
+
 </div>
-<section class="hero">
 
-<div class="hero-overlay">
+<h2>
 
-<div class="hero-content">
+Provider
 
-<h1>TradeGuard Copy Network</h1>
+</h2>
 
 <p>
 
-Connect. Approve. Copy. Grow.
+Share your MT5 trades using your
+
+Master EA.
+
+Build your investor network.
 
 </p>
 
+<ul>
+
+<li>✔ Connect Master EA</li>
+
+<li>✔ Invite Investors</li>
+
+<li>✔ Approve Requests</li>
+
+<li>✔ Manage Followers</li>
+
+<li>✔ Performance Analytics</li>
+
+</ul>
+
+<a href="master-ea.html"
+
+class="role-button provider-btn">
+
+Open Provider Dashboard
+
+</a>
+
+</div>
+
+
+
+<div class="role-card">
+
+<div class="role-icon">
+
+📥
+
+</div>
+
+<h2>
+
+Investor
+
+</h2>
+
 <p>
 
-TradeGuard Copy Network securely connects
-Providers (Master EA) and Investors (Client EA)
-through a secure approval-based copy trading network.
+Copy trades from professional
+
+Providers using your Client EA.
+
+</p>
+
+<ul>
+
+<li>✔ Connect Client EA</li>
+
+<li>✔ Browse Providers</li>
+
+<li>✔ Send Follow Requests</li>
+
+<li>✔ Risk Settings</li>
+
+<li>✔ Disconnect Anytime</li>
+
+</ul>
+
+<a href="client-ea.html"
+
+class="role-button investor-btn">
+
+Open Investor Dashboard
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+How It Works
+========================== -->
+
+<section class="section">
+
+<h2>
+
+🚀 How TradeGuard Works
+
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+<span>1</span>
+
+<h3>
+
+Download EA
+
+</h3>
+
+</div>
+
+<div class="step">
+
+<span>2</span>
+
+<h3>
+
+Activate EA
+
+</h3>
+
+</div>
+
+<div class="step">
+
+<span>3</span>
+
+<h3>
+
+Connect MT5
+
+</h3>
+
+</div>
+
+<div class="step">
+
+<span>4</span>
+
+<h3>
+
+Choose Role
+
+</h3>
+
+</div>
+
+<div class="step">
+
+<span>5</span>
+
+<h3>
+
+Approval
+
+</h3>
+
+</div>
+
+<div class="step">
+
+<span>6</span>
+
+<h3>
+
+Copy Trading
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+Two Ways To Connect
+========================== -->
+
+<section class="section">
+
+<h2>
+
+🔗 Two Ways To Connect
+
+</h2>
+
+<div class="connection-grid">
+
+
+<div class="connection-card">
+
+<h3>
+
+Method 1
+
+</h3>
+
+Provider
+
+<br>
+
+↓
+
+<br>
+
+Invite Investor
+
+<br>
+
+↓
+
+<br>
+
+Investor Approves
+
+<br>
+
+↓
+
+<br>
+
+Connected
+
+</div>
+
+
+
+<div class="connection-card">
+
+<h3>
+
+Method 2
+
+</h3>
+
+Investor
+
+<br>
+
+↓
+
+<br>
+
+Follow Provider
+
+<br>
+
+↓
+
+<br>
+
+Provider Approves
+
+<br>
+
+↓
+
+<br>
+
+Connected
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+Footer CTA
+========================== -->
+
+<section class="cta">
+
+<h2>
+
+Ready To Start?
+
+</h2>
+
+<p>
+
+Choose your trading role and start building your copy trading network.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="master-ea.html">
+<a href="master-ea.html"
+
+class="provider-btn">
 
 Become Provider
 
 </a>
 
-<a href="client-ea.html">
+<a href="client-ea.html"
+
+class="investor-btn">
 
 Become Investor
 
@@ -287,12 +457,11 @@ Become Investor
 
 </div>
 
-</div>
-
-</div>
-
 </section>
+
 
 </div>
 
 </body>
+
+</html>
