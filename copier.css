@@ -328,12 +328,16 @@ li{
         font-size:44px;
 
     }
+.hero h2{
 
-    h2{
+font-size:30px;
 
-        font-size:28px;
+font-weight:500;
 
-    }
+margin-bottom:35px;
+
+}
+  
 
     .hero-buttons{
 
@@ -542,8 +546,11 @@ flex-wrap:wrap;
 
 .btn-provider,
 .btn-investor{
+    
+min-width:260px;
 
-min-width:230px;
+height:58px;
+
 
 padding:18px 35px;
 
