@@ -126,12 +126,10 @@ background:
 linear-gradient(
 
 90deg,
+rgba(5,12,24,.72),
+rgba(5,12,24,.35),
+rgba(5,12,24,.10)
 
-rgba(5,12,24,.90),
-
-rgba(5,12,24,.65),
-
-rgba(5,12,24,.20)
 
 ),
 
@@ -160,10 +158,12 @@ align-items:center;
 }
 
 .hero-content{
+  
+max-width:560px;
 
-max-width:650px;
+margin-left:60px;
 
-padding:80px;
+padding:0;
 
 z-index:2;
 
