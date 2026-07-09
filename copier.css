@@ -292,7 +292,19 @@ transform:translateY(-6px);
 box-shadow:0 18px 35px rgba(22,163,74,.45);
 
 }
+.hero-title{
 
+font-size:28px;
+
+font-weight:400;
+
+color:#ffc107;
+
+margin-bottom:25px;
+
+letter-spacing:1px;
+
+}
 /*==========================================
 Buttons
 ==========================================*/
