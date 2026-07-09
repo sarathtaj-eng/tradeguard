@@ -148,7 +148,35 @@ display:flex;
 align-items:center;
 
 }
+.hero-content{
 
+position:relative;
+
+z-index:5;
+
+max-width:620px;
+
+margin-left:70px;
+
+padding:50px;
+
+background:rgba(7,17,31,.45);
+
+backdrop-filter:blur(16px);
+
+-webkit-backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:22px;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.45),
+0 0 30px rgba(13,110,253,.12);
+
+animation:heroCard .8s ease;
+
+}
 
 
 .hero-badge{
