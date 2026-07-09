@@ -242,7 +242,27 @@ gap:18px;
 flex-wrap:wrap;
 
 }
+.hero{
 
+animation:heroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+0%{
+
+background-size:100%;
+
+}
+
+100%{
+
+background-size:108%;
+
+}
+
+}
 .provider-btn,
 
 .investor-btn{
