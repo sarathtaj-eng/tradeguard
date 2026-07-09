@@ -423,9 +423,9 @@ align-items:center;
 
 .hero-content{
 
-max-width:620px;
+max-width:680px;
 
-padding:55px;
+padding:60px;
 
 background:rgba(8,18,35,.45);
 
@@ -473,15 +473,22 @@ margin-bottom:30px;
 
 /* Title */
 
+
+
+
+
+
+
+
+}
 .hero h1{
-
-font-size:72px;
-
-line-height:1;
+font-size:82px;
 
 font-weight:900;
 
-margin-bottom:12px;
+line-height:.95;
+
+margin-bottom:15px;
 
 letter-spacing:-2px;
 
