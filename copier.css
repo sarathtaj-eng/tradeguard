@@ -358,9 +358,8 @@ Premium Hero
 
     display:flex;
     align-items:center;
-
-    min-height:780px;
-
+     min-height:640px;
+    
     background:
     linear-gradient(
     90deg,
