@@ -15,11 +15,11 @@
 
 <body>
 
-<!-- =========================
+<!-- ===========================
 Sidebar
-========================== -->
+=========================== -->
 
-<div class="sidebar">
+<aside class="sidebar">
 
 <div class="logo">
 
@@ -27,39 +27,53 @@ Sidebar
 
 </div>
 
-<a href="dashboard.html">📊 Dashboard</a>
+<nav>
 
-<a href="monitor.html">📋 Trade Monitor</a>
-
-<a href="copier.html" class="active-menu">
-
-🔄 Copy Network
-
+<a href="dashboard.html">
+📊 Dashboard
 </a>
 
-<a href="trailing.html">📈 Trailing Stop</a>
+<a href="monitor.html">
+📈 Trade Monitor
+</a>
 
-<a href="downloads.html">📥 Downloads</a>
+<a href="copier.html" class="active">
+🔄 Copy Network
+</a>
 
-<a href="subscription.html">💳 Subscription</a>
+<a href="trailing.html">
+🎯 Trailing Stop
+</a>
 
-<a href="settings.html">⚙ Settings</a>
+<a href="downloads.html">
+📥 Downloads
+</a>
 
-<a href="index.html">🚪 Logout</a>
+<a href="subscription.html">
+💳 Subscription
+</a>
 
-</div>
+<a href="settings.html">
+⚙ Settings
+</a>
 
+<a href="logout.html">
+🚪 Logout
+</a>
 
-<!-- =========================
-Main Area
-========================== -->
+</nav>
 
-<div class="main">
+</aside>
 
+<!-- ===========================
+Main
+=========================== -->
 
-<!-- =========================
-Hero Section
-========================== -->
+<main class="main">
+
+<!-- ======================================
+Hero
+====================================== -->
 
 <section class="hero">
 
@@ -69,51 +83,51 @@ Hero Section
 
 <div class="hero-badge">
 
-🔄 TradeGuard Copy Network
+TradeGuard Copy Network
 
 </div>
 
 <h1>
 
-Connect.
+TradeGuard
 
 <br>
 
-Approve.
-
-<br>
-
-Copy. Grow.
+Copy Network
 
 </h1>
+
+<h2>
+
+Connect • Approve • Copy • Grow
+
+</h2>
 
 <p>
 
 TradeGuard Copy Network securely connects
-
 <strong>Providers (Master EA)</strong>
-
 and
-
 <strong>Investors (Client EA)</strong>
+through a secure approval-based copy trading system.
 
-through a secure approval-based copy trading network.
+Every connection is verified.
+Every trade is synchronized.
+Both parties remain in complete control.
 
 </p>
 
 <div class="hero-buttons">
 
 <a href="master-ea.html"
-
-class="provider-btn">
+class="btn-provider">
 
 👑 Become Provider
 
 </a>
 
 <a href="client-ea.html"
-
-class="investor-btn">
+class="btn-investor">
 
 📥 Become Investor
 
@@ -127,15 +141,13 @@ class="investor-btn">
 
 </section>
 
-
-<!-- =========================
-Provider & Investor
-========================== -->
+<!-- ======================================
+Provider Investor
+====================================== -->
 
 <section class="roles">
 
-
-<div class="role-card">
+<div class="role-card provider">
 
 <div class="role-icon">
 
@@ -143,39 +155,35 @@ Provider & Investor
 
 </div>
 
-<h2>
+<h3>
 
 Provider
 
-</h2>
+</h3>
 
 <p>
 
-Share your MT5 trades using your
-
-Master EA.
-
-Build your investor network.
+Share your MT5 strategy using
+your Master EA.
 
 </p>
 
 <ul>
 
-<li>✔ Connect Master EA</li>
+<li>Connect Master EA</li>
 
-<li>✔ Invite Investors</li>
+<li>Approve Followers</li>
 
-<li>✔ Approve Requests</li>
+<li>Invite Investors</li>
 
-<li>✔ Manage Followers</li>
+<li>Manage Connections</li>
 
-<li>✔ Performance Analytics</li>
+<li>Performance Analytics</li>
 
 </ul>
 
 <a href="master-ea.html"
-
-class="role-button provider-btn">
+class="card-button">
 
 Open Provider Dashboard
 
@@ -183,9 +191,7 @@ Open Provider Dashboard
 
 </div>
 
-
-
-<div class="role-card">
+<div class="role-card investor">
 
 <div class="role-icon">
 
@@ -193,37 +199,35 @@ Open Provider Dashboard
 
 </div>
 
-<h2>
+<h3>
 
 Investor
 
-</h2>
+</h3>
 
 <p>
 
-Copy trades from professional
-
-Providers using your Client EA.
+Copy trades securely using
+your Client EA.
 
 </p>
 
 <ul>
 
-<li>✔ Connect Client EA</li>
+<li>Connect Client EA</li>
 
-<li>✔ Browse Providers</li>
+<li>Browse Providers</li>
 
-<li>✔ Send Follow Requests</li>
+<li>Send Follow Request</li>
 
-<li>✔ Risk Settings</li>
+<li>Risk Management</li>
 
-<li>✔ Disconnect Anytime</li>
+<li>Disconnect Anytime</li>
 
 </ul>
 
 <a href="client-ea.html"
-
-class="role-button investor-btn">
+class="card-button">
 
 Open Investor Dashboard
 
@@ -233,10 +237,9 @@ Open Investor Dashboard
 
 </section>
 
-
-<!-- =========================
+<!-- ======================================
 How It Works
-========================== -->
+====================================== -->
 
 <section class="section">
 
@@ -246,17 +249,17 @@ How It Works
 
 </h2>
 
-<div class="steps">
+<div class="timeline">
 
 <div class="step">
 
 <span>1</span>
 
-<h3>
+<h4>
 
 Download EA
 
-</h3>
+</h4>
 
 </div>
 
@@ -264,11 +267,11 @@ Download EA
 
 <span>2</span>
 
-<h3>
+<h4>
 
 Activate EA
 
-</h3>
+</h4>
 
 </div>
 
@@ -276,11 +279,11 @@ Activate EA
 
 <span>3</span>
 
-<h3>
+<h4>
 
 Connect MT5
 
-</h3>
+</h4>
 
 </div>
 
@@ -288,11 +291,11 @@ Connect MT5
 
 <span>4</span>
 
-<h3>
+<h4>
 
 Choose Role
 
-</h3>
+</h4>
 
 </div>
 
@@ -300,11 +303,11 @@ Choose Role
 
 <span>5</span>
 
-<h3>
+<h4>
 
-Approval
+Approve Connection
 
-</h3>
+</h4>
 
 </div>
 
@@ -312,11 +315,11 @@ Approval
 
 <span>6</span>
 
-<h3>
+<h4>
 
-Copy Trading
+Copy Starts
 
-</h3>
+</h4>
 
 </div>
 
@@ -324,10 +327,9 @@ Copy Trading
 
 </section>
 
-
-<!-- =========================
-Two Ways To Connect
-========================== -->
+<!-- ======================================
+Connection Methods
+====================================== -->
 
 <section class="section">
 
@@ -337,16 +339,17 @@ Two Ways To Connect
 
 </h2>
 
-<div class="connection-grid">
+<div class="connections">
 
-
-<div class="connection-card">
+<div class="connection">
 
 <h3>
 
 Method 1
 
 </h3>
+
+<p>
 
 Provider
 
@@ -364,7 +367,7 @@ Invite Investor
 
 <br>
 
-Investor Approves
+Investor Accepts
 
 <br>
 
@@ -374,17 +377,19 @@ Investor Approves
 
 Connected
 
+</p>
+
 </div>
 
-
-
-<div class="connection-card">
+<div class="connection">
 
 <h3>
 
 Method 2
 
 </h3>
+
+<p>
 
 Investor
 
@@ -412,16 +417,129 @@ Provider Approves
 
 Connected
 
+</p>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- ======================================
+Security
+====================================== -->
 
-<!-- =========================
+<section class="section">
+
+<h2>
+
+🛡 Why TradeGuard?
+
+</h2>
+
+<div class="features">
+
+<div class="feature">
+
+✔ Mutual Approval
+
+</div>
+
+<div class="feature">
+
+✔ Secure EA Communication
+
+</div>
+
+<div class="feature">
+
+✔ Real-Time Copy Trading
+
+</div>
+
+<div class="feature">
+
+✔ Disconnect Anytime
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+FAQ
+====================================== -->
+
+<section class="section">
+
+<h2>
+
+❓ Frequently Asked Questions
+
+</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<h3>
+
+Can I be both Provider and Investor?
+
+</h3>
+
+<p>
+
+Yes.
+Every TradeGuard account includes both
+Master EA and Client EA.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Can I stop copy trading anytime?
+
+</h3>
+
+<p>
+
+Yes.
+Disconnect your Client EA whenever you want.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Does every connection require approval?
+
+</h3>
+
+<p>
+
+Yes.
+Trade copying starts only after both parties approve.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
 Footer CTA
-========================== -->
+====================================== -->
 
 <section class="cta">
 
@@ -433,23 +551,21 @@ Ready To Start?
 
 <p>
 
-Choose your trading role and start building your copy trading network.
+Choose your role and start building your copy trading network.
 
 </p>
 
 <div class="hero-buttons">
 
 <a href="master-ea.html"
-
-class="provider-btn">
+class="btn-provider">
 
 Become Provider
 
 </a>
 
 <a href="client-ea.html"
-
-class="investor-btn">
+class="btn-investor">
 
 Become Investor
 
@@ -459,8 +575,9 @@ Become Investor
 
 </section>
 
+</main>
 
-</div>
+<script src="copier.js"></script>
 
 </body>
 
