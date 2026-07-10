@@ -357,21 +357,14 @@ margin-bottom:35px;
 PART 3A
 Premium Hero
 ==================================================*/
-
 .hero{
 
-    display:flex;
-    align-items:center;
-     min-height:640px;
-    background:
-        linear-gradient(
-90deg,
-rgba(5,10,20,.40),
-rgba(5,10,20,.15),
-rgba(5,10,20,.05)
-),
+display:flex;
+align-items:center;
 
-background:url("copyhero.png");
+min-height:640px;
+
+background-image:url("copyhero.png");
 
 background-size:cover;
 
@@ -379,18 +372,17 @@ background-position:center;
 
 background-repeat:no-repeat;
 
+border-radius:24px;
 
+overflow:hidden;
 
-    border-radius:24px;
+position:relative;
 
-    overflow:hidden;
-
-    position:relative;
-
-    box-shadow:
-    0 30px 70px rgba(0,0,0,.45);
+box-shadow:
+0 30px 70px rgba(0,0,0,.45);
 
 }
+
 
 /* Blue Glow */
 
