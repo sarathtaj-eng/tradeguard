@@ -959,3 +959,77 @@ padding:35px;
 }
 
 }
+/*==========================================
+Floating Hero Buttons
+==========================================*/
+
+.provider-action,
+.investor-action{
+
+position:absolute;
+
+bottom:45px;
+
+z-index:50;
+
+}
+
+.provider-action{
+
+left:70px;
+
+}
+
+.investor-action{
+
+right:70px;
+
+}
+
+/* Buttons */
+
+.provider-action .btn-provider,
+.investor-action .btn-investor{
+
+width:240px;
+
+height:62px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:16px;
+
+font-size:18px;
+
+font-weight:700;
+
+text-decoration:none;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.35);
+
+transition:.35s;
+
+}
+
+.provider-action .btn-provider:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 45px rgba(13,110,253,.45);
+
+}
+
+.investor-action .btn-investor:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 45px rgba(22,163,74,.45);
+
+}
