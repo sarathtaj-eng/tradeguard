@@ -156,11 +156,7 @@ section{
     position:relative;
 
 }
-.hero p{
 
-max-width:430px;
-
-}
 /* ---------- Typography ---------- */
 
 h1{
@@ -526,6 +522,7 @@ letter-spacing:1px;
 
 .hero p{
 
+max-width:430px;
 font-size:18px;
 
 line-height:1.9;
