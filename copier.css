@@ -542,106 +542,7 @@ transform:translateY(0);
 
 
 
-/* Desktop */
 
-@media(max-width:1200px){
-
-.hero{
-
-min-height:700px;
-
-}
-
-.hero-content{
-
-max-width:560px;
-
-}
-
-}
-
-/* Tablet */
-
-@media(max-width:900px){
-
-.hero{
-
-min-height:650px;
-
-background-position:65% center;
-
-}
-
-.hero-overlay{
-
-padding:40px;
-
-}
-
-.hero-content{
-
-max-width:100%;
-
-padding:40px;
-
-}
-
-.hero h1{
-
-font-size:52px;
-
-}
-
-.hero h2{
-
-font-size:24px;
-
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-.hero{
-
-background-position:72% center;
-
-}
-
-.hero-content{
-
-padding:30px;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero h2{
-
-font-size:20px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.btn-provider,
-.btn-investor{
-
-width:100%;
-
-}
-
-}
 /*==================================================
 PART 4A
 Provider & Investor Cards
@@ -1431,6 +1332,106 @@ padding:25px;
 .flow-step{
 
 max-width:100%;
+
+}
+
+}
+/* Desktop */
+
+@media(max-width:1200px){
+
+.hero{
+
+min-height:700px;
+
+}
+
+.hero-content{
+
+max-width:560px;
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+.hero{
+
+min-height:650px;
+
+background-position:65% center;
+
+}
+
+.hero-overlay{
+
+padding:40px;
+
+}
+
+.hero-content{
+
+max-width:100%;
+
+padding:40px;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero h2{
+
+font-size:24px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.hero{
+
+background-position:72% center;
+
+}
+
+.hero-content{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero h2{
+
+font-size:20px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn-provider,
+.btn-investor{
+
+width:100%;
 
 }
 
