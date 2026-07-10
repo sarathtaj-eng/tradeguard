@@ -1086,80 +1086,72 @@ box-shadow:
 
 }
 /*==================================================
-HOW TRADEGUARD WORKS
+Premium Workflow
 ==================================================*/
-
-.how-section{
-
-margin:70px 0;
-
-padding:45px;
-
-background:#0d2038;
-
-border-radius:20px;
-
-border:1px solid #1d4f86;
-
-}
-
-.how-section h2{
-
-text-align:center;
-
-font-size:38px;
-
-color:#ffc107;
-
-margin-bottom:50px;
-
-}
 
 .workflow{
 
-display:flex;
+display:grid;
 
-align-items:flex-start;
+grid-template-columns:
+1fr 60px
+1fr 60px
+1fr 60px
+1fr 60px
+1fr 60px
+1fr;
 
-justify-content:center;
+align-items:start;
 
-gap:0;
+margin-top:40px;
 
 }
 
 .workflow-step{
 
-width:160px;
-
 text-align:center;
 
-position:relative;
+padding:0 10px;
+
+}
+
+.workflow-line{
+
+height:2px;
+
+margin-top:38px;
+
+background:linear-gradient(
+90deg,
+#0d6efd,
+#16c784
+);
+
+opacity:.85;
 
 }
 
 .step-icon{
 
-width:74px;
+width:72px;
 
-height:74px;
+height:72px;
 
 margin:auto;
 
 border-radius:50%;
 
-background:#102947;
+background:#132844;
 
-border:2px solid #1d74ff;
+border:2px solid #0d6efd;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
 
-font-size:30px;
+align-items:center;
 
-box-shadow:0 0 18px rgba(0,140,255,.30);
+font-size:30px;
 
 transition:.35s;
 
@@ -1167,9 +1159,9 @@ transition:.35s;
 
 .workflow-step:hover .step-icon{
 
-transform:translateY(-8px) scale(1.08);
+transform:translateY(-8px);
 
-box-shadow:0 0 35px rgba(0,140,255,.65);
+box-shadow:0 0 25px rgba(13,110,253,.45);
 
 }
 
@@ -1185,27 +1177,23 @@ border-radius:50%;
 
 background:#0d6efd;
 
-color:white;
-
-font-size:14px;
-
-font-weight:bold;
-
 display:flex;
 
 align-items:center;
 
 justify-content:center;
 
+font-weight:bold;
+
+font-size:13px;
+
 }
 
 .workflow-step h3{
 
-margin:8px 0;
-
 font-size:18px;
 
-color:white;
+margin:8px 0;
 
 }
 
@@ -1213,24 +1201,8 @@ color:white;
 
 font-size:13px;
 
+color:#c7d7ea;
+
 line-height:1.5;
-
-color:#bfcfe4;
-
-padding:0 8px;
-
-}
-
-.workflow-line{
-
-flex:1;
-
-height:2px;
-
-margin-top:36px;
-
-background:linear-gradient(90deg,#1d74ff,#20c05c);
-
-opacity:.8;
 
 }
