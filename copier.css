@@ -156,7 +156,11 @@ section{
     position:relative;
 
 }
+.hero p{
 
+max-width:430px;
+
+}
 /* ---------- Typography ---------- */
 
 h1{
