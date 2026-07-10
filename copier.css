@@ -1262,3 +1262,153 @@ margin:auto;
 }
 
 }
+/*==================================================
+PART 4
+Connection Methods
+==================================================*/
+
+.connection-section{
+
+margin:80px 0;
+
+padding:50px 40px;
+
+background:#10253d;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 20px 50px rgba(0,0,0,.30);
+
+}
+
+.connection-section h2{
+
+text-align:center;
+
+font-size:40px;
+
+color:#ffc107;
+
+margin-bottom:50px;
+
+}
+
+.connection-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:35px;
+
+}
+
+.connection-card{
+
+background:linear-gradient(
+180deg,
+#132844,
+#0b1b2e
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:35px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+transition:.35s;
+
+}
+
+.connection-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 50px rgba(0,0,0,.40);
+
+}
+
+.method-title{
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#ffc107;
+
+margin-bottom:30px;
+
+letter-spacing:1px;
+
+}
+
+.flow{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.flow-step{
+
+width:100%;
+
+max-width:260px;
+
+padding:16px;
+
+margin:8px 0;
+
+background:#17365d;
+
+border-radius:14px;
+
+text-align:center;
+
+font-size:17px;
+
+font-weight:600;
+
+color:white;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.30s;
+
+}
+
+.flow-step:hover{
+
+background:#1d4f86;
+
+transform:scale(1.03);
+
+}
+
+.arrow{
+
+font-size:30px;
+
+color:#16c784;
+
+margin:5px 0;
+
+}
+
+.success{
+
+background:#16a34a;
+
+border:none;
+
+}
