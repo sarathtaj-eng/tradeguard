@@ -279,40 +279,6 @@ TABLET
 ==========================================*/
 
 
-
-.sidebar.show{
-transform:translateX(0);
-}
-
-.hero{
-height:520px;
-background-position:center;
-}
-
-.hero-content{
-width:420px;
-left:35px;
-top:40px;
-}
-
-.roles{
-grid-template-columns:1fr;
-}
-
-.timeline{
-grid-template-columns:repeat(3,1fr);
-}
-
-.connections{
-grid-template-columns:1fr;
-}
-
-.features{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
 /*==================================================
 PART 3A
 Premium Hero
