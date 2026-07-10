@@ -1412,3 +1412,26 @@ background:#16a34a;
 border:none;
 
 }
+@media(max-width:900px){
+
+.connection-grid{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+.connection-card{
+
+padding:25px;
+
+}
+
+.flow-step{
+
+max-width:100%;
+
+}
+
+}
