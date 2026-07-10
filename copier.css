@@ -278,23 +278,7 @@ li{
 TABLET
 ==========================================*/
 
-@media (max-width:1100px){
 
-.main{
-margin-left:0;
-padding:20px;
-}
-
-.sidebar{
-transform:translateX(-100%);
-position:fixed;
-left:0;
-top:0;
-width:260px;
-height:100%;
-transition:.35s;
-z-index:9999;
-}
 
 .sidebar.show{
 transform:translateX(0);
