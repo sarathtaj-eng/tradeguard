@@ -984,13 +984,14 @@ width:100%;
 margin-top:20px;
 
 }
-
 .provider-action .btn-provider,
 .investor-action .btn-investor{
 
-width:100%;
+width:220px;
+max-width:100%;
 
 }
+
 
 .features{
 
