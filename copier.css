@@ -550,8 +550,9 @@ flex-wrap:wrap;
 
 .btn-provider,
 .btn-investor{
-    
-min-width:260px;
+
+width:220px;   
+
 
 height:58px;
 
