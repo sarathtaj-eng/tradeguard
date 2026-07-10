@@ -1436,6 +1436,15 @@ width:100%;
 }
 
 }
+@media(max-width:900px){
+
+.faq-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
 /*==================================================
 PART 6
 FAQ
