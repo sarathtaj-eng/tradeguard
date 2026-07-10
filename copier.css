@@ -189,15 +189,7 @@ p{
 
 /* ---------- Buttons ---------- */
 
-.hero-buttons{
 
-    display:flex;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
 
 .btn-provider,
 .btn-investor,
