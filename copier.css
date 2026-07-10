@@ -987,7 +987,7 @@ margin-top:20px;
 .provider-action .btn-provider,
 .investor-action .btn-investor{
 
-width:220px;
+width:240px;
 max-width:100%;
 
 }
@@ -1043,6 +1043,7 @@ bottom:28px;
 .investor-action .btn-investor{
 
 width:240px;
+max-width:100%;
 
 height:62px;
 
