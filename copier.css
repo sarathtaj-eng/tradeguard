@@ -1086,6 +1086,37 @@ box-shadow:
 
 }
 /*==================================================
+How Section
+==================================================*/
+
+.how-section{
+
+margin:80px 0;
+
+padding:50px 40px;
+
+background:#10253d;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 20px 50px rgba(0,0,0,.30);
+
+}
+
+.how-section h2{
+
+text-align:center;
+
+font-size:40px;
+
+color:#ffc107;
+
+margin-bottom:50px;
+
+}
+/*==================================================
 Premium Workflow
 ==================================================*/
 
@@ -1204,5 +1235,30 @@ font-size:13px;
 color:#c7d7ea;
 
 line-height:1.5;
+
+}
+@media(max-width:900px){
+
+.workflow{
+
+grid-template-columns:1fr;
+
+row-gap:35px;
+
+}
+
+.workflow-line{
+
+display:none;
+
+}
+
+.workflow-step{
+
+max-width:280px;
+
+margin:auto;
+
+}
 
 }
