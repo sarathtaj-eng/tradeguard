@@ -364,19 +364,13 @@ Premium Hero
     align-items:center;
      min-height:640px;
     background:
-linear-gradient(
-
+        linear-gradient(
 90deg,
-
-rgba(6,12,25,.35) 0%,
-
-rgba(6,12,25,.15) 35%,
-
-rgba(6,12,25,.05) 60%,
-
-rgba(6,12,25,0) 100%
-
+rgba(5,10,20,.40),
+rgba(5,10,20,.15),
+rgba(5,10,20,.05)
 ),
+
 
 url("copyhero.png");
 
@@ -633,27 +627,9 @@ transform:translateY(0);
 
 /* Background Animation */
 
-.hero{
 
-animation:heroZoom 18s ease-in-out infinite alternate;
 
-}
 
-@keyframes heroZoom{
-
-0%{
-
-background-size:100%;
-
-}
-
-100%{
-
-background-size:108%;
-
-}
-
-}
 
 /* Desktop */
 
