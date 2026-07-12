@@ -450,69 +450,8 @@ h2{
 
 </div>
 
-<div class="card">
-
-<h2>EA Information</h2>
-    <table class="info-table">
-
-<tr>
-    <th width="250">Activation Code</th>
-    <td id="activationCode">Not Generated</td>
-</tr>
-
-<tr>
-    <th>EA ID</th>
-    <td id="eaID">Waiting for Activation</td>
-</tr>
-
-<tr>
-    <th>License Number</th>
-    <td id="licenseNumber">Waiting for Activation</td>
-</tr>
-
-<tr>
-    <th>Role</th>
-    <td id="eaRole">Not Assigned</td>
-</tr>
-
-<tr>
-    <th>Status</th>
-    <td id="activationStatus">Waiting</td>
-</tr>
-
-</table>
 
 
-<br>
-
-<button
-class="table-btn"
-onclick="generateCode()">
-
-🔑 Generate Activation Code
-
-</button>
-<a
-id="downloadLink"
-href="TradeGuardEA.ex5.txt"
-download
-class="download-btn"
-style="
-    pointer-events:none;
-    opacity:0.5;
-    text-decoration:none;
-    display:inline-block;
-">
-
-📥 Download TradeGuard EA
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h2>Installation</h2>
 
 <ol>
 
@@ -552,26 +491,6 @@ function closeMenu(){
     document.body.classList.remove("menu-open");
 
 }
-
-    async function generateCode(){
-
-    document.getElementById("activationCode").innerHTML = "Generating...";
-    document.getElementById("activationStatus").innerHTML = "Please wait...";
-
-    try{
-
-        const token = localStorage.getItem("token");
-
-        const response = await fetch(
-            "https://tradeguard-api.onrender.com/api/generate-activation",
-            {
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json",
-                    "Authorization":"Bearer " + token
-                }
-            }
-        );
 
         const data = await response.json();
 
