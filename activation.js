@@ -370,29 +370,7 @@ router.get("/test", (req, res) => {
 
 
 
-// =====================================
-//I DON'T KNOW
-// =====================================
-router.post("/generate-master", auth, async(req,res)=>{
 
-    try{
-
-        const result = await createLicense(req.user.id,"MASTER");
-
-        res.json(result);
-
-    }catch(err){
-
-        console.error(err);
-
-        res.status(500).json({
-            success:false,
-            message:"Server Error"
-        });
-
-    }
-
-});
 // =====================================
 // Master API
 // =====================================
