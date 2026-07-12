@@ -450,92 +450,165 @@ h2{
 
 </div>
 
+<div class="card">
 
+<h2>👑 Master EA</h2>
 
+<table class="info-table">
+
+<tr>
+<th width="250">Activation Code</th>
+<td id="masterActivationCode">Not Generated</td>
+</tr>
+
+<tr>
+<th>EA ID</th>
+<td id="masterEAID">Waiting for Activation</td>
+</tr>
+
+<tr>
+<th>License Number</th>
+<td id="masterLicense">Waiting for Activation</td>
+</tr>
+
+<tr>
+<th>Role</th>
+<td>MASTER</td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td id="masterStatus">Waiting</td>
+</tr>
+
+</table>
+
+<br>
+
+<button
+class="table-btn"
+onclick="generateMaster()">
+
+👑 Generate Master EA
+
+</button>
+
+<a
+id="masterDownload"
+href="TradeGuardMasterEA.ex5"
+download
+class="download-btn"
+style="pointer-events:none;opacity:.5;">
+
+📥 Download Master EA
+
+</a>
+
+</div>
+    <div class="card">
+
+<h2>👥 Client EA</h2>
+
+<table class="info-table">
+
+<tr>
+<th width="250">Activation Code</th>
+<td id="clientActivationCode">Not Generated</td>
+</tr>
+
+<tr>
+<th>EA ID</th>
+<td id="clientEAID">Waiting for Activation</td>
+</tr>
+
+<tr>
+<th>License Number</th>
+<td id="clientLicense">Waiting for Activation</td>
+</tr>
+
+<tr>
+<th>Role</th>
+<td>CLIENT</td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td id="clientStatus">Waiting</td>
+</tr>
+
+</table>
+
+<br>
+
+<button
+class="table-btn"
+onclick="generateClient()">
+
+👥 Generate Client EA
+
+</button>
+
+<a
+id="clientDownload"
+href="TradeGuardClientEA.ex5"
+download
+class="download-btn"
+style="pointer-events:none;opacity:.5;">
+
+📥 Download Client EA
+
+</a>
+
+</div>
+    <div class="card">
+
+<h2>Installation</h2>
 
 <ol>
 
 <li>Generate your Activation Code.</li>
-
-<li>Download the TradeGuard EA.</li>
-
+<li>Download the EA.</li>
 <li>Copy the EA into the MT5 Experts folder.</li>
-
 <li>Restart MetaTrader 5.</li>
-
 <li>Attach the EA to any chart.</li>
-
-<li>Enter your Activation Code.</li>
-
+<li>Enter the Activation Code.</li>
 <li>Click Activate.</li>
 
 </ol>
-
-</div>
-
-</div>
 <script>
-    function toggleMenu(){
+
+function toggleMenu(){
 
     document.querySelector(".sidebar").classList.toggle("show");
     document.querySelector(".overlay").classList.toggle("show");
-
     document.body.classList.toggle("menu-open");
 
 }
+
 function closeMenu(){
 
     document.querySelector(".sidebar").classList.remove("show");
     document.querySelector(".overlay").classList.remove("show");
-
     document.body.classList.remove("menu-open");
 
 }
 
-        const data = await response.json();
+async function generateMaster(){
 
-        if(data.success){
+    alert("Master EA Code Generation");
 
-            document.getElementById("activationCode").innerHTML =
-                data.activation_code;
+}
 
-            // EA not activated yet
-            document.getElementById("eaID").innerHTML =
-                "Waiting for Activation";
+async function generateClient(){
 
-            document.getElementById("licenseNumber").innerHTML =
-                "Waiting for Activation";
-
-            document.getElementById("eaRole").innerHTML =
-                "Not Assigned";
-
-            document.getElementById("activationStatus").innerHTML =
-                "Activation Code Generated";
-
-            document.getElementById("downloadLink").style.pointerEvents="auto";
-            document.getElementById("downloadLink").style.opacity="1";
-
-        }else{
-
-            document.getElementById("activationStatus").innerHTML =
-                data.message || "Generation Failed";
-
-        }
-
-    }catch(err){
-
-        console.error(err);
-
-        document.getElementById("activationStatus").innerHTML =
-            "Server Connection Failed";
-
-    }
+    alert("Client EA Code Generation");
 
 }
 
 </script>
 
-
 </body>
-
 </html>
+</div>
+  
+
