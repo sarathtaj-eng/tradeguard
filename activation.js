@@ -199,33 +199,26 @@ await client.query(
 // =====================================
 // Generate Activation Code
 // =====================================
-
-function generateActivationCode() {
+function generateActivationCode(prefix = "TG") {
 
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-    let code = "TG-";
+    let code = prefix + "-";
 
-    for (let i = 0; i < 4; i++) {
-        code += chars.charAt(
-            Math.floor(Math.random() * chars.length)
-        );
+    for(let i=0;i<4;i++){
+        code += chars.charAt(Math.floor(Math.random()*chars.length));
     }
 
     code += "-";
 
-    for (let i = 0; i < 4; i++) {
-        code += chars.charAt(
-            Math.floor(Math.random() * chars.length)
-        );
+    for(let i=0;i<4;i++){
+        code += chars.charAt(Math.floor(Math.random()*chars.length));
     }
 
     code += "-";
 
-    for (let i = 0; i < 4; i++) {
-        code += chars.charAt(
-            Math.floor(Math.random() * chars.length)
-        );
+    for(let i=0;i<4;i++){
+        code += chars.charAt(Math.floor(Math.random()*chars.length));
     }
 
     return code;
