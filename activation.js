@@ -236,7 +236,105 @@ function generateLicenseNumber(id) {
 }
 
 
+async function createLicense(userID, role){
 
+    const existing = await pool.query(
+
+        `SELECT activation_code,license_number,ea_id
+         FROM ea_licenses
+         WHERE user_id=$1
+         AND role=$2
+         LIMIT 1`,
+
+        [userID, role]
+
+    );
+
+    if(existing.rows.length>0){
+
+        return {
+
+            success:true,
+            existing:true,
+            activation_code:existing.rows[0].activation_code,
+            license_number:existing.rows[0].license_number,
+            ea_id:existing.rows[0].ea_id
+
+        };
+
+    }
+
+    const client = await pool.connect();
+
+    try{
+
+        await client.query("BEGIN");
+
+        const prefix = role==="MASTER" ? "TG-MST" : "TG-CLT";
+
+        const activationCode = generateActivationCode(prefix);
+
+        const result = await client.query(
+
+            `INSERT INTO ea_licenses
+            (
+                user_id,
+                activation_code,
+                role
+            )
+            VALUES
+            (
+                $1,$2,$3
+            )
+            RETURNING id`,
+
+            [userID,activationCode,role]
+
+        );
+
+        const id=result.rows[0].id;
+
+        const licenseNumber=generateLicenseNumber(id);
+
+        await client.query(
+
+            `UPDATE ea_licenses
+             SET
+             license_number=$1,
+             ea_id=$2
+             WHERE id=$3`,
+
+            [
+                licenseNumber,
+                activationCode,
+                id
+            ]
+
+        );
+
+        await client.query("COMMIT");
+
+        return{
+
+            success:true,
+            activation_code:activationCode,
+            license_number:licenseNumber,
+            ea_id:activationCode
+
+        };
+
+    }catch(err){
+
+        await client.query("ROLLBACK");
+        throw err;
+
+    }finally{
+
+        client.release();
+
+    }
+
+}
 // =====================================
 // Generate EA ID
 // =====================================
@@ -271,6 +369,79 @@ router.get("/test", (req, res) => {
 });
 
 
+
+// =====================================
+//I DON'T KNOW
+// =====================================
+router.post("/generate-master", auth, async(req,res)=>{
+
+    try{
+
+        const result = await createLicense(req.user.id,"MASTER");
+
+        res.json(result);
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success:false,
+            message:"Server Error"
+        });
+
+    }
+
+});
+// =====================================
+// Master API
+// =====================================
+
+router.post("/generate-master", auth, async(req,res)=>{
+
+    try{
+
+        const result = await createLicense(req.user.id,"MASTER");
+
+        res.json(result);
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success:false,
+            message:"Server Error"
+        });
+
+    }
+
+});
+
+// =====================================
+// Client API
+// =====================================
+
+router.post("/generate-client", auth, async(req,res)=>{
+
+    try{
+
+        const result = await createLicense(req.user.id,"CLIENT");
+
+        res.json(result);
+
+    }catch(err){
+
+        console.error(err);
+
+        res.status(500).json({
+            success:false,
+            message:"Server Error"
+        });
+
+    }
+
+});
 
 // =====================================
 // Export Router
