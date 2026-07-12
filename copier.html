@@ -12,63 +12,44 @@
 <link rel="stylesheet" href="copier.css">
 
 </head>
-
 <body>
 
-<!-- ===========================
-Sidebar
-=========================== -->
+<!-- Mobile Menu Button -->
+<button class="menu-toggle" id="menuToggle">☰</button>
 
+<!-- Sidebar -->
 <aside class="sidebar">
 
-<div class="logo">
+    <div class="logo">
+        🛡 TradeGuard
+    </div>
 
-🛡 TradeGuard
+    <nav>
 
-</div>
+        <a href="dashboard.html">📊 Dashboard</a>
 
-<nav>
+        <a href="monitor.html">📈 Trade Monitor</a>
 
-<a href="dashboard.html">
-📊 Dashboard
-</a>
+        <a href="copier.html" class="active">🔄 Copy Network</a>
 
-<a href="monitor.html">
-📈 Trade Monitor
-</a>
+        <a href="trailing.html">🎯 Trailing Stop</a>
 
-<a href="copier.html" class="active">
-🔄 Copy Network
-</a>
+        <a href="downloads.html">📥 Downloads</a>
 
-<a href="trailing.html">
-🎯 Trailing Stop
-</a>
+        <a href="subscription.html">💳 Subscription</a>
 
-<a href="downloads.html">
-📥 Downloads
-</a>
+        <a href="settings.html">⚙ Settings</a>
 
-<a href="subscription.html">
-💳 Subscription
-</a>
+        <a href="logout.html">🚪 Logout</a>
 
-<a href="settings.html">
-⚙ Settings
-</a>
-
-<a href="logout.html">
-🚪 Logout
-</a>
-
-</nav>
+    </nav>
 
 </aside>
 
-<!-- ===========================
-Main
-=========================== -->
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
+<!-- Main Content -->
 <main class="main">
 
 <!-- ======================================
