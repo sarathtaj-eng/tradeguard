@@ -597,18 +597,102 @@ function closeMenu(){
     document.body.classList.remove("menu-open");
 
 }
-
 async function generateMaster(){
 
-    alert("Master EA Code Generation");
+    document.getElementById("masterStatus").innerHTML = "Generating...";
+
+    try{
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(
+            "https://tradeguard-api.onrender.com/api/generate-master",
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + token
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            document.getElementById("masterActivationCode").innerHTML =
+                data.activation_code;
+
+            document.getElementById("masterStatus").innerHTML =
+                "Activation Code Generated";
+
+            document.getElementById("masterDownload").style.pointerEvents = "auto";
+            document.getElementById("masterDownload").style.opacity = "1";
+
+        }else{
+
+            document.getElementById("masterStatus").innerHTML =
+                data.message;
+
+        }
+
+    }catch(err){
+
+        document.getElementById("masterStatus").innerHTML =
+            "Server Connection Failed";
+
+    }
 
 }
 
 async function generateClient(){
 
-    alert("Client EA Code Generation");
+    document.getElementById("clientStatus").innerHTML = "Generating...";
 
-}
+    try{
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(
+            "https://tradeguard-api.onrender.com/api/generate-client",
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + token
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            document.getElementById("clientActivationCode").innerHTML =
+                data.activation_code;
+
+            document.getElementById("clientStatus").innerHTML =
+                "Activation Code Generated";
+
+            document.getElementById("clientDownload").style.pointerEvents = "auto";
+            document.getElementById("clientDownload").style.opacity = "1";
+
+        }else{
+
+            document.getElementById("clientStatus").innerHTML =
+                data.message;
+
+        }
+
+    }catch(err){
+
+        document.getElementById("clientStatus").innerHTML =
+            "Server Connection Failed";
+
+    }
+
+
+
 
 </script>
 
