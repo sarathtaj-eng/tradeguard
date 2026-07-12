@@ -1445,6 +1445,39 @@ grid-template-columns:1fr;
 }
 
 }
+/* ==============================
+   Mobile Sidebar
+============================== */
+
+@media (max-width:768px){
+
+    .sidebar{
+        width:280px;
+        max-width:80vw;
+        left:-280px;
+        transition:0.3s ease;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .main{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .logo{
+        padding:20px;
+        font-size:22px;
+    }
+
+    .sidebar a{
+        padding:16px 20px;
+        font-size:18px;
+    }
+
+}
 /*==================================================
 PART 6
 FAQ
