@@ -1450,7 +1450,21 @@ grid-template-columns:1fr;
 ============================== */
 
 @media (max-width:768px){
-
+.menu-toggle{
+    display:block;
+    position:fixed;
+    top:15px;
+    left:15px;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:10px;
+    background:#17365d;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    z-index:1001;
+}
     .sidebar{
         width:280px;
         max-width:80vw;
@@ -1461,6 +1475,20 @@ grid-template-columns:1fr;
     .sidebar.active{
         left:0;
     }
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:998;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
 
     .main{
         margin-left:0;
