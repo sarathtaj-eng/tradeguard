@@ -3,16 +3,11 @@
 // =====================================
 
 const express = require("express");
-const { Pool } = require("pg");
+const pool = require("./db");
 const auth = require("./auth");
 
 const router = express.Router();
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
+
 // =====================================
 // Generate Activation Code
 // =====================================
