@@ -1146,12 +1146,11 @@ row-gap:35px;
 display:none;
 
 }
-
 .workflow-step{
 
-max-width:280px;
+flex:0 0 150px;
 
-margin:auto;
+text-align:center;
 
 }
 
