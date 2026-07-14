@@ -23,26 +23,34 @@ document.addEventListener("DOMContentLoaded", function () {
 // MT5 Guide Popup
 // ================================
 
-function openMT5Guide(){
+function openMT5Guide() {
 
-document.getElementById("mt5GuideModal").style.display="block";
+    const modal = document.getElementById("mt5GuideModal");
 
-}
-
-function closeMT5Guide(){
-
-document.getElementById("mt5GuideModal").style.display="none";
+    if (modal) {
+        modal.style.display = "block";
+    }
 
 }
 
-window.addEventListener("click",function(e){
+function closeMT5Guide() {
 
-const modal=document.getElementById("mt5GuideModal");
+    const modal = document.getElementById("mt5GuideModal");
 
-if(e.target===modal){
-
-modal.style.display="none";
+    if (modal) {
+        modal.style.display = "none";
+    }
 
 }
+
+window.addEventListener("click", function (e) {
+
+    const modal = document.getElementById("mt5GuideModal");
+
+    if (modal && e.target === modal) {
+
+        modal.style.display = "none";
+
+    }
 
 });
