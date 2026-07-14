@@ -1039,12 +1039,11 @@ overflow-x:auto;
 padding-bottom:10px;
 
 }
-
 .workflow-line{
 
-height:2px;
+flex:1;
 
-margin-top:38px;
+height:2px;
 
 background:linear-gradient(
 90deg,
@@ -1052,9 +1051,14 @@ background:linear-gradient(
 #16c784
 );
 
+min-width:50px;
+
+margin-top:-40px;
+
 opacity:.85;
 
 }
+
 
 .step-icon{
 
@@ -1146,15 +1150,17 @@ row-gap:35px;
 display:none;
 
 }
+
 .workflow-step{
 
-flex:0 0 150px;
+max-width:280px;
 
-text-align:center;
+margin:auto;
+
+}
 
 }
 
-}
 /*==================================================
 PART 4
 Connection Methods
