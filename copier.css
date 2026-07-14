@@ -1139,23 +1139,15 @@ line-height:1.5;
 
 .workflow{
 
-grid-template-columns:1fr;
+overflow-x:auto;
 
-row-gap:35px;
+flex-wrap:nowrap;
 
 }
 
 .workflow-line{
 
-display:none;
-
-}
-
-.workflow-step{
-
-max-width:280px;
-
-margin:auto;
+display:block;
 
 }
 
