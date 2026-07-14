@@ -254,10 +254,7 @@ How TradeGuard Works
 <p>Activate with your license key</p>
 
 </div>
-
-<div class="workflow-line"></div>
-
-<div class="workflow-step">
+<div class="workflow-step connect-mt5" onclick="openMT5Guide()">
 
 <div class="step-icon">🔌</div>
 
@@ -265,7 +262,10 @@ How TradeGuard Works
 
 <h3>Connect MT5</h3>
 
-<p>Connect your MT5 account</p>
+<p>Click here for setup guide</p>
+
+</div>
+
 
 </div>
 
@@ -564,7 +564,26 @@ Join TradeGuard today as a Provider or Investor and start copying trades securel
 
 
 </main>
+<!-- ======================================
+MT5 Guide Popup
+====================================== -->
 
+<div id="mt5GuideModal" class="guide-modal">
+
+    <div class="guide-content">
+
+        <span class="guide-close" onclick="closeMT5Guide()">&times;</span>
+
+        <h2>🚀 MT5 Connection Guide</h2>
+
+        <img
+            src="mt5-connection-guide.png"
+            alt="MT5 Connection Guide"
+        >
+
+    </div>
+
+</div>
 <script src="copier.js"></script>
 
 </body>
