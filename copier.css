@@ -1052,8 +1052,9 @@ background:linear-gradient(
 );
 
 min-width:50px;
+    
+align-self:center;
 
-margin-top:-40px;
 
 opacity:.85;
 
