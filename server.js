@@ -14,9 +14,8 @@ const eaUploadRoutes = require("./eaUpload");
 // =====================================
 // Admin Credentials
 // =====================================
-
-const ADMIN_USERNAME = "sarath";
-const ADMIN_PASSWORD = "sarath";
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 
 const app = express();
