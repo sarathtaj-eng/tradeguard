@@ -2,7 +2,7 @@
 const adminAuth = require("./adminAuth");
 const express = require("express");
 const cors = require("cors");
-const { Pool } = require("pg");
+const pool = require("./db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -26,13 +26,7 @@ app.use(express.json());
 
 app.use("/api", activationRoutes);
 app.use("/api", eaUploadRoutes);
-// PostgreSQL Connection
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
+
 
 // =====================================
 // Create Database Tables
