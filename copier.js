@@ -19,3 +19,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+// ================================
+// MT5 Guide Popup
+// ================================
+
+function openMT5Guide(){
+
+document.getElementById("mt5GuideModal").style.display="block";
+
+}
+
+function closeMT5Guide(){
+
+document.getElementById("mt5GuideModal").style.display="none";
+
+}
+
+window.addEventListener("click",function(e){
+
+const modal=document.getElementById("mt5GuideModal");
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
+});
