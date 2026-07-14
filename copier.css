@@ -1763,14 +1763,13 @@ color:#FFC107;
 margin-bottom:20px;
 
 }
-
 .guide-content img{
-
-width:100%;
-
-border-radius:10px;
-
+    width:100%;
+    max-height:80vh;
+    object-fit:contain;
+    border-radius:10px;
 }
+
 
 .guide-close{
 
