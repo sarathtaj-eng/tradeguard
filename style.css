@@ -284,6 +284,13 @@ button:hover{
     color:#ffffff;
     margin-bottom:15px;
 }
+/* ---------- Grid ---------- */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
 
 .modal-content button{
     width:100%;
