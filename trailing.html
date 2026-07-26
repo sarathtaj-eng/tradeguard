@@ -567,7 +567,37 @@ Step:5
 
 </div>
 <!-- END MAIN -->
+<script>
 
+function enableTrailing(btn){
+
+    // Change button
+    btn.className = "btn-blue";
+    btn.innerHTML = "⚙ Manage";
+
+    btn.onclick = function(){
+        openSettings(btn);
+    };
+
+    // Change status badge
+    let row = btn.closest("tr");
+
+    let badge = row.querySelector(".inactive-badge");
+
+    if(badge){
+        badge.className = "active-badge";
+        badge.innerHTML = "ACTIVE";
+    }
+
+}
+
+function openSettings(btn){
+
+    alert("Open Trailing Settings Popup");
+
+}
+
+</script>
 </body>
 
 </html>
