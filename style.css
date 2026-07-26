@@ -219,7 +219,7 @@ button{
     cursor:pointer;
     font-weight:bold;
     margin:2px;
-    transition:.2s;
+    transition:all .2s ease;
 }
 
 .btn-yellow{
