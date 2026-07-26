@@ -2,25 +2,27 @@
    TradeGuard Mobile Functions
    ========================================== */
 
+/* Toggle Sidebar */
+
 function toggleMenu(){
 
     const sidebar = document.querySelector(".sidebar");
     const overlay = document.querySelector(".sidebar-overlay");
 
-    sidebar.classList.toggle("show");
-    overlay.classList.toggle("show");
+    if(sidebar) sidebar.classList.toggle("show");
+    if(overlay) overlay.classList.toggle("show");
 
 }
 
-/* Close menu */
+/* Close Sidebar */
 
 function closeMenu(){
 
     const sidebar = document.querySelector(".sidebar");
     const overlay = document.querySelector(".sidebar-overlay");
 
-    sidebar.classList.remove("show");
-    overlay.classList.remove("show");
+    if(sidebar) sidebar.classList.remove("show");
+    if(overlay) overlay.classList.remove("show");
 
 }
 
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-/* Close menu when screen becomes desktop */
+/* Close menu when resizing to desktop */
 
 window.addEventListener("resize", function(){
 
