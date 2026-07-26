@@ -646,10 +646,10 @@ Step:5
 
 </div>
 <script>
+<script>
 
 function enableTrailing(btn){
 
-    // Change button
     btn.className = "btn-blue";
     btn.innerHTML = "⚙ Manage";
 
@@ -657,9 +657,7 @@ function enableTrailing(btn){
         openSettings(btn);
     };
 
-    // Change status badge
     let row = btn.closest("tr");
-
     let badge = row.querySelector(".inactive-badge");
 
     if(badge){
@@ -668,6 +666,7 @@ function enableTrailing(btn){
     }
 
 }
+
 function openSettings(btn){
 
     document.getElementById("settingsModal").style.display="block";
@@ -680,7 +679,17 @@ function closeSettings(){
 
 }
 
+// ADD THIS FUNCTION HERE
+function disableTrailing(){
+
+    document.getElementById("settingsModal").style.display="none";
+
+    alert("Trailing Disabled");
+
+}
+
 </script>
+
 </body>
 
 </html>
