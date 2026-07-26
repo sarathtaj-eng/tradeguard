@@ -175,13 +175,20 @@ button{
     background:#24508a;
     color:white;
 }
-
 .stats-row{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
-    margin:20px 0;
 }
+
+@media(max-width:768px){
+
+.stats-row{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
 
 .stat-box{
     background:#132b4a;
@@ -264,6 +271,25 @@ button{
 .modal-content button{
     width:100%;
     margin-top:10px;
+}
+    @media (max-width:768px){
+
+.sidebar{
+    position:fixed;
+    left:-170px;
+    transition:.3s;
+    z-index:1000;
+}
+
+.sidebar.show{
+    left:0;
+}
+
+.main{
+    margin-left:0;
+    padding:10px;
+}
+
 }
 @media(max-width:768px){
 
