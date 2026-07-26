@@ -1,120 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeGuard | Masters</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>TradeGuard Masters</title>
-
-<link rel="stylesheet" href="masters.css">
-
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="masters.css">
 </head>
 
 <body>
 
+<div class="dashboard-layout">
 
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Same sidebar used in dashboard.html -->
+    </aside>
 
-<!-- ========================= -->
-<!-- Hero -->
-<!-- ========================= -->
+    <!-- Main Content -->
+    <main class="main-content">
 
-<section class="hero">
+        <!-- Page Title -->
+        <section class="hero">
+            <h1>Verified Masters</h1>
+            <p>
+                Discover professional traders with verified performance and request to follow them.
+            </p>
+        </section>
 
-<h1>
+        <!-- Filters -->
+        <section class="filters">
 
-Verified Master Performance
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search Master ID">
 
-</h1>
+            <select id="sortBy">
+                <option value="growth">Highest Growth</option>
+                <option value="days">Longest Trading Days</option>
+                <option value="drawdown">Lowest Drawdown</option>
+                <option value="followers">Most Followers</option>
+            </select>
 
-<p>
+            <input
+                type="number"
+                id="minDays"
+                placeholder="Minimum Trading Days">
 
-Discover experienced traders with verified
-long-term trading performance.
+            <input
+                type="number"
+                id="maxDD"
+                placeholder="Maximum Drawdown %">
 
-</p>
+            <input
+                type="number"
+                id="minGrowth"
+                placeholder="Minimum Growth %">
 
-</section>
+            <button id="applyFilters">
+                Apply Filters
+            </button>
 
-<!-- ========================= -->
-<!-- Search & Filters -->
-<!-- ========================= -->
+        </section>
 
-<section class="filters">
+        <!-- Master Cards -->
+        <section
+            class="masterContainer"
+            id="masterContainer">
+        </section>
 
-<input
-type="text"
-id="searchBox"
-placeholder="Search Master ID">
+    </main>
 
-<select id="sortBy">
+</div>
 
-<option value="growth">
-
-Highest Growth
-
-</option>
-
-<option value="days">
-
-Longest Trading Days
-
-</option>
-
-<option value="drawdown">
-
-Lowest Drawdown
-
-</option>
-
-<option value="followers">
-
-Most Followers
-
-</option>
-
-</select>
-
-<input
-type="number"
-id="minDays"
-placeholder="Min Days">
-
-<input
-type="number"
-id="maxDD"
-placeholder="Max Drawdown %">
-
-<input
-type="number"
-id="minGrowth"
-placeholder="Min Growth %">
-
-<button id="applyFilters">
-
-Apply Filters
-
-</button>
-
-</section>
-
-<!-- ========================= -->
-<!-- Master Cards -->
-<!-- ========================= -->
-
-<section
-class="masterContainer"
-id="masterContainer">
-
-<!-- Dynamic Cards -->
-
-</section>
-
+<script src="sidebar.js"></script>
 <script src="masters.js"></script>
 
 </body>
-
 </html>
