@@ -466,9 +466,10 @@ ACTIVE
 
 
 <td>
-<button class="btn-blue">
-⚙ Settings
+    <button class="btn-blue" onclick="openSettings(this)">
+⚙ Manage
 </button>
+
 </td>
 
 </tr>
@@ -567,6 +568,30 @@ Step:5
 
 </div>
 <!-- END MAIN -->
+    <!-- TRAILING SETTINGS POPUP -->
+
+<div id="settingsModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>⚙ Trailing Settings</h2>
+
+        <label>Start Trailing</label><br>
+        <input type="number" value="20"><br><br>
+
+        <label>Trail Distance</label><br>
+        <input type="number" value="10"><br><br>
+
+        <label>Trail Step</label><br>
+        <input type="number" value="5"><br><br>
+
+        <button class="btn-yellow">💾 Save</button>
+        <button class="btn-green">🛑 Disable</button>
+        <button class="btn-blue" onclick="closeSettings()">❌ Close</button>
+
+    </div>
+
+</div>
 <script>
 
 function enableTrailing(btn){
@@ -590,10 +615,15 @@ function enableTrailing(btn){
     }
 
 }
-
 function openSettings(btn){
 
-    alert("Open Trailing Settings Popup");
+    document.getElementById("settingsModal").style.display="block";
+
+}
+
+function closeSettings(){
+
+    document.getElementById("settingsModal").style.display="none";
 
 }
 
