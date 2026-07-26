@@ -14,14 +14,15 @@ body{
     background:#07111f;
     color:white;
 }
-
 .sidebar{
     position:fixed;
     width:170px;
     height:100%;
     background:#0d2038;
     border-right:1px solid #17365d;
+    z-index:1000;
 }
+
 
 .logo{
     padding:25px;
@@ -338,12 +339,7 @@ button{
 }
    @media (max-width:768px){
 
-.sidebar{
-    position:fixed;
-    left:-170px;
-    transition:.3s;
-    z-index:1000;
-}
+
 
 .sidebar.show{
     left:0;
