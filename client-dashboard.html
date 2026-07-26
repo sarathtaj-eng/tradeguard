@@ -217,10 +217,11 @@ if(!user){
     window.location="login.html";
 
 }
-document.getElementById("username").textContent = user.username;
-document.getElementById("plan").textContent = user.plan;
-document.getElementById("status").textContent = user.account_status;
-document.getElementById("trialEnd").textContent = user.trial_end;
+    document.getElementById("username").textContent = user.username || "Trader";
+document.getElementById("plan").textContent = user.plan || "Free Trial";
+document.getElementById("status").textContent = user.account_status || "Active";
+document.getElementById("trialEnd").textContent = user.trial_end || "-";
+
 
 
 function logout(){
