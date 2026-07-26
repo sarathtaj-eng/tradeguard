@@ -1,0 +1,291 @@
+/* ==========================================
+   TradeGuard - Main Style Sheet
+   ========================================== */
+
+/* ---------- Global ---------- */
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#07111f;
+    color:#ffffff;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar{
+    position:fixed;
+    width:170px;
+    height:100%;
+    background:#0d2038;
+    border-right:1px solid #17365d;
+    z-index:1000;
+}
+
+.logo{
+    padding:25px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#ffc107;
+    border-bottom:1px solid #17365d;
+}
+
+.menu a{
+    display:block;
+    padding:18px;
+    color:#ffffff;
+    text-decoration:none;
+    border-bottom:1px solid #17365d;
+    transition:.2s;
+}
+
+.menu a:hover{
+    background:#17365d;
+}
+
+.menu .active{
+    background:#1a3d6b;
+    color:#ffc107 !important;
+}
+
+/* ---------- Main ---------- */
+
+.main{
+    margin-left:170px;
+    padding:15px;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+    background:#0d2038;
+    border:1px solid #17365d;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+/* ---------- Account ---------- */
+
+.account-box{
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:8px;
+    padding:15px;
+    overflow-x:auto;
+}
+
+/* ---------- Statistics ---------- */
+
+.stats-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.stat-box{
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:8px;
+    padding:15px;
+    text-align:center;
+}
+
+.stat-box h3{
+    margin:0;
+    font-size:14px;
+    color:#cccccc;
+}
+
+.stat-value{
+    margin-top:10px;
+    font-size:28px;
+    font-weight:bold;
+    color:#00ff88;
+    text-shadow:0 0 10px rgba(0,255,136,.3);
+}
+
+/* ---------- Default Settings ---------- */
+
+.default-settings{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.setting-box{
+    flex:1;
+    min-width:220px;
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:8px;
+    padding:20px;
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.setting-box h3{
+    margin:0 0 15px;
+    color:#cccccc;
+}
+
+.value{
+    font-size:34px;
+    color:#2d8cff;
+    font-weight:bold;
+}
+
+/* ---------- Tables ---------- */
+
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
+.trade-table{
+    width:100%;
+    min-width:950px;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.trade-table th{
+    background:#17365d;
+    color:#ffc107;
+    padding:12px;
+    text-align:center;
+}
+
+.trade-table td{
+    padding:12px;
+    text-align:center;
+    border-top:1px solid #17365d;
+}
+
+/* ---------- Trade Colors ---------- */
+
+.buy{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+.sell{
+    color:#ff4d4d;
+    font-weight:bold;
+}
+
+.profit{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+/* ---------- Status ---------- */
+
+.active-badge{
+    display:inline-block;
+    background:#28a745;
+    color:#ffffff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.inactive-badge{
+    display:inline-block;
+    background:#dc3545;
+    color:#ffffff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* ---------- Buttons ---------- */
+
+button{
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:2px;
+    transition:.2s;
+}
+
+.btn-yellow{
+    background:#ffc107;
+    color:#000000;
+}
+
+.btn-green{
+    background:#28a745;
+    color:#ffffff;
+}
+
+.btn-blue{
+    background:#24508a;
+    color:#ffffff;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+/* ---------- Popup ---------- */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    z-index:999;
+}
+
+.modal-content{
+    width:420px;
+    max-width:95%;
+    margin:80px auto;
+    background:#132b4a;
+    border:1px solid #24508a;
+    border-radius:10px;
+    padding:25px;
+}
+
+.modal-content h2{
+    margin-top:0;
+    color:#ffc107;
+    text-align:center;
+}
+
+.modal-content label{
+    display:block;
+    margin-bottom:5px;
+    color:#dddddd;
+    font-weight:bold;
+}
+
+.modal-content input{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    border:1px solid #24508a;
+    border-radius:5px;
+    background:#07111f;
+    color:#ffffff;
+    margin-bottom:15px;
+}
+
+.modal-content button{
+    width:100%;
+    margin-top:10px;
+}
