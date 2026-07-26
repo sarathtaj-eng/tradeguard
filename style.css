@@ -296,3 +296,7 @@ button:hover{
     width:100%;
     margin-top:10px;
 }
+.connected{
+    color:#00ff88;
+    font-weight:bold;
+}
