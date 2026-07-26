@@ -277,17 +277,7 @@ button:hover{
     font-weight:bold;
 }
 
-.modal-content input{
-    width:100%;
-    padding:10px;
-    box-sizing:border-box;
-    border:1px solid #24508a;
-    border-radius:5px;
-    background:#07111f;
-    color:#ffffff;
-    margin-bottom:15px;
-}
-/* ---------- Grid ---------- */
+/* ---------- Utility ---------- */
 
 .info-grid{
     display:grid;
@@ -295,10 +285,6 @@ button:hover{
     gap:15px;
 }
 
-.modal-content button{
-    width:100%;
-    margin-top:10px;
-}
 .connected{
     color:#00ff88;
     font-weight:bold;
