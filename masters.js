@@ -204,10 +204,16 @@ ${master.followers}
 </div>
 
 </div>
+<button class="viewBtn">
+    View Profile
+</button>
+`;
 
-<button class="viewBtn"
+const button = card.querySelector(".viewBtn");
 
-onclick="viewMaster('${master.masterID}')">
+button.addEventListener("click", () => {
+    viewMaster(master.masterID);
+});
 
 View Profile
 
