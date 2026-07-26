@@ -770,14 +770,16 @@ function disableTrailing(){
     alert("Trailing Disabled");
 
 }
-    function toggleMenu() {
+    function toggleMenu(){
 
     document.querySelector(".sidebar").classList.toggle("show");
+    document.querySelector(".sidebar-overlay").classList.toggle("show");
 
 }
+  
 
 </script>
 
 </body>
-
+<div class="sidebar-overlay" onclick="toggleMenu()"></div>
 </html>
