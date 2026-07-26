@@ -29,42 +29,42 @@
     </p>
 </section>
        
+<!-- Filters -->
+<section class="filters">
 
-        <!-- Filters -->
-        <section class="filters">
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Search Master ID">
 
-            <input
-                type="text"
-                id="searchBox"
-                placeholder="Search Master ID">
+    <select id="sortBy">
+        <option value="growth">Highest Growth</option>
+        <option value="days">Longest Trading Days</option>
+        <option value="drawdown">Lowest Drawdown</option>
+        <option value="followers">Most Followers</option>
+    </select>
 
-            <select id="sortBy">
-                <option value="growth">Highest Growth</option>
-                <option value="days">Longest Trading Days</option>
-                <option value="drawdown">Lowest Drawdown</option>
-                <option value="followers">Most Followers</option>
-            </select>
+    <input
+        type="number"
+        id="minDays"
+        placeholder="Minimum Trading Days">
 
-            <input
-                type="number"
-                id="minDays"
-                placeholder="Minimum Trading Days">
+    <input
+        type="number"
+        id="maxDD"
+        placeholder="Maximum Drawdown %">
 
-            <input
-                type="number"
-                id="maxDD"
-                placeholder="Maximum Drawdown %">
+    <input
+        type="number"
+        id="minGrowth"
+        placeholder="Minimum Growth %">
 
-            <input
-                type="number"
-                id="minGrowth"
-                placeholder="Minimum Growth %">
+    <button id="applyFilters">
+        🔍 Search Masters
+    </button>
 
-            <button id="applyFilters">
-                🔍 Search Masters
-            </button>
-
-        </section>
+</section>
+       
 
         <!-- Master Cards -->
         <section
