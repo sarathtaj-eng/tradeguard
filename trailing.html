@@ -338,12 +338,13 @@ button{
 .trade-table{
     min-width:950px;
 }
-  
-    @media (max-width:768px){
+  @media (max-width:768px){
 
     .sidebar{
         position:fixed;
         left:-170px;
+        width:170px;
+        height:100%;
         transition:0.3s;
         z-index:1000;
     }
@@ -352,25 +353,16 @@ button{
         left:0;
     }
 
+    .main{
+        margin-left:0;
+        padding:10px;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
 }
    
-.mobile-menu{
-    display:none;
-    background:#0d2038;
-    color:#ffc107;
-    padding:15px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-@media(max-width:768px){
-
-.mobile-menu{
-    display:block;
-}
-
-}
 
 </style>
 </head>
