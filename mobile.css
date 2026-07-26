@@ -1,15 +1,24 @@
-/* Mobile Menu */
+/* ==========================================
+   TradeGuard Mobile Responsive Styles
+   ========================================== */
+
+/* Hide mobile menu on desktop */
 .mobile-menu{
     display:none;
     background:#0d2038;
     color:#ffc107;
-    padding:15px;
+    padding:15px 20px;
     font-size:22px;
     font-weight:bold;
     cursor:pointer;
+    position:sticky;
+    top:0;
+    z-index:1100;
+    border-bottom:1px solid #17365d;
 }
 
 /* Sidebar Overlay */
+
 .sidebar-overlay{
     display:none;
     position:fixed;
@@ -17,7 +26,7 @@
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,.4);
+    background:rgba(0,0,0,.45);
     z-index:999;
 }
 
@@ -25,15 +34,18 @@
     display:block;
 }
 
-@media(max-width:768px){
+/* ==========================================
+   Tablet & Mobile
+   ========================================== */
 
-    .mobile-menu{
-        display:block;
-    }
+@media (max-width:768px){
+
+    /* Sidebar */
 
     .sidebar{
         position:fixed;
         left:-170px;
+        top:0;
         width:170px;
         height:100%;
         transition:.3s;
@@ -44,22 +56,94 @@
         left:0;
     }
 
-    .main{
-        margin-left:0;
-        padding:10px;
+    /* Mobile Menu */
+
+    .mobile-menu{
+        display:block;
     }
+
+    /* Main */
+
+    .main{
+        margin-left:0 !important;
+        padding:10px !important;
+    }
+
+    /* Cards */
+
+    .card{
+        padding:15px;
+    }
+
+    /* Statistics */
+
+    .stats-row{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    /* Settings */
+
+    .default-settings{
+        flex-direction:column;
+    }
+
+    .setting-box{
+        width:100%;
+    }
+
+    /* Buttons */
+
+    button{
+        min-height:44px;
+        font-size:14px;
+    }
+
+    /* Tables */
+
+    .table-wrapper{
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .trade-table{
+        min-width:900px;
+    }
+
+    /* Popup */
+
+    .modal-content{
+        width:95%;
+        margin:20px auto;
+    }
+
+}
+
+/* ==========================================
+   Small Phones
+   ========================================== */
+
+@media (max-width:480px){
 
     .stats-row{
         grid-template-columns:1fr;
     }
 
-    .table-wrapper{
-        overflow-x:auto;
+    .modal-content{
+        padding:20px;
     }
 
-    .modal-content{
-        width:95%;
-        margin:20px auto;
+    .logo{
+        font-size:16px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .value,
+    .stat-value{
+        font-size:24px;
     }
 
 }
