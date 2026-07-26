@@ -46,6 +46,14 @@ body{
     background:#17365d;
 }
 
+.sidebar a.active{
+    background:#17365d;
+    color:#ffc107;
+    border-left:4px solid #ffc107;
+    font-weight:bold;
+}
+
+    
 .main{
     margin-left:230px;
     padding:30px;
@@ -56,14 +64,15 @@ body{
     flex-wrap:wrap;
     gap:20px;
 }
-
 .card{
+    flex:1 1 250px;
+    max-width:280px;
     background:#0d2038;
     border:1px solid #17365d;
     border-radius:10px;
     padding:20px;
-    width:220px;
 }
+
 
 .card h3{
     color:#ffc107;
@@ -116,9 +125,8 @@ button:hover{
     <div class="logo">
         🛡️ TradeGuard
     </div>
-
-    <a href="client-dashboard.html">🏠 Dashboard</a>
-
+    <a href="client-dashboard.html" class="active">🏠 Dashboard</a>
+    
     <a href="masters.html">👑 Masters</a>
 
     <a href="copier.html">🔄 Copy Network</a>
@@ -152,13 +160,12 @@ Manage your Master EA, Client EA, subscriptions,
 and discover verified TradeGuard Masters.
 
 </p>
+<p style="color:#9ea9bc;margin-top:-8px;margin-bottom:30px;font-size:16px;">
 
-<p style="color:#aaa; margin-top:-10px; margin-bottom:30px; font-size:16px;">
-
-Manage your licenses, discover verified masters,
-and connect your Client EA.
+Manage your licenses, connect your Client EA, browse verified masters, and control your copy trading from one dashboard.
 
 </p>
+
 <div class="cards">
 
     <div class="card">
