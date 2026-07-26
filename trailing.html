@@ -180,14 +180,49 @@ button{
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
 }
+/* ---------- Tablet ---------- */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.stats-row{
-    grid-template-columns:1fr 1fr;
+    .main{
+        margin-left:0;
+        padding:10px;
+    }
+
+    .stats-row{
+        grid-template-columns:1fr 1fr;
+    }
+
+    button{
+        min-height:44px;
+        font-size:14px;
+    }
+
 }
 
+/* ---------- Mobile ---------- */
+
+@media (max-width:480px){
+
+    .stats-row{
+        grid-template-columns:1fr;
+    }
+
+    .default-settings{
+        flex-direction:column;
+    }
+
+    .setting-box{
+        width:100%;
+    }
+
+    .modal-content{
+        width:95%;
+        margin:20px auto;
+    }
+
 }
+
 
 
 .stat-box{
@@ -321,26 +356,7 @@ button{
 }
 
 }
-@media(max-width:768px){
 
-    .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
-    }
-
-    .main{
-        margin-left:0;
-    }
-
-.trade-table{
-    display:block;
-    overflow-x:auto;
-    white-space:nowrap;
-}
-
-
-}
 
 </style>
 </head>
