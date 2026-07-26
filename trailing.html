@@ -343,13 +343,31 @@ button{
 
 
 }
+.mobile-menu{
+    display:none;
+    background:#0d2038;
+    color:#ffc107;
+    padding:15px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
+@media(max-width:768px){
+
+.mobile-menu{
+    display:block;
+}
+
+}
 
 </style>
 </head>
 
 <body>
-
+<div class="mobile-menu" onclick="toggleMenu()">
+    ☰ TradeGuard
+</div>
 <div class="sidebar">
 
 <div class="logo">
