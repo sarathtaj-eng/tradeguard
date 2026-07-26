@@ -1,3 +1,7 @@
+/* ==========================================
+   TradeGuard Trailing Manager Functions
+   ========================================== */
+
 function enableTrailing(btn){
 
     btn.className = "btn-blue";
