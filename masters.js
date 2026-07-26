@@ -131,11 +131,8 @@ card.innerHTML=`
 ${master.masterID}
 
 </div>
-
-<div class="status">
-
-${master.status}
-
+<div class="status ${master.status.toLowerCase()}">
+    ${master.status}
 </div>
 
 </div>
@@ -229,14 +226,14 @@ container.appendChild(card);
 // =====================================
 
 document.getElementById("searchBox").addEventListener("input",function(){
+const keyword = this.value.trim().toUpperCase();
 
-const keyword=this.value.toUpperCase();
+filteredMasters = masters.filter(master =>
 
-filteredMasters=masters.filter(master=>{
+    master.masterID.toUpperCase().includes(keyword)
 
-return master.masterID.includes(keyword);
+);
 
-});
 
 renderMasters(filteredMasters);
 
@@ -281,32 +278,30 @@ renderMasters(filteredMasters);
 // =====================================
 // Filters
 // =====================================
+document.getElementById("filterForm").addEventListener("submit", function(e){
 
-document.getElementById("applyFilters").addEventListener("click",function(){
+    e.preventDefault();
 
-const minDays=parseInt(document.getElementById("minDays").value)||0;
+    const minDays = parseInt(document.getElementById("minDays").value) || 0;
+    const maxDD = parseFloat(document.getElementById("maxDD").value) || 999;
+    const minGrowth = parseFloat(document.getElementById("minGrowth").value) || 0;
 
-const maxDD=parseFloat(document.getElementById("maxDD").value)||999;
+    filteredMasters = masters.filter(master => {
 
-const minGrowth=parseFloat(document.getElementById("minGrowth").value)||0;
+        return (
 
-filteredMasters=masters.filter(master=>{
+            master.days >= minDays &&
+            master.drawdown <= maxDD &&
+            master.growth >= minGrowth
 
-return(
+        );
 
-master.days>=minDays &&
+    });
 
-master.drawdown<=maxDD &&
-
-master.growth>=minGrowth
-
-);
-
-});
-
-renderMasters(filteredMasters);
+    renderMasters(filteredMasters);
 
 });
+
 
 // =====================================
 // View Profile
